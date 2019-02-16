@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="CalldownMULE">
+    <name>轨道空投任意单位</name>
+    <category>技能</category>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="AnyUnit" type="CUnitLink">
+      <name>空投单位</name>
+    </input>
+    <validate type="error">
+      <text>必须空投一个单位</text>
+      <condition id="DropAnyUnit" />
+    </validate>
+    <condition id="DropAnyUnit" empty="0" input="AnyUnit" />
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Cost_Vital">
+        <value>50</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Range">
+        <value>500</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^CreateUnit</value>
+        <index>0</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^CreatePersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ExpireDelay">
+        <value>4</value>
+      </field>
+      <field id="FinalEffect">
+        <value>^Id^FinalSet</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^CreateSet</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>MakePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^CreatePersistent</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^CreateUnit</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="SpawnUnit">
+        <value>^AnyUnit^</value>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^CreateSet</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>MULETargetCheck</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FinalSet</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>RemovePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TimedLife</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^TimedLife</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Behavior">
+        <value>MULETimedLife</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <parentid>TimedLife</parentid>
+      <id>^Id^TimedLife</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>90</value>
+      </field>
+      <field id="ExpireEffect">
+        <value>MULEFate</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShotNoOrphan</parentid>
+      <id>^Id^Model</id>
+      <field id="Model">
+        <value>DropPodFalling</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Start</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^TimedLife.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterOpening; AnimName BSD</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Create DropPodUnload</value>
+        <index>4</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>MercDropSOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^Sound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Start; At Target</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 2.100000 DelayDropPod</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDropPod</value>
+        <index>3</index>
+      </field>
+      <!--无需修改-->
+      <field id="On_Send">
+        <value>Create OrbitalCommand_CalldownMuleImpact</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDropPod</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>OrbitalCommand_CalldownMuleDrop</value>
+      </field>
+    </entry>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Id^Range</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="On_Terms">
+        <index>1</index>
+        <value>Abil.^Id^.TargetOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>2</index>
+        <value>Abil.^Id^.TargetOff</value>
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Abil.^Id^.ButtonHoverOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Abil.^Id^.ButtonHoverOff</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^PodFalling</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\DropPodFalling\DropPodFalling.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>OrbitalCommandDropPodDeathA</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>OrbitalCommand_DropPodDeathA</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>OrbitalCommandDropPodDeathB</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.600000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>OrbitalCommand_DropPodDeathB</value>
+        <index>1</index>
+      </field>
+      <field id="RadiusLoose">
+        <value>0.250000</value>
+      </field>
+      <field id="Radius">
+        <value>0.250000</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\BTN-Unit-Terran-mule.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\BTN-Unit-Terran-mule.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+  </wizard>
+</wizardfile>

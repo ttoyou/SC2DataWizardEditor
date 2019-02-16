@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="Stimpack">
+    <name>强化剂</name>
+    <category>技能</category>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CAbilEffectInstant" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+      <field id="Cost_Vital">
+        <value>10</value>
+        <index>0;Life</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>Stim</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="InfoTooltipPriority">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^</id>
+      <field id="Alignment">
+        <value>Positive</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-terran-stimpack.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>15</value>
+      </field>
+      <field id="Modification_MoveSpeedMultiplier">
+        <value>1.5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.5</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^</id>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStart</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+      </field>
+      <field id="Sound">
+        <value>Marine_Stimpack</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>^Id^EndImpact</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.Off; ValidateUnit NotDead</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOverhead</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>^Id^StartImpact</id>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStart</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOverhead</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^EndImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\StimpackEndImpact\StimpackEndImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^StartImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\StimpackStartImpact\StimpackStartImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-terran-stimpack-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-terran-stimpack-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+  </wizard>
+</wizardfile>

@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="Snipe">
+    <category>技能</category>
+    <name>狙杀</name>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <macro id="On1">ref=Actor,^WhichUnit^,On#</macro>
+    <macro id="On2">^On1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <input id="EnableAction" type="WizardCheckbox">
+      <name>同时添加施法动作</name>
+      <condition id="AddToUnit" />
+    </input>
+    <condition id="AddAction" value="1" input="EnableAction" operator="equal" />
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <condition id="AddAction" />
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStart</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBaselineStop</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStart</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay SpellA Spell,A</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStop</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear SpellA</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceCastStop</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBaselineStart</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceChannelStart</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay SpellB Spell,B PlayForever</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceChannelStop</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear SpellB</value>
+        <index>^On2^</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourceFinishStart</value>
+        <index>^On1^</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay SpellC Spell,C</value>
+        <index>^On2^</index>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Damage</value>
+        <index>0</index>
+      </field>
+      <field id="TargetFilters">
+        <value>Biological,Visible;Self,Structure,Destructible,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>10</value>
+      </field>
+      <field id="CastIntroTime">
+        <value>0.5</value>
+      </field>
+      <field id="Cost_Vital">
+        <value>25</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Marker_MatchFlags">
+        <value>0</value>
+        <index>0;Link</index>
+      </field>
+      <field id="Marker_MatchFlags">
+        <value>1</value>
+        <index>0;CasterUnit</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^Damage</id>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Kind">
+        <value>Spell</value>
+      </field>
+      <field id="Amount">
+        <value>45</value>
+      </field>
+      <field id="Death">
+        <value>Silentkill</value>
+      </field>
+      <field id="ArmorReduction">
+        <value>0</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectAttack">
+        <value>^Id^Damage</value>
+      </token>
+      <field id="LaunchSiteOps_Ops">
+        <value>SOpAttachHarnessStationary</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Ghost_SnipeLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Ghost_SnipeImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>GenericAttackBeam</parentid>
+      <id>^Id^AttackBeam</id>
+    </entry>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Id^Range</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="On_Terms">
+        <index>1</index>
+        <value>Abil.^Id^.TargetOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>2</index>
+        <value>Abil.^Id^.TargetOff</value>
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Abil.^Id^.ButtonHoverOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Abil.^Id^.ButtonHoverOff</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\GhostSnipeBeam\GhostSnipeBeam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\SnipeImpact\SnipeImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\SnipeLaunch\SnipeLaunch.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-terran-snipe-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-terran-snipe-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="HidesForSimpleText">
+        <value>0</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+  </wizard>
+</wizardfile>

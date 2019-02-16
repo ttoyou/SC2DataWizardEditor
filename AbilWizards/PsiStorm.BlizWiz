@@ -1,0 +1,502 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="PsiStorm">
+    <name>灵能风暴</name>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <macro id="On1">ref=Actor,^WhichUnit^,On#</macro>
+    <macro id="On2">^On1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <condition id="AddAction" value="1" input="EnableAction" operator="equal" />
+    <input id="EnableAction" type="WizardCheckbox">
+      <name>同时添加施法动作</name>
+      <condition id="AddToUnit" />
+    </input>
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <field id="On_Terms">
+        <index>^On1^</index>
+        <value>Abil.^Id^.SourceCastStart</value>
+      </field>
+      <field id="On_Send">
+        <index>^On2^</index>
+        <value>AnimPlay A A</value>
+      </field>
+      <condition id="AddToUnit" />
+      <condition id="AddAction" />
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+      <field id="CastOutroTime">
+        <value>0.5</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Persistent</value>
+        <index>0</index>
+      </field>
+      <field id="CursorEffect">
+        <value>^Id^Search</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AllowMovement</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^ApplyBehavior</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Hidden</value>
+      </field>
+      <field id="Amount">
+        <value>10</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>PsiStormUTargetFilters</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^DamageInitial</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Amount">
+        <value>10</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>PsiStormUTargetFilters</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^Persistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^Search</value>
+      </field>
+      <field id="PeriodCount">
+        <value>6</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^Search</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.5712</value>
+      </field>
+      <field id="AINotifyEffect">
+        <value>^Id^Search</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^Search</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="SearchFilters">
+        <value>-;Structure,Missile,Destructible,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>1.5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^ApplyBehavior</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+      <field id="AINotifyFlags">
+        <value>1</value>
+        <index>HurtFriend</index>
+      </field>
+      <field id="AINotifyFlags">
+        <value>1</value>
+        <index>HurtEnemy</index>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^</id>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-psistorm.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>0.6665</value>
+      </field>
+      <field id="Period">
+        <value>0.571</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^DamageInitial</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Global</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^ImpactSound</id>
+      <field id="Sound">
+        <value>HighTemplar_PsionicStormImpact</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.On</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^Impact</id>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>BaseModelScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Scale</index>
+      </field>
+      <field id="AutoScaleFactor">
+        <value>0.750000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^LaunchSound</id>
+      <field id="Sound">
+        <value>HiTePsionicStormCast</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.SourcePrepStart</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^Model</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="Scale">
+        <value>1.300000</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>HighTemplar_PsionicStormLaunch</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>ProtossCursorSplat</parentid>
+      <id>^Id^CursorSplat</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="Model">
+        <value>^Id^CursorSplat</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.Cursor</value>
+      </field>
+    </entry>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Id^Range</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="On_Terms">
+        <index>1</index>
+        <value>Abil.^Id^.TargetOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>2</index>
+        <value>Abil.^Id^.TargetOff</value>
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Abil.^Id^.ButtonHoverOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Abil.^Id^.ButtonHoverOff</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^Impact</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\PsiStormImpact\PsiStormImpact.m3</value>
+      </field>
+      <field id="Radius">
+        <value>1.000000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^Model</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\PsiStorm\PsiStorm.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UI</parentid>
+      <id>^Id^CursorSplat</id>
+      <field id="Model">
+        <value>Assets\UI\Cursors\ProtossCursor1\ProtossCursor1.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.250000,0.250000,0.250000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.250000,0.250000,0.250000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>2.500000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>2.500000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <category>技能</category>
+    <objecttypes create="Abil" />
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-protoss-psistorm-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-protoss-psistorm-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>AoEAttackBase</parentid>
+      <id>^Id^ShieldHitter</id>
+      <field id="Lifetime">
+        <value>3.400000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^DamageInitial.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^DamageInitial.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^DamageInitial.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Stop</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>5</index>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

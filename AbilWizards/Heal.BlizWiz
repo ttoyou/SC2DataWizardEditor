@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="Heal">
+    <name>治疗</name>
+    <category>技能</category>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreateHealer" catalog="Effect">
+      <id>^Id^</id>
+      <field id="DrainVital">
+        <value>Energy</value>
+      </field>
+      <field id="DrainVitalCostFactor">
+        <value>0.33</value>
+      </field>
+      <field id="RechargeVitalRate">
+        <value>9</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>noMarkers</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>NotWarpingIn</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>HiddenCompareAB</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>HiddenCompareBA</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>NotVortexd</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^Beam</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^.TargetStart</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^.TargetStop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="HostForProps_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostForProps_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostForProps_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostLaunch_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostLaunch_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostLaunch_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostImpact_Scope">
+        <value>Target</value>
+      </field>
+      <field id="HostImpact_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachWeapon</value>
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^Model</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^.TargetStart; At Target</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^.TargetStop; At Target</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>5</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOverhead</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound</id>
+      <field id="Sound">
+        <value>Medivac_HealLoop</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.TargetChannelStart</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.TargetChannelStop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>Create MedivacHealSoundStart</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorDestruction</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Create MedivacHealSoundStop</value>
+        <index>7</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOverhead</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^Beam</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MedivacBeam\MedivacBeam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.500000,0.500000,0.500000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.500000,0.500000,0.500000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^Model</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MedicHeal\MedicHeal.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Biological,Visible;Self,Enemy,Air,Structure,Missile,UnderConstruction,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="FollowRange">
+        <value>1.5</value>
+      </field>
+      <field id="AutoCastRange">
+        <value>6</value>
+      </field>
+      <field id="AcquireAttackers">
+        <value>1</value>
+      </field>
+      <field id="DefaultError">
+        <value>RequiresHealTarget</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AllowMovement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCast</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCastOn</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>NoDeceleration</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>ReExecutable</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Smart</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>PassengerAcquirePassengers</index>
+      </field>
+      <field id="TargetSorts_RequestCount">
+        <value>1</value>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSAlliancePassive</value>
+        <index>0;0</index>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSDistance</value>
+        <index>0;1</index>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSLifeFraction</value>
+        <index>0;2</index>
+      </field>
+      <field id="SmartValidatorArray">
+        <value>healSmartTargetFilters</value>
+        <index>0</index>
+      </field>
+      <field id="SmartValidatorArray">
+        <value>NotWarpingIn</value>
+        <index>1</index>
+      </field>
+      <field id="AutoCastValidatorArray">
+        <value>healCasterMinEnergy</value>
+        <index>0</index>
+      </field>
+      <field id="AutoCastValidatorArray">
+        <value>NotWarpingIn</value>
+        <index>1</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+      <field id="AutoCastAcquireLevel">
+        <value>Defensive</value>
+      </field>
+      <field id="AutoCastFilters">
+        <value>Visible;Neutral,Enemy</value>
+      </field>
+      <field id="UseMarkerArray">
+        <value>0</value>
+        <index>Approach</index>
+      </field>
+      <field id="UseMarkerArray">
+        <value>0</value>
+        <index>Prep</index>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-terran-heal-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-terran-heal-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

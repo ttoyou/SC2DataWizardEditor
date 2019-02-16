@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="Charge">
+    <name>冲锋</name>
+    <category>技能</category>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CAbilAugment" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+      <field id="AbilCmd">
+        <value>attack,Execute</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCast</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCastOn</index>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <value>10</value>
+      </field>
+      <field id="AutoCastValidatorArray">
+        <value>CasterNotHoldingPosition</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^MinTriggerDistance</value>
+        <index>0</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^MaxDistance</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound</id>
+      <field id="Sound">
+        <value>Zealot_Charge</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CValidatorLocationCompareRange" catalog="Validator">
+      <id>^Id^MaxDistance</id>
+      <field id="WhichLocation_Value">
+        <value>SourceUnit</value>
+      </field>
+      <field id="Value_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Compare">
+        <value>LT</value>
+      </field>
+      <field id="Range">
+        <value>4</value>
+      </field>
+      <field id="ResultFailed">
+        <value>TargetIsOutOfRange</value>
+      </field>
+      <field id="Pathing">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareOrderTargetRange" catalog="Validator">
+      <id>^Id^MinTriggerDistance</id>
+      <field id="ResultFailed">
+        <value>TargetIsTooClose</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="OtherUnit_Value">
+        <value>Target</value>
+      </field>
+      <field id="Compare">
+        <value>GT</value>
+      </field>
+      <field id="AbilLink">
+        <value>attack</value>
+      </field>
+      <field id="Value">
+        <value>0.6</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-charge.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>3.5</value>
+      </field>
+      <field id="Modification_MoveSpeedMultiplier">
+        <value>2.2</value>
+      </field>
+      <field id="Alignment">
+        <value>Positive</value>
+      </field>
+      <field id="BuffFlags">
+        <value>1</value>
+        <index>Channeling</index>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Not^Id^</id>
+      <field id="Behavior">
+        <value>^Id^</value>
+      </field>
+      <field id="ResultFailed">
+        <value>AlreadyTargeted</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-protoss-charge-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-protoss-charge-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+  </wizard>
+</wizardfile>
