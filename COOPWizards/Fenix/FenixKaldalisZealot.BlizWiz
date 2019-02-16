@@ -1,0 +1,873 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作单位向导-->
+  <wizard id="FenixKaldalisZealot">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="LifeStart">
+        <value>400</value>
+      </field>
+      <field id="LifeMax">
+        <value>400</value>
+      </field>
+      <field id="LifeArmor">
+        <value>2</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>200</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>200</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Speed">
+        <value>3</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="RepairTime">
+        <value>50</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>20</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>70</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>10</value>
+        <index>0;Turn</index>
+      </field>
+      <field id="TauntDuration">
+        <value>5</value>
+        <index>Cheer</index>
+      </field>
+      <field id="TauntDuration">
+        <value>5</value>
+        <index>Dance</index>
+      </field>
+      <field id="ShieldArmor">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.25</value>
+      </field>
+      <field id="BarWidth">
+        <value>42</value>
+      </field>
+      <field id="BarOffset">
+        <value>45</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-champion-zealot-purifier.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-champion-zealot-purifier.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\wireframe-protoss-zealot-Purifier-Champion-shield00.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\wireframe-protoss-zealot-Purifier-Champion-shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\wireframe-protoss-zealot-Purifier-Champion-shield02.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-protoss-zealot-Purifier-Champion.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-zealot-Purifier-Champion.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Kaldalis_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Kaldalis_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Kaldalis_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Kaldalis_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Kaldalis_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Kaldalis_Pissed</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Zealot_DeathFX</value>
+      </field>
+      <field id="Macros">
+        <value>ChargingAnim</value>
+        <index>1</index>
+      </field>
+      <field id="Macros">
+        <value>TerrainSquibAnimations</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Champion</value>
+        <index>69</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="Model">
+        <value>Assets\Units\Protoss\Zealot_Purifier_Collection\Zealot_Purifier_Collection.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.440000,1.440000,1.440000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.440000,1.440000,1.440000</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.416500</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.375000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.416500</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Jump,Start,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>FenixKaldalisZealot_Jump</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.006000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>FenixKaldalisZealot_Jump</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Jump,End,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>FenixKaldalisZealot_Land</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.022000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>FenixKaldalisZealot_Land</value>
+        <index>1</index>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,00</value>
+        <index>0</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,C,00</value>
+        <index>0</index>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,01</value>
+        <index>1</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,C,00</value>
+        <index>1</index>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,02</value>
+        <index>2</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,D,00</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <!--修改-->
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^PsiBladesBurst</value>
+      </field>
+      <field id="Options">
+        <index>Melee</index>
+        <value>1</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>0.1</value>
+      </field>
+      <field id="Period">
+        <value>0.8</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Protoss\Zealot_Purifier_Collection_Kaldalis_Portrait\Zealot_Purifier_Collection_Kaldalis_Portrait.m3</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\zealot_purifier_collection_kaldalis_static.dds</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <id>^Id^PsiBladesBurst</id>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.28</value>
+        <index>1</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^Damage</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <field id="Amount">
+        <value>18</value>
+      </field>
+      <field id="Death">
+        <value>Eviscerate</value>
+      </field>
+      <id>^Id^Damage</id>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Zealot_Purifier_Collection_Death\Zealot_Purifier_Collection_Death.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossSpiritDeathLow</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.555400</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.555400</value>
+      </field>
+      <field id="VariationCount">
+        <value>2</value>
+      </field>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start; At Caster</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponLeft</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Zealot_AttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Zealot_AttackImpact</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Header</value>
+      </field>
+      <id>^Id^Attack</id>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossAck_Void</parentid>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack00</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack01</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack02</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack03</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack04</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack05</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack06</value>
+        <index>6</index>
+      </field>
+      <field id="Volume">
+        <value>-5.000000,-5.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <id>Kaldalis_Attack</id>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Death</parentid>
+      <field id="AssetArray_File">
+        <value>LocalizedData\Sounds\VO\Protoss\Kaldalis_Death00.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_Volume">
+        <value>-5.000000,-5.000000</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_Weight">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>LocalizedData\Sounds\VO\Protoss\ZealotNerazim_Death01.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_Pitch">
+        <value>-1.000000,1.000000</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>LocalizedData\Sounds\VO\Protoss\ZealotNerazim_Death02.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_Pitch">
+        <value>-1.000000,1.000000</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>LocalizedData\Sounds\VO\Protoss\ZealotNerazim_Death03.wav</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_Pitch">
+        <value>-1.000000,1.000000</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>LocalizedData\Sounds\VO\Protoss\ZealotNerazim_Death04.wav</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_Pitch">
+        <value>-1.000000,1.000000</value>
+        <index>4</index>
+      </field>
+      <field id="Select">
+        <value>Random</value>
+      </field>
+      <id>Kaldalis_Death</id>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossAck_Void</parentid>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack00</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack01</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack02</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack03</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack04</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack05</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Attack06</value>
+        <index>6</index>
+      </field>
+      <field id="Volume">
+        <value>-5.000000,-5.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <id>Kaldalis_EngageRangedVO</id>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossHelp</parentid>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Help00</value>
+      </field>
+      <field id="Volume">
+        <value>-3.000000,-3.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <id>Kaldalis_Help</id>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossPissed</parentid>
+      <id>Kaldalis_Pissed</id>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed01</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed02</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed03</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed04</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed05</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed06</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Pissed07</value>
+        <index>6</index>
+      </field>
+      <field id="Volume">
+        <value>-4.000000,-4.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossReady</parentid>
+      <id>Kaldalis_Ready</id>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Ready00</value>
+      </field>
+      <field id="Volume">
+        <value>-1.000000,-1.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossAck_Void</parentid>
+      <id>Kaldalis_What</id>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What00</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What01</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What02</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What03</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What04</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What05</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_What06</value>
+        <index>6</index>
+      </field>
+      <field id="Volume">
+        <value>-4.000000,-4.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>ProtossAck_Void</parentid>
+      <id>Kaldalis_Yes</id>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes00</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes01</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes02</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes03</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes04</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_TemplateParam">
+        <value>Kaldalis_Yes05</value>
+        <index>5</index>
+      </field>
+      <field id="Volume">
+        <value>-4.000000,-4.000000</value>
+      </field>
+      <field id="Exclusivity">
+        <value>KaldalisAndLegionnaire_UnitDX_Exclusivity</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^Champion</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\AI_Champion_Ground_Coop_WarpIn\AI_Champion_Ground_Coop_WarpIn.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.800000,0.800000,0.800000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.800000,0.800000,0.800000</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>CloakedUndetectedIsHidden</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^Champion</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>BaseModelScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Scale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.BeforeClosing; AnimName BSD</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>RefClear ::Host</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeath</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachHardPoint01</value>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+    </entry>
+    <category>合作任务/菲尼克斯</category>
+    <objecttypes create="Unit" />
+    <name>卡尔达利斯</name>
+  </wizard>
+</wizardfile>

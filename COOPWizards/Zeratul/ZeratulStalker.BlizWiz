@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作单位向导-->
+  <wizard id="ZeratulStalker">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>100</value>
+      </field>
+      <field id="LifeMax">
+        <value>100</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>100</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>100</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Speed">
+        <value>2.9492</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="RepairTime">
+        <value>21</value>
+      </field>
+      <field id="Radius">
+        <value>0.625</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.625</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>3.1328</value>
+      </field>
+      <field id="BarOffset">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Stalker.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-stalker.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundarmorlevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-zeratulstalker.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Stalker.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\Wireframe-Protoss-Stalker-Shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\Wireframe-Protoss-Stalker-Shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\Wireframe-Protoss-Stalker-Shield03.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Stalker_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Stalker_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Stalker_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Stalker_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Stalker_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Stalker_Pissed</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Superior</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Inferior</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>69</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>StalkerBase</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Units\Stalker_Zeratul_COOP\Stalker_Zeratul_COOP.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <!--修改-->
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^LM</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Period">
+        <value>1.44</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorAction">
+      <id>^Id^Attack</id>
+      <parentid>GenericAttack</parentid>
+      <field id="ImpactModel">
+        <value>^Id^ImpactModel</value>
+      </field>
+      <field id="DamageMap_Model">
+        <value>StalkerAttackDamage</value>
+      </field>
+      <field id="DamageMap_Sound">
+        <value>StalkerAttackDamage</value>
+      </field>
+      <field id="DamageMap_ModelReaction">
+        <value>StalkerAttackDamageReaction</value>
+      </field>
+      <field id="LaunchAssets_Model">
+        <value>StalkerAttackLaunch</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Stalker_AttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>StalkerAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Stalker_AttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>StalkerAttackImpactReaction</value>
+      </field>
+      <token id="effectImpact">
+        <value>^Id^Damage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LM</value>
+      </token>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^AttackImpact</id>
+      <parentid>ImpactFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\StalkerMissileImpact\StalkerMissileImpact.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Portraits\Stalker_Zeratul_COOP_Portrait\Stalker_Zeratul_COOP_Portrait.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <field id="Amount">
+        <value>26</value>
+      </field>
+      <field id="AttributeBonus">
+        <index>1</index>
+        <value>10</value>
+      </field>
+      <id>^Id^Damage</id>
+      <parentid>DU_WEAP_MISSILE</parentid>
+    </entry>
+    <entry catalog="Effect" type="CEffectLaunchMissile">
+      <id>^Id^LM</id>
+      <field id="ImpactEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^Weapon</id>
+      <parentid>MISSILE</parentid>
+      <field id="Mover">
+        <value>StalkerWeapon</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <id>^Id^AttackMissile</id>
+      <parentid>GenericAttackMissile</parentid>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+      <field id="Model">
+        <value>StalkerWeapon</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>ActorCreation</value>
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>SetTintColor 221,255,26 0.000000 OneShot ColorTint</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^ImpactModel</id>
+      <parentid>GenericAttackModel</parentid>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>SetTintColor 221,255,26 0.000000 OneShot ColorTint</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <category>合作任务/泽拉图</category>
+    <name>萨尔纳加伏击者</name>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>StalkerDeathBase</parentid>
+      <id>^Id^_Death</id>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Units\Stalker_Zeratul_COOP_Death\Stalker_Zeratul_COOP_Death.m3</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

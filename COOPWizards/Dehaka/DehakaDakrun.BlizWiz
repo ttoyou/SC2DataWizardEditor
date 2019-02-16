@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作单位向导-->
+  <wizard id="DehakaDakrun">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>PZrg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unstoppable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>4</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>5</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>MapBoss</index>
+      </field>
+      <field id="LifeStart">
+        <value>3000</value>
+      </field>
+      <field id="LifeMax">
+        <value>3000</value>
+      </field>
+      <field id="LifeArmor">
+        <value>5</value>
+      </field>
+      <field id="Speed">
+        <value>2</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.5</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.25</value>
+      </field>
+      <field id="InnerRadius">
+        <value>1.5</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.75</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="PushPriority">
+        <value>12</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>1</value>
+      </field>
+      <field id="BarOffset">
+        <value>185</value>
+      </field>
+      <field id="BarWidth">
+        <value>155</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-zerg-dakrun.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-dehaka-groundcarapace-level0.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-dehaka-dakrun-primal.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-dehaka-dakrun-primal.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Dakrun_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Dakrun_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Dakrun_Yes</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; AnimPlaying Birth</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>66</index>
+      </field>
+      <field id="PortraitModel">
+        <value>Dakrun_Primal_Collection_Portrait</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <count>15</count>
+        <index>^VALUEINDEX^</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 02</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 03</value>
+        <index>3</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 04</value>
+        <index>4</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 05</value>
+        <index>5</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 06</value>
+        <index>6</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 07</value>
+        <index>7</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 08</value>
+        <index>8</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 09</value>
+        <index>9</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 10</value>
+        <index>10</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 11</value>
+        <index>11</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 12</value>
+        <index>12</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 13</value>
+        <index>13</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 14</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,Start</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>RunStart</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <count>23</count>
+        <index>^VALUEINDEX^</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Spell_CrashingCharge_PreCast</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,Start</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>RunStart</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_ChargePreCast</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,03</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.100000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_SpellRunCharge</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,03</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_FoleyMovement</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,End</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_SpellImpact</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,End</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.120000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_ImpactSlap_Eso</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Run,End</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_Impact</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Foley_LargeFootSteps</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_SlowWalk</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.570000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_FoleyMovement</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.700000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Foley_LargeFootSteps</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.150000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_FoleyMovement</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,01</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.060000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Foley_LargeFootSteps</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,01</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.940000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_FoleyMovement</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,01</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>Kraith_Vox_Snort</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.150000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_Snort</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,01</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Name">
+        <value>Run</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.010000</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Foley_LargeFootSteps</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Name">
+        <value>Kraith_Attack_Headbutt_Impact</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.584000</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Attack_Headbutt_Impact</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Name">
+        <value>Attack</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.550000</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_Attack</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Name">
+        <value>Attack</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.490000</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_FoleyMovement</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,Start,01</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Name">
+        <value>Attack</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_Spell</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,Start,01</value>
+        <index>20</index>
+      </field>
+      <field id="Events_Name">
+        <value>Attack</value>
+        <index>20</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.900000</value>
+        <index>20</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_SpellStartSpine</value>
+        <index>20</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,Start,B</value>
+        <index>21</index>
+      </field>
+      <field id="Events_Name">
+        <value>Attack</value>
+        <index>21</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.150000</value>
+        <index>21</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Kraith_Vox_InhaleExert</value>
+        <index>21</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+        <index>22</index>
+      </field>
+      <field id="Events_Name">
+        <value>Murvar_Burrow_Dig</value>
+        <index>22</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.326000</value>
+        <index>22</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Murvar_Burrow_Dig</value>
+        <index>22</index>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>1.250000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.050000,1.050000,1.050000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.050000,1.050000,1.050000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>2.000000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.250000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+      <field id="TipabilityLength">
+        <value>1.000000</value>
+      </field>
+      <field id="TipabilityWidth">
+        <value>0.600000</value>
+      </field>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Dakrun_Coop\Dakrun_Coop.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <!--修改-->
+      <field id="DisplayEffect" />
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="Options">
+        <index>Melee</index>
+        <value>1</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-dehaka-meleeattacks-level0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>0.5</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorAction">
+      <id>^Id^Attack</id>
+      <parentid>GenericAttack</parentid>
+      <token id="effectAttack">
+        <value>^Id^Damage</value>
+      </token>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <field id="Kind">
+        <value>Melee</value>
+      </field>
+      <field id="Amount">
+        <value>100</value>
+      </field>
+      <id>^Id^Damage</id>
+    </entry>
+    <name>达克伦</name>
+    <category>合作任务/德哈卡</category>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>

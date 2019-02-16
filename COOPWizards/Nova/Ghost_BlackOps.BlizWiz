@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Ghost_BlackOps">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="LifeStart">
+        <value>250</value>
+      </field>
+      <!--修改-->
+      <field id="LifeMax">
+        <value>250</value>
+      </field>
+      <!--修改-->
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <!--修改-->
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <!--修改-->
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <!--修改-->
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <!--修改-->
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <!--重要-->
+      <field id="FlagArray">
+        <index>PreventDestroy</index>
+        <value>1</value>
+      </field>
+      <!--重要-->
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <!--重要-->
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <!--重要-->
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <!--重要-->
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <!--重要-->
+      <field id="PlaneArray">
+        <index>Ground</index>
+        <value>1</value>
+      </field>
+      <!--重要-->
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="FlagArray">
+        <index>UseLineOfSight</index>
+        <value>1</value>
+      </field>
+      <field id="FlagArray">
+        <index>ArmySelect</index>
+        <value>1</value>
+      </field>
+      <!--修改-->
+      <field id="Sight">
+        <value>11</value>
+      </field>
+      <field id="Attributes">
+        <index>Biological</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <index>Psionic</index>
+        <value>1</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <!--重要-->
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Ghost.dds</value>
+      </field>
+      <!--重要-->
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <!--重要-->
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-blackops-ghost.dds</value>
+      </field>
+      <!--重要-->
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Ghost.dds</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--重要-->
+      <field id="WalkAnimMoveSpeed">
+        <value>2.25</value>
+      </field>
+      <!--修改-->
+      <!--修改-->
+      <!--修改-->
+      <parentid>GenericUnitBase</parentid>
+      <!---->
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Ghost_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Ghost_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Ghost_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Ghost_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Ghost_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Ghost_Pissed</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-blackops-ghost.dds</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Superior</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Inferior</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>69</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Ghost_Explode</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="Model">
+        <value>Assets\Units\Terran\Ghost_BlackOps\Ghost_BlackOps.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.375000</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <!--修改-->
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <!--修改-->
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <!--修改-->
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <!--修改-->
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <!--修改-->
+      <field id="DamagePoint">
+        <value>0.083</value>
+      </field>
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Backswing">
+        <value>1.167</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorAction">
+      <id>^Id^Attack</id>
+      <parentid>GenericAttack</parentid>
+      <token id="effectAttack">
+        <value>^Id^Damage</value>
+      </token>
+      <!--修改-->
+      <field id="LaunchAssets_Sound">
+        <value>Ghost_AttackLaunch</value>
+      </field>
+      <!--修改-->
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>Ghost_AttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>BloodTargetImpact</value>
+        <index>6</index>
+      </field>
+      <field id="AcquisitionYawHalfArc">
+        <value>10.000000</value>
+      </field>
+      <field id="AcquisitionPitchHalfArc">
+        <value>15.000000</value>
+      </field>
+      <field id="AccuracyHalfArc">
+        <value>5.000000</value>
+      </field>
+    </entry>
+    <objecttypes create="Unit" />
+    <category>合作任务/诺娃</category>
+    <name>特战幽灵</name>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <parentid>DU_WEAP</parentid>
+      <field id="AttributeBonus">
+        <index>Light</index>
+        <value>15</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>15</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^AttackImpact</id>
+      <parentid>ImpactFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Terran\GhostWeaponImpact\GhostWeaponImpact.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^AttackLaunch</id>
+      <parentid>LaunchFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Terran\GhostWeaponLaunch\GhostWeaponLaunch.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Image">
+        <value>Assets\Textures\blackops_ghostportrait_static.dds</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\Ghost_BlackOps_Portrait\Ghost_BlackOps_Portrait.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <field id="LowQualityModel">
+        <value>TerranBloodDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <id>^Id^_Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Terran\Ghost_BlackOps_Death\Ghost_BlackOps_Death.m3</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

@@ -1,0 +1,664 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作单位向导-->
+  <wizard id="Goliath_BlackOps">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^A</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>450</value>
+      </field>
+      <field id="LifeMax">
+        <value>450</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>115.1875</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="RepairTime">
+        <value>40</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.6875</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.65</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.65</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Turn</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^G</value>
+        <index>1</index>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>SpartanCompany</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>3.6093</value>
+      </field>
+      <field id="BarWidth">
+        <value>66</value>
+      </field>
+      <field id="BarOffset">
+        <value>95</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-goliathblackops.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-goliathblackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-goliathblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Goliath_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Goliath_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Goliath_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Goliath_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Goliath_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Goliath_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Goliath_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Goliath_Movement</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Goliath_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^G.AttackStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^G.AttackStop</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^A.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Spell Spell</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^A.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Spell</value>
+        <index>67</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="ScaleMax">
+        <value>0.780000,0.780000,0.780000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.780000,0.780000,0.780000</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.999700</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.999700</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_TurretZ</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;Turret</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>2;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 02</value>
+        <index>3</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>3;SetB</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 03</value>
+        <index>4</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>4;SetB</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 05</value>
+        <index>5</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>5;SetB</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 06</value>
+        <index>6</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>3</value>
+        <index>6;SetB</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Goliath_BlackOps\Goliath_BlackOps.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\GoliathMercenaryPortrait\GoliathMercenaryPortrait.m3</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\GoliathMercenaryPortrait_Static.dds</value>
+      </field>
+      <field id="Lighting">
+        <value>GoliathMercenaryPortrait</value>
+      </field>
+    </entry>
+    <name>强击歌利亚</name>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <field id="LowQualityModel">
+        <value>TerranMediumUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <id>^Id^_Death</id>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>GoliathDeathFXA</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>^VALUEINDEX^</index>
+        <count>4</count>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Goliath_DeathFXA</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>GoliathDeathFXA</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Goliath_DeathFXA</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>GoliathDeathFXB</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.000000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Goliath_DeathFXB</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>GoliathDeathFXB</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.770000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Goliath_DeathFXB</value>
+        <index>3</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Goliath_BlackOps_Death\Goliath_BlackOps_Death.m3</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^AU</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Arc">
+        <value>29.9926</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^A</value>
+      </field>
+      <id>^Id^A</id>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^ALM</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.21</value>
+        <index>1</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>CasterIsNotHidden</value>
+      </field>
+      <id>^Id^A</id>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <field id="ImpactEffect">
+        <value>^Id^AU</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^AWeapon</value>
+      </field>
+      <id>^Id^ALM</id>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <field id="Amount">
+        <value>12</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>12</value>
+        <index>Armored</index>
+      </field>
+      <id>^Id^AU</id>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mover">
+        <value>GoliathMissile</value>
+      </field>
+      <id>^Id^AWeapon</id>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AirAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^AWeapon</value>
+      </token>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Terran\GoliathAirMissile\GoliathAirMissile.m3</value>
+      </field>
+      <id>^Id^AWeapon</id>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMPatternGoliathBlackOps</value>
+      </field>
+      <field id="LaunchAttachQuery_Fallback">
+        <value>SetB</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>VikingFighter_AttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>GoliathAirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>VikingFighter_AttackImpact</value>
+      </field>
+      <id>^Id^AirAttack</id>
+      <token id="effectImpact">
+        <value>^Id^AU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^ALM</value>
+      </token>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Arc">
+        <value>29.9926</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <id>^Id^G</id>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>27</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>CasterIsNotHidden</value>
+      </field>
+      <id>^Id^G</id>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <field id="LaunchAssets_Sound">
+        <value>GoliathGroundAttackLaunch</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Goliath_GroundAttackImpact</value>
+      </field>
+      <id>^Id^GroundAttack</id>
+      <token id="effectAttack">
+        <value>^Id^G</value>
+      </token>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingAssaultWeaponImpact\VikingAssaultWeaponImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <id>^Id^GroundAttackImpact</id>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingAssaultWeaponLaunch\VikingAssaultWeaponLaunch.m3</value>
+      </field>
+      <id>^Id^GroundAttackLaunch</id>
+    </entry>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>

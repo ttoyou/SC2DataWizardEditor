@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--这个是合作任务基础向导，所有合作任务单位向导都复制它。-->
+  <wizard id="StukovApocalisk">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Blades</value>
+      </field>
+      <field id="Race">
+        <value>InfT</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>TurnBeforeMove</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="Collide">
+        <index>4</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>5</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="LifeStart">
+        <value>3000</value>
+      </field>
+      <field id="LifeMax">
+        <value>3000</value>
+      </field>
+      <field id="LifeArmor">
+        <value>5</value>
+      </field>
+      <field id="Speed">
+        <value>1.875</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="TurningRate">
+        <value>360</value>
+      </field>
+      <field id="Sight">
+        <value>11</value>
+      </field>
+      <field id="RepairTime">
+        <value>60</value>
+      </field>
+      <field id="Radius">
+        <value>1.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.8125</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0</value>
+      </field>
+      <field id="PlaneArray">
+        <index>Ground</index>
+        <value>1</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="SpeedMultiplierCreep">
+        <value>1.3</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.9375</value>
+      </field>
+      <field id="BarOffset">
+        <value>30</value>
+      </field>
+      <field id="BarWidth">
+        <value>160</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-zerg-stukov-apocalisk.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-upgrade-zerg-stukov-apocolisk_04.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Ultralisk_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Ultralisk_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Ultralisk_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Ultralisk_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Ultralisk_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Ultralisk_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Ultralisk_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Ultralisk_Movement</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-upgrade-zerg-stukov-apocolisk_04.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-zerg-stukov-apocalisk.dds</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; !ValidateUnit HaveStukovApocaliskUpgrades</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Spell,A</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; ValidateUnit HaveStukovApocaliskUpgrades</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Spell,D</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>68</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Stukov_Apocalisk_Death_Explode</value>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <value>Stukov_Apocalisk_Death_VxFx</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="Model">
+        <value>Assets\Units\Zerg\Apocalisk_Stukov_Coop\Apocalisk_Stukov_Coop.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.400000,1.400000,1.400000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.400000,1.400000,1.400000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.176200</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>^VALUEINDEX^</index>
+        <count>16</count>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.160000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,01</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.040000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,01</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.160000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,A</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.020000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,A</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.190000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,00</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskHeadAttack</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.550000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,00</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.350000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,00</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.490000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,01</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskHeadAttack</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.450000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,01</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.400000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,01</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.490000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,D</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.020000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,D</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>UltraliskAttack</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.190000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>Stukov_Apocalisk_Fs</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Stukov_Apocalisk_Fs</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Name">
+        <value>Stukov_Apocalisk_Fs</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.489000</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Stukov_Apocalisk_Fs</value>
+        <index>15</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="Radius">
+        <value>1.250000</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^Blades</id>
+      <!--修改-->
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="Options">
+        <index>Melee</index>
+        <value>1</value>
+      </field>
+      <field id="Options">
+        <index>LinkedCooldown</index>
+        <value>0</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>1</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.3332</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\apocaliskportrait_static.dds</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Zerg\Apocalisk_Portrait\Apocalisk_Portrait.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Effect" type="CEffectSet">
+      <field id="EffectArray">
+        <value>^Id^BladesSearch</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <index>1</index>
+        <value>^Id^BladesDamage</value>
+      </field>
+      <id>^Id^Blades</id>
+    </entry>
+    <entry catalog="Effect" type="CEffectDamage">
+      <id>^Id^Damage</id>
+      <parentid>DU_WEAP</parentid>
+      <field id="Amount">
+        <value>80</value>
+      </field>
+      <field id="Death">
+        <value>Eviscerate</value>
+      </field>
+      <field id="KindSplash">
+        <value>Melee</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^DamageSecondary</id>
+      <parentid>DU_WEAP</parentid>
+      <field id="Amount">
+        <value>20</value>
+      </field>
+      <field id="Death">
+        <value>Eviscerate</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^BladesSearch</id>
+      <field id="SearchFilters">
+        <value>Ground,Visible;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="ImpactLocation">
+        <value>TargetUnit</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>OffsetByUnitRadius</index>
+      </field>
+      <field id="AreaArray_Arc">
+        <value>180</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>3</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>ApocaliskBladesDamageSecondary</value>
+      </field>
+      <field id="ExcludeArray_Effect">
+        <value>^Id^Blades</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+    </entry>
+    <name>末日巨兽</name>
+    <category>合作任务/斯托科夫</category>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <field id="LowQualityModel">
+        <value>ZergLargeUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <id>^Id^_Death</id>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Stukov_Apocalisk_DeathBlow</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Stukov_Apocalisk_DeathBlow</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Stukov_Apocalisk_DeathSplatter</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.481000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Stukov_Apocalisk_DeathSplatter</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Stukov_Apocalisk_DeathJuice</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.410000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Stukov_Apocalisk_DeathJuice</value>
+        <index>2</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Apocalisk_Stukov_Coop_Death\Apocalisk_Stukov_Coop_Death.m3</value>
+      </field>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <field id="Sound">
+        <value>Stukov_Apocalisk_FlameTurret_Launch</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^Blades.AttackStart</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Layers_Sound">
+        <value>Stukov_Apocalisk_FireLaunch_Mech</value>
+        <index>0</index>
+      </field>
+      <field id="Layers_Chance">
+        <value>100</value>
+        <index>0</index>
+      </field>
+      <field id="Layers_Sound">
+        <value>Stukov_Apocalisk_TurretFlame</value>
+        <index>1</index>
+      </field>
+      <field id="Layers_Chance">
+        <value>100</value>
+        <index>1</index>
+      </field>
+      <id>^Id^_AS</id>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Spell</parentid>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_00.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_01.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_02.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_03.wav</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_04.wav</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Spell_Firebreath_Launch_05.wav</value>
+        <index>5</index>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>4</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>4</value>
+      </field>
+      <field id="Pitch">
+        <value>-1.000000,1.000000</value>
+      </field>
+      <id>Stukov_Apocalisk_FlameTurret_Launch</id>
+      <allowmodify />
+    </entry>
+  </wizard>
+</wizardfile>

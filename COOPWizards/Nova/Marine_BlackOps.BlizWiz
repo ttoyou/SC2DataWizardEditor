@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Marine_BlackOps">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="LifeStart">
+        <value>150</value>
+      </field>
+      <field id="LifeMax">
+        <value>150</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="RepairTime">
+        <value>20</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.25</value>
+      </field>
+      <field id="BarWidth">
+        <value>36</value>
+      </field>
+      <field id="BarOffset">
+        <value>40</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-marineblackops.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\BTN-Unit-Terran-marineblackops.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-marine-blackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-marine-blackops.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>MarineBirth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>MarineBlackOps_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Marine_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Marine_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Marine_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Marine_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Marine_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>MarineMovement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>MarineTurning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>MarineBoard</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>MarineClick</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>MarineClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>MarineHighlight</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Superior</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>68</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <!--修改-->
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Marine_BlackOps\Marine_BlackOps.m3</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\Marine_SwarmAnims\Marine_SwarmAnims.m3a</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\Marine_BlackOps_DLC2Anims\Marine_BlackOps_DLC2Anims.m3a</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Victory,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>SquibStart</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Custom</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.200000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Victory,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>SquibStop</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Custom</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>4.650000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Victory,01</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>SquibStart</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Custom</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.350000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Victory,01</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>SquibStop</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Type">
+        <value>Custom</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.350000</value>
+        <index>3</index>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>0.375000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.375000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.375000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;SetC</index>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <!--修改-->
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <!--修改-->
+      <field id="Effect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>0.8608</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.05</value>
+      </field>
+      <field id="Backswing">
+        <value>0.75</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorAction">
+      <id>^Id^Attack</id>
+      <parentid>GenericAttack</parentid>
+      <token id="effectAttack">
+        <value>^Id^Damage</value>
+      </token>
+      <field id="LaunchAssets_Model">
+        <value>MarineAttackLaunch</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Marine_AttackLaunch</value>
+      </field>
+      <field id="ContainerAssets_Model">
+        <value>MarineAttackLaunch</value>
+      </field>
+      <field id="ContainerAssets_Sound">
+        <value>Marine_AttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>MarineAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Marine_AttackImpact</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\blackopsmarineportrait_static.dds</value>
+      </field>
+      <field id="Lighting">
+        <value>MarinePortrait</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\BlackOps_Marine_Portrait\BlackOps_Marine_Portrait.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>9</value>
+      </field>
+      <field id="ArmorReduction">
+        <value>1</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>OffsetByUnitRadius</index>
+      </field>
+      <id>^Id^Damage</id>
+    </entry>
+    <name>精英陆战队员</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>
