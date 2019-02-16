@@ -12,3 +12,6 @@ follow this steps:
 ![step5](/How%20to%20use%20wizards/step5.JPG)
 ![step6](/How%20to%20use%20wizards/step6.JPG)
 ![step7](/How%20to%20use%20wizards/step7.JPG)
+  
+How to edit wizards  
+by the software
