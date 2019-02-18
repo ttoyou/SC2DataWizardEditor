@@ -535,15 +535,19 @@
       </field>
       <field id="AttachProps_Keys">
         <value>0</value>
+        <index>0;SetA</index>
       </field>
       <field id="AttachProps_Keys">
         <value>0</value>
+        <index>1;SetA</index>
       </field>
       <field id="AttachProps_Keys">
         <value>0</value>
+        <index>2;SetA</index>
       </field>
       <field id="AttachProps_Keys">
         <value>0</value>
+        <index>3;SetA</index>
       </field>
       <field id="SquibTypeDefault">
         <value>Flesh</value>
