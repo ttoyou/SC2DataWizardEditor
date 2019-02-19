@@ -167,7 +167,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>Banshee_CovertOps_Collection_Portrait</value>
       </field>
       <field id="BarWidth">
         <value>90</value>
@@ -246,6 +246,25 @@
       <field id="DeathArray_SoundLink">
         <value>Banshee_Explode</value>
       </field>
+      <field id="GroupSoundArray">
+        <value>BansheeGroupWhat</value>
+        <index>What</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>BansheeGroupYes</value>
+        <index>Yes</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>BansheeGroupAttack</value>
+        <index>Attack</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>BansheeGroupBoard</value>
+        <index>Board</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpBanker</value>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -277,6 +296,28 @@
       </field>
       <field id="Model">
         <value>Assets\Units\Terran\Banshee_BlackOps\Banshee_BlackOps.m3</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Hit 01</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;Weapon</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Hit 04</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>1;Weapon</index>
+      </field>
+      <field id="Radius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.937500</value>
       </field>
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
@@ -315,7 +356,7 @@
     <entry catalog="Actor" type="CActorAction">
       <id>^Id^Attack</id>
       <parentid>GenericAttack</parentid>
-      <token id="effectLaunch">
+      <token id="effectImpact">
         <value>^Id^Damage</value>
       </token>
       <!--修改-->
@@ -329,19 +370,15 @@
       <token id="effectLaunch">
         <value>^Id^LaunchMissile</value>
       </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMPattern^Id^</value>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^AttackImpact</id>
       <parentid>ImpactFX</parentid>
       <field id="Model">
         <value>Assets\Effects\Terran\BansheeMissileImpact\BansheeMissileImpact.m3</value>
-      </field>
-    </entry>
-    <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
-      <parentid>Banshee_CovertOps_Collection_Portrait</parentid>
-      <field id="Name">
-        <value>^Name^头像</value>
       </field>
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
@@ -419,6 +456,15 @@
       <id>^Id^_Death</id>
       <field id="Model">
         <value>Assets\Units\Terran\Banshee_BlackOps_Death\Banshee_BlackOps_Death.m3</value>
+      </field>
+    </entry>
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^</id>
+      <field id="Keyword">
+        <value>Weapon</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^LaunchMissile</value>
       </field>
     </entry>
   </wizard>

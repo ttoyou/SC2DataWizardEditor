@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Raven_BlackOps">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AlwaysThreatens</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatAir</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AICaster</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISupport</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>350</value>
+      </field>
+      <field id="LifeMax">
+        <value>350</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>2</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>11</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>60</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.625</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.625</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>122</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Raven_CovertOps_Collection_Portrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="BarOffset">
+        <value>55</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-ravenblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-ravenblackops.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Raven_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Raven_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Raven_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Raven_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Raven_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Raven_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Raven_Movement</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-ravenblackops.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Raven_Explode</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.800000,0.800000,0.800000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.800000,0.800000,0.800000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.350000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.781200</value>
+      </field>
+      <field id="Radius">
+        <value>0.625000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.781200</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Raven_BlackOps\Raven_BlackOps.m3</value>
+      </field>
+    </entry>
+    <category>合作任务/诺娃</category>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^_Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>TerranLargeUnitDeathLow</value>
+      </field>
+      <field id="Events_Variation">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.700000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Variation">
+        <value>1</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,04</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.600000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,03</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_ExplosionSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.720000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_ExplosionSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="VariationCount">
+        <value>2</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Raven_BlackOps_Death\Raven_BlackOps_Death.m3</value>
+      </field>
+    </entry>
+    <name>铁鸦II型</name>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>

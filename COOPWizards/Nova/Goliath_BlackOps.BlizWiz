@@ -572,7 +572,7 @@
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
       <field id="LaunchAttachQuery_Methods">
-        <value>AMPatternGoliathBlackOps</value>
+        <value>AMPattern^Id^</value>
       </field>
       <field id="LaunchAttachQuery_Fallback">
         <value>SetB</value>
@@ -660,5 +660,23 @@
     </entry>
     <category>合作任务/诺娃</category>
     <objecttypes create="Unit" />
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^</id>
+      <field id="Keyword">
+        <value>SetB</value>
+      </field>
+      <field id="Base">
+        <value>::RollingIndex</value>
+      </field>
+      <field id="Multiplier">
+        <value>2</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^ALM</value>
+      </field>
+      <field id="Offset">
+        <value>1</value>
+      </field>
+    </entry>
   </wizard>
 </wizardfile>
