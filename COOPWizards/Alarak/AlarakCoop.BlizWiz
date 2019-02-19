@@ -1,0 +1,786 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="AlarakCoop">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Psionic</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="LifeStart">
+        <value>200</value>
+      </field>
+      <field id="LifeMax">
+        <value>200</value>
+      </field>
+      <field id="LifeArmor">
+        <value>2</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>200</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>200</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>3</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Speed">
+        <value>2.9492</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>199</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^AA</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.9492</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-protoss-alarak.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>AlarakChampion_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Alarak_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Alarak_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Alarak_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Alarak_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Alarak_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Alarak_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>AlarakChampion_Movement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>AlarakChampion_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>AlarakChampion_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>AlarakChampion_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>AlarakChampion_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>AlarakChampion_Highlight</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-alarak.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\wireframe-protoss-alarak-shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\wireframe-protoss-alarak-shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\wireframe-protoss-alarak-shield03.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Alarak_Death_Fx</value>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <value>AlarakChampionDeathVoice</value>
+      </field>
+      <field id="PortraitActor">
+        <value>AlarakEx2Portrait</value>
+      </field>
+      <field id="PortraitModel">
+        <value>AlarakEx2Portrait</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^AA.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Spell,C</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; AnimPlaying Birth</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^AA.AttackStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AAAttackBeam</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Spell</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^.AttackStart</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear SpellAttack</value>
+        <index>72</index>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Melee</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-alarak-melleeweapon.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^BaneBladesDamage</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>1</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^BaneBlades</value>
+      </field>
+    </entry>
+    <category>合作任务/阿拉纳克</category>
+    <name>阿拉纳克</name>
+    <entry type="CModel" catalog="Model">
+      <parentid>Unit</parentid>
+      <id>^Id^</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>0.675000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.093700</value>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,A,00</value>
+        <index>0</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,Upgrade,00</value>
+        <index>0</index>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,A,01</value>
+        <index>1</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,Upgrade,01</value>
+        <index>1</index>
+      </field>
+      <field id="AnimAliases_Anim">
+        <value>Attack,A,02</value>
+        <index>2</index>
+      </field>
+      <field id="AnimAliases_Alias">
+        <value>Attack,Upgrade,02</value>
+        <index>2</index>
+      </field>
+      <field id="ScaleMax">
+        <value>1.250000,1.250000,1.250000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.250000,1.250000,1.250000</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.200000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,01</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.201000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,03</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.201000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Alarak_BaneBlade_AttackImpactSound</value>
+        <index>2</index>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Alarak_COOP\Alarak_COOP.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Alarak_Death\Alarak_Death.m3</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossLargeUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>Alarak_Death_Fx_Missile</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Alarak_Death_Fx_Missile</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^BaneBlades</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>AlarakBaneBladesDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.28</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^BaneBladesDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Amount">
+        <value>20</value>
+      </field>
+      <field id="Death">
+        <value>Eviscerate</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^BaneBladeAttackLaunchSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^BaneBladesDamage.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Alarak_BaneBlade_AttackLaunchSound</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^AA</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-alarak-rangeweapon.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^AADamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Ground,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.2</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^AADamage</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^AADamage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Amount">
+        <value>30</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^Id^AAAttackBeam</id>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressSaveLoad</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart BSD Birth {} Death ContentPlayOnce</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterClosing; AnimName BSD</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="Model">
+        <value>^Id^_COOP_AirAttack_Missile</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AAAttack</id>
+      <token id="effectAttack">
+        <value>^Id^AADamage</value>
+      </token>
+      <field id="LaunchSiteOps_Ops">
+        <value>SOpAttachWeapon01</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Archon_AttackLaunch</value>
+      </field>
+      <field id="BeamScope">
+        <value>Caster</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>AlarakForkedLightningAttackBeamImpactSound</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>ImpactMonitorsTeleports</index>
+      </field>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <id>AlarakForkedLightningAttackBeamImpactSound</id>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_01a.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_01b.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_02.wav</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>3</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_02a.wav</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>4</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Alarak_LightningStrike_02b.wav</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_FacialGroup">
+        <index>5</index>
+      </field>
+      <field id="DupeMaximumMethod">
+        <value>Replace</value>
+      </field>
+      <field id="DupeThresholdPoints_Count">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <field id="DupeThresholdPoints_Volume">
+        <value>-0.100000</value>
+        <index>0</index>
+      </field>
+      <field id="DupeThresholdPoints_Count">
+        <value>4</value>
+        <index>1</index>
+      </field>
+      <field id="DupeThresholdPoints_Volume">
+        <value>-4.000000</value>
+        <index>1</index>
+      </field>
+      <field id="Pitch">
+        <value>-3.000000,1.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-9.000000,-6.000000</value>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>8</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>8</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>RaceMissileFX</parentid>
+      <id>^Id^_COOP_AirAttack_Missile</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\Alarak_COOP_AirAttack_Missile\Alarak_COOP_AirAttack_Missile.m3</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
