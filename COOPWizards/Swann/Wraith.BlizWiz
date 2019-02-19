@@ -1,0 +1,700 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Wraith">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="LifeStart">
+        <value>140</value>
+      </field>
+      <field id="LifeMax">
+        <value>140</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>3.75</value>
+      </field>
+      <field id="Acceleration">
+        <value>2.625</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="RepairTime">
+        <value>42</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.625</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.625</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>14</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="Sight">
+        <value>8</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="RepairTime">
+        <value>50</value>
+      </field>
+      <field id="TurningRate">
+        <value>1440</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>114</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^A</value>
+        <index>0</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^G</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>WraithPortrait</value>
+      </field>
+      <field id="AnimBlendTime">
+        <value>0.300000</value>
+      </field>
+      <field id="BarWidth">
+        <value>66</value>
+      </field>
+      <field id="BarOffset">
+        <value>55</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-wraith.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-wraith.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-wraith.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-wraith.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^A.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Superior</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^G.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>68</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Wraith_Explode</value>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Birth</value>
+        <index>Birth</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="SoundArray">
+        <value>Wraith_Movement</value>
+        <index>Movement</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Birth</value>
+        <index>Birth</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_What</value>
+        <index>What</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="GroupSoundArray">
+        <value>Wraith_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Wraith\Wraith.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+      <field id="Radius">
+        <value>0.625000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.625000</value>
+      </field>
+    </entry>
+    <category>合作任务/斯旺</category>
+    <name>怨灵战机</name>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^G</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^GU</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^GLaunchMissile</value>
+      </field>
+      <field id="Arc">
+        <value>90</value>
+      </field>
+      <field id="Period">
+        <value>1.25</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.0446</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^A</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^AU</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>1.25</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^APersistent</value>
+      </field>
+      <field id="Arc">
+        <value>90</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.0446</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^GU</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>8</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^GLaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^GU</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^GroundWeapon</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^AU</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>5</value>
+        <index>Armored</index>
+      </field>
+      <field id="Amount">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^ALeftLaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^AU</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^AirWeaponLeft</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^ARightLaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^AU</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^AirWeaponRight</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^APersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^ALeftLaunchMissile</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^ARightLaunchMissile</value>
+        <index>1</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^GroundAttack</id>
+      <token id="effectImpact">
+        <value>^Id^GU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^GLaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponBottom</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Wraith_GroundAttackImpact</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>WraithGroundAttackLaunch</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^GroundAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^GroundWeapon</value>
+      </token>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^GroundWeapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mover">
+        <value>MissileDefault</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^GroundAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithLaserMissileImpact\WraithLaserMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^GroundWeapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithLaserMissile\WraithLaserMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^AirWeaponRight</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
+      </field>
+      <field id="Mover">
+        <value>MissileDefault</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^AirWeaponLeft</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
+      </field>
+      <field id="Mover">
+        <value>MissileDefault</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AirAttackLeft</id>
+      <token id="effectImpact">
+        <value>^Id^AU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^ALeftLaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponLeft</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>WraithAWeaponBirth</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>WraithAWeaponImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AirAttackLeftMissile</id>
+      <token id="unitName">
+        <value>^Id^AirWeaponLeft</value>
+      </token>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AirAttackRight</id>
+      <token id="effectImpact">
+        <value>^Id^AU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^ARightLaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponRight</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>WraithAWeaponBirth</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>WraithAWeaponImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AirAttackRightMissile</id>
+      <token id="unitName">
+        <value>^Id^AirWeaponRight</value>
+      </token>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AirAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithMissileImpact\WraithMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AirWeaponLeft</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithMissile\WraithMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AirWeaponRight</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithMissile\WraithMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Radius">
+        <value>0.625000</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranMediumUnitDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\WraithDeath\WraithDeath.m3</value>
+      </field>
+    </entry>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>
