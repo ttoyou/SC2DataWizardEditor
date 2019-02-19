@@ -193,6 +193,12 @@
       <field id="Universal">
         <value>1</value>
       </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
     </entry>
     <objecttypes create="Abil" />
   </wizard>

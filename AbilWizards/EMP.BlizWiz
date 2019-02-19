@@ -235,9 +235,11 @@
       </field>
       <field id="VitalArray_Change">
         <value>-100</value>
+        <index>1</index>
       </field>
       <field id="VitalArray_ChangeFraction">
         <value>-1</value>
+        <index>2</index>
       </field>
     </entry>
     <entry type="CEffectEnumArea" catalog="Effect">
@@ -265,12 +267,15 @@
       <id>^Id^Set</id>
       <field id="EffectArray">
         <value>^Id^Damage</value>
+        <index>0</index>
       </field>
       <field id="EffectArray">
         <value>^Id^ModifyUnit</value>
+        <index>1</index>
       </field>
       <field id="EffectArray">
         <value>^Id^ApplyDecloakBehavior</value>
+        <index>2</index>
       </field>
       <field id="EditorCategories">
         <value>Race:Terran</value>
