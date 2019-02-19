@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Firebat">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="LifeStart">
+        <value>100</value>
+      </field>
+      <field id="LifeMax">
+        <value>100</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="TurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="RepairTime">
+        <value>20</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.4375</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISplash</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Sight">
+        <value>8</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>33</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>114</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>1.875</value>
+      </field>
+      <field id="BarWidth">
+        <value>45</value>
+      </field>
+      <field id="BarOffset">
+        <value>77</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-firebat.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-firebat.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-firebat.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-firebat.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Firebat_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Target">
+        <value>FirebatAttackModel</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 0.000000 0.250000</value>
+        <index>69</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Firebat_Pissed</value>
+        <index>Pissed</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Firebat\Firebat.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^UFull</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="Period">
+        <value>1.4</value>
+      </field>
+      <field id="Backswing">
+        <value>1</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Set</value>
+      </field>
+      <field id="Marker_MatchFlags">
+        <value>1</value>
+        <index>0;Id</index>
+      </field>
+      <field id="DamagePoint">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>FXAPortrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\FirebatPortrait\FirebatPortrait.m3</value>
+      </field>
+    </entry>
+    <category>合作任务/雷诺</category>
+    <name>火蝠</name>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^Set</id>
+      <field id="EffectArray">
+        <value>^Id^ACCP</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^UFull</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^ACCP</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>SourcePoint</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^ACSearch</value>
+      </field>
+      <field id="PeriodicOffsetArray">
+        <value>0,-8,0</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_SPLASH</parentid>
+      <id>^Id^UFull</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Amount">
+        <value>8</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>noMarkers</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>4</value>
+        <index>Light</index>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^ACSearch</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AreaArray_RectangleWidth">
+        <value>1.2</value>
+      </field>
+      <field id="AreaArray_RectangleHeight">
+        <value>16</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^UFull</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectAttack">
+        <value>^Id^</value>
+      </token>
+      <field id="LaunchModel">
+        <value>^Id^AttackModel</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Set.Start; At Caster</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^UFull.Start; At Caster; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Firebat_AttackImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShotNoOrphan</parentid>
+      <id>^Id^AttackModel</id>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressCreationErrors</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; ValidateUnit BearclawNozzlesPurchased</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>SetScale 2.250000,1.800000,1.000000</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>^Id^ImpactModelFlames</id>
+      <field id="Terms">
+        <value>Cap 1</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^UFull.Start; At Target</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachRandomDamage</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\FirebatFireSprite\FirebatFireSprite.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.000000,1.500000,1.000000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.000000,1.500000,1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^BunkerAttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\FirebatFireSprite\FirebatFireSprite.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.000000,3.000000,1.000000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.000000,3.000000,1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^ImpactModelFlames</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\FireImpact\FireImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranSmallUnitDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\FirebatDeath\FirebatDeath.m3</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
