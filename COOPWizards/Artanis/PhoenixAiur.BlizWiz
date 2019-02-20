@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="PhoenixAiur">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="LifeStart">
+        <value>120</value>
+      </field>
+      <field id="LifeMax">
+        <value>120</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>60</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>60</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>4.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>3.25</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="TurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>15</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.75</value>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="EnergyStart">
+        <value>50</value>
+      </field>
+      <field id="EnergyMax">
+        <value>200</value>
+      </field>
+      <field id="EnergyRegenRate">
+        <value>0.5625</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="RepairTime">
+        <value>45</value>
+      </field>
+      <field id="EnergyStart">
+        <value>0</value>
+      </field>
+      <field id="EnergyMax">
+        <value>0</value>
+      </field>
+      <field id="EnergyRegenRate">
+        <value>0</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>12</value>
+      </field>
+      <field id="RepairTime">
+        <value>23.33</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>112</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>PhoenixPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="AnimBlendTime">
+        <value>0.450000</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-phoenix.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-phoenix.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\Wireframe-Protoss-Phoenix-Shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\Wireframe-Protoss-Phoenix-Shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\Wireframe-Protoss-Phoenix-Shield03.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Phoenix.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Phoenix.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Phoenix_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Phoenix_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Phoenix_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Phoenix_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Phoenix_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Phoenix_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>PhoenixVoid_Pissed</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Phoenix_Explode</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Phoenix_Ex2\Phoenix_Ex2.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.400000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.882000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;Air</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 03</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;Air</index>
+      </field>
+      <field id="Radius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.882000</value>
+      </field>
+    </entry>
+    <category>合作任务/阿塔尼斯</category>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\PhoenixDeathEx1\PhoenixDeathEx1.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossMediumUnitDeathLow</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.588100</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.588100</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireWhileInAttackOrder</index>
+      </field>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireAtAttackOrderTarget</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^U</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Arc">
+        <value>4.9987</value>
+      </field>
+      <field id="ArcSlop">
+        <value>0</value>
+      </field>
+      <field id="Period">
+        <value>1.1</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Moving</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^LMLeft</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^LMRight</value>
+        <index>1</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^U</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>7</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>5</value>
+        <index>Light</index>
+      </field>
+      <field id="Death">
+        <value>Blast</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Air;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>ArtanisIonCannonsU</parentid>
+      <id>^Id^ULeft</id>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>ArtanisIonCannonsU</parentid>
+      <id>^Id^URight</id>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LMLeft</id>
+      <field id="Movers_Link">
+        <value>MissileDefault</value>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>1</value>
+      </field>
+      <field id="Movers_Link">
+        <value>IonCannonsWeaponLeft</value>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>6</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^ULeft</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LMRight</id>
+      <field id="Movers_Link">
+        <value>MissileDefault</value>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>1</value>
+      </field>
+      <field id="Movers_Link">
+        <value>IonCannonsWeaponRight</value>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>6</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^URight</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackNoCreateBase</parentid>
+      <id>^Id^AttackLeft</id>
+      <token id="effectImpact">
+        <value>^Id^ULeft</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LMLeft</value>
+      </token>
+      <field id="Missile">
+        <value>^Id^AttackMissile</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Weapon 1</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Phoenix_AirAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Phoenix_AirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>BloodTargetImpact</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LMLeft.Start; At Caster</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackNoCreateBase</parentid>
+      <id>^Id^AttackRight</id>
+      <token id="effectImpact">
+        <value>^Id^URight</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LMRight</value>
+      </token>
+      <field id="Missile">
+        <value>^Id^AttackMissile</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Weapon 3</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Phoenix_AirAttackLaunch</value>
+      </field>
+      <field id="HostImpactSource_Subject">
+        <value>PhoenixAirAttackLeft</value>
+      </field>
+      <field id="HostImpactSource_ReachAcrossEffectTrees">
+        <value>1</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Phoenix_AirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>BloodTargetImpact</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LMRight.Start; At Caster</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\PhoenixMissile\PhoenixMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\PhoenixMissileImpact\PhoenixMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Melee</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Weapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Throw</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Speed">
+        <value>6</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>6</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>0.4,0.85</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowRotationType">
+        <value>ThrowForward</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowVector">
+        <value>0,-1,0</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>1,1.5</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_ThrowVector">
+        <value>0,-1,0</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>60</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>40</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <name>凤凰</name>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>
