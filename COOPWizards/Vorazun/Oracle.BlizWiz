@@ -1,0 +1,775 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Oracle">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AlwaysThreatens</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIHighPrioTarget</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AICaster</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISupport</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIFleeDamageDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Psionic</index>
+      </field>
+      <field id="LifeStart">
+        <value>100</value>
+      </field>
+      <field id="LifeMax">
+        <value>100</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>60</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>60</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1</value>
+      </field>
+      <field id="Speed">
+        <value>4</value>
+      </field>
+      <field id="Acceleration">
+        <value>3</value>
+      </field>
+      <field id="RepairTime">
+        <value>18.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>117</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <index>5</index>
+        <value>^Id^WeaponOn</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>5</index>
+        <value>AbilCmd</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>5</index>
+        <value>^Id^Weapon,On</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>5</index>
+        <value>2</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>5</index>
+        <value>2</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <index>6</index>
+        <value>^Id^WeaponOff</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>6</index>
+        <value>AbilCmd</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>6</index>
+        <value>^Id^Weapon,Off</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>6</index>
+        <value>2</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>6</index>
+        <value>3</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>3</index>
+        <value>^Id^Weapon</value>
+      </field>
+      <field id="EnergyStart">
+        <value>50</value>
+      </field>
+      <field id="EnergyMax">
+        <value>200</value>
+      </field>
+      <field id="EnergyRegenRate">
+        <value>0.5625</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>OraclePortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="AnimBlendTime">
+        <value>0.400000</value>
+      </field>
+      <field id="BarWidth">
+        <value>50</value>
+      </field>
+      <field id="BarOffset">
+        <value>40</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-oracle.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-oracle.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\Wireframe-Protoss-Oracle-Shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\Wireframe-Protoss-Oracle-Shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\Wireframe-Protoss-Oracle-Shield03.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Oracle.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Oracle.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds</value>
+      </field>
+      <field id="DeathActorModel">
+        <value>UnitDeathModelWithDeathMotionFlier</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Oracle_Explode</value>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Birth</value>
+        <index>Birth</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Movement</value>
+        <index>Movement</index>
+      </field>
+      <field id="SoundArray">
+        <value>Oracle_Turning</value>
+        <index>Turning</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>OracleBase</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\PurifierMP\PurifierMP.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+    </entry>
+    <category>合作任务/沃拉尊</category>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>4</value>
+      </field>
+      <field id="RangeSlop">
+        <value>0</value>
+      </field>
+      <field id="Period">
+        <value>0.86</value>
+      </field>
+      <field id="LegacyOptions">
+        <value>1</value>
+        <index>CanRetargetWhileChanneling</index>
+      </field>
+      <field id="LegacyOptions">
+        <value>1</value>
+        <index>NoDeceleration</index>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^WeaponCreatePersistent</value>
+      </field>
+      <field id="Backswing">
+        <value>0.75</value>
+      </field>
+      <field id="TeleportResetRange">
+        <value>0</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Disabled</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OracleDeathBase</parentid>
+      <id>^Id^Death</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\PurifierMPDeath\PurifierMPDeath.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^WeaponCreatePersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>PersistUntilDestroyed</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.86</value>
+      </field>
+      <field id="PeriodicValidator">
+        <value>CasterHasEnergy</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^WeaponDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>10</value>
+        <index>Light</index>
+      </field>
+      <field id="Kind">
+        <value>Spell</value>
+      </field>
+      <field id="Amount">
+        <value>15</value>
+      </field>
+      <field id="ArmorReduction">
+        <value>0</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^WeaponAttack</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponDamage.Start; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide</value>
+      </field>
+      <field id="AcquisitionYawHalfArc">
+        <value>10.000000</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>ImpactMonitorsTeleports</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>-1.000000</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuousClosingFull</parentid>
+      <id>^Id^WeaponAttackBeam</id>
+      <field id="Model">
+        <value>^Id^AttackBeam</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Stop; At Effect</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <field id="Macros">
+        <value>GlobalLoopMacro</value>
+      </field>
+      <field id="Macros">
+        <value>ActionTargetTeleportDestroy</value>
+      </field>
+      <field id="Scale">
+        <value>0.600000</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^WeaponAttackLoop</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>Oracle_PulsarBeamWeaponLoop</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^WeaponAttackStart</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Sentry_WeaponStart</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^WeaponAttackStop</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponCreatePersistent.Stop</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Sentry_WeaponEnd</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\PulsarBeam\PulsarBeam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.714000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.714000</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <name>先知</name>
+    <objecttypes create="Unit" />
+    <entry type="CButton" catalog="Button">
+      <id>^Id^WeaponOn</id>
+      <field id="Icon">
+        <value>Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOn.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOn.dds</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^WeaponOff</id>
+      <field id="Icon">
+        <value>Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOff.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\BTN-Ability-Protoss-OraclePulsarCannonOff.dds</value>
+      </field>
+    </entry>
+    <entry type="CAbilBehavior" catalog="Abil">
+      <id>^Id^Weapon</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^WeaponOn</value>
+        <index>0</index>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^WeaponOff</value>
+        <index>1</index>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>1;ToSelection</index>
+      </field>
+      <field id="Cost_Vital">
+        <value>25</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <index>4</index>
+      </field>
+      <field id="BehaviorArray">
+        <value>^Id^Weapon</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Toggle</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Weapon</id>
+      <field id="EditorCategories">
+        <value>AbilityorEffectType:Units</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>CanSpendEnergy</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>CasterHasEnergy</value>
+      </field>
+      <field id="Modification_VitalRegenArray">
+        <value>-2</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Modification_WeaponEnableArray">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^_Death</id>
+      <field id="On_Terms">
+        <value>UnitDeath.^Id^; PassChance 25.000000; !ValidateUnit IsHallucination</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^WeaponBehaviorModel</id>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Weapon.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Weapon.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+      </field>
+      <field id="HostSiteOps_HoldRotation">
+        <value>1</value>
+      </field>
+      <field id="AutoScaleFactor">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^WeaponBehaviorModel</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\OracleBeamIndicator\OracleBeamIndicator.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.650000,0.650000,0.650000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.650000,0.650000,0.650000</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
