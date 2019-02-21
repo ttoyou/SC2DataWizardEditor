@@ -1,0 +1,1351 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="HHBattlecruiser">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="LifeStart">
+        <value>900</value>
+      </field>
+      <field id="LifeMax">
+        <value>900</value>
+      </field>
+      <field id="LifeArmor">
+        <value>3</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>1.875</value>
+      </field>
+      <field id="Acceleration">
+        <value>1</value>
+      </field>
+      <field id="Sight">
+        <value>12</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>90</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.25</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>2.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>160</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.25</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^ATALaserBattery</value>
+        <index>0</index>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>Battlecruiser</value>
+        <index>0</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^LaserBattery</value>
+        <index>1</index>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>Battlecruiser</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^YamatoShots</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^YamatoShots,On</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Shots</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^YamatoShots,Off</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>2</value>
+        <index>6</index>
+      </field>
+      <field id="AbilArray_Link">
+        <index>3</index>
+        <value>^Id^YamatoShots</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>BattlecruiserPortrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="BarOffset">
+        <value>75</value>
+      </field>
+      <field id="BarWidth">
+        <value>130</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Battlecruiser.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-battlecruiser-covertops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-battlecruiser-covertops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Battlecruiser.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Battlecruiser_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Battlecruiser_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Battlecruiser_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Battlecruiser_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Battlecruiser_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Battlecruiser_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Battlecruiser_Movement</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>SS_Battlecruiser_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.On</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBlendTimeApply 5.000000</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.On</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay GLBirth,A</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.On</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply A</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.On</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBlendTimeApply</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.Off</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove A</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt00</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt01</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt02</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt03</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt04</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt05</value>
+        <index>79</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt06</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BattlecruiserLookAt07</value>
+        <index>81</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^ATALaserBattery.AttackStart</value>
+        <index>82</index>
+      </field>
+      <field id="On_Target">
+        <value>_BattlecruiserTurretATS</value>
+        <index>82</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtEngage Continue</value>
+        <index>82</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^ATALaserBattery.AttackStart</value>
+        <index>83</index>
+      </field>
+      <field id="On_Target">
+        <value>_BattlecruiserTurretATA</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtEngage Continue</value>
+        <index>83</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>84</index>
+      </field>
+      <field id="On_Target">
+        <value>_BattlecruiserTurretATS</value>
+        <index>84</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtDisengage</value>
+        <index>84</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>85</index>
+      </field>
+      <field id="On_Target">
+        <value>_BattlecruiserTurretATA</value>
+        <index>85</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtDisengage</value>
+        <index>85</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^LaserBattery.AttackStart</value>
+        <index>86</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Spell,A,End</value>
+        <index>86</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>1.000000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.700000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.562500</value>
+      </field>
+      <field id="Tipability">
+        <value>0.150000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.562500</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\BattleCruiser_CovertOps_Collection\BattleCruiser_CovertOps_Collection.m3</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 04</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 09</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>2;CustomA</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>2;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 10</value>
+        <index>3</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>3;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 11</value>
+        <index>4</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>4;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 12</value>
+        <index>5</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>5;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 13</value>
+        <index>6</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>6;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 14</value>
+        <index>7</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>7;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 15</value>
+        <index>8</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>8;SetA</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Morph,A,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>HH_BattleCruiser_Morph</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.289000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HH_BattleCruiser_Morph</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <category>合作任务/霍纳与汉</category>
+    <name>至尊战列巡航舰</name>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^LaserBattery</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-terran-yamatogun-color.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^LaserBatteryU</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AcquirePrioritization">
+        <value>ByAngle</value>
+      </field>
+      <field id="MinScanRange">
+        <value>6.5</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Period">
+        <value>2</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LaserBatteryLM</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Moving</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Disabled</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^ATALaserBatteryLM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^ATALaserBatteryU</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^ATALaserBatteryU</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>18</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AirAttack</id>
+      <token id="effectImpact">
+        <value>^Id^ATALaserBatteryU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^ATALaserBatteryLM</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0 AMRandomUniform</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Battlecruiser_AirAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AirAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Battlecruiser_AirAttackImpact</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AirAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^ATALaserBatteryLMWeapon</value>
+      </token>
+      <field id="Model">
+        <value>^Id^ATALaserBatteryLMWeapon</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^ATALaserBatteryLMWeapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
+      </field>
+      <field id="Mover">
+        <value>ATALaserBatteryLMWeapon</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^ATALaserBatteryLMWeapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\BattleCruiserMissile\BattleCruiserMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AirAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\BattlecruiserMissileImpact\BattleCruiserMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>BattlecruiserDeathLow</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <count>15</count>
+        <index>^VALUEINDEX^</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.018000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_Defib</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.243000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_Defib</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_Mech</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.634000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_Mech</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_MechBang</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.801000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_MechBang</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.310000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.494000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.310000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.018000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.133000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.588000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.309000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.018000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BoltExplo</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.133000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_MetalFire</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.588000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_DeathExplo</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.309000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Terran_Structure_Destruction_BlastMetalFlange</value>
+        <index>14</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\BattleCruiser_CovertOps_Collection_Death\BattleCruiser_CovertOps_Collection_Death.m3</value>
+      </field>
+      <field id="Lighting">
+        <value>BattleCruiserDeath</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.625000</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^ATALaserBattery</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireWhileInAttackOrder</index>
+      </field>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireAtAttackOrderTarget</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^ATALaserBatteryU</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AcquirePrioritization">
+        <value>ByAngle</value>
+      </field>
+      <field id="MinScanRange">
+        <value>6.5</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="Period">
+        <value>0.225</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^ATALaserBatteryLM</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Moving</value>
+      </field>
+      <field id="RandomDelayMax">
+        <value>0.1875</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LaserBatteryLM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^LaserBatteryU</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^LaserBatteryU</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>200</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectImpact">
+        <value>^Id^LaserBatteryU</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LaserBatteryLM</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Weapon 9</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Battlecruiser_GroundAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^_Yamato_Impact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Battlecruiser_YamatoAttackImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^BattlecruiserYamatoAttackChargeModel</id>
+      <field id="Aliases">
+        <value>_Snapshot</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>BaseModelScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CastShadows</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CreepEngulfment</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Decal</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>ModelMaterials</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Opacity</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Scale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TeamColor</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TimeScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TintColor</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>WarpGroup</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Stand NonLooping -1.000000 -1.000000 2.000000 AsDuration</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^YamatoShots.Off</value>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^LaserBattery.AttackStart</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Birth</value>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCustomA</value>
+      </field>
+      <field id="Model">
+        <value>MiraHorner_Battlecruiser_Coop_Yamato_Charge</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>UseSyncSeed</index>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^LaserBatteryLMWeapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
+      </field>
+      <field id="Mover">
+        <value>ATSLaserBatteryLMWeapon</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^LaserBatteryLMWeapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MiraHorner_Battlecruiser_Coop_Yamato\MiraHorner_Battlecruiser_Coop_Yamato.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^_Yamato_Charge</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MiraHorner_Battlecruiser_Coop_Yamato_Charge\MiraHorner_Battlecruiser_Coop_Yamato_Charge.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>HH_BattleCruiser_Yamato_Launch</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.279000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HH_BattleCruiser_Yamato_Launch</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>HH_BattleCruiser_Yamato_LaunchRecoil</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.279000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HH_BattleCruiser_Yamato_LaunchRecoil</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RaceImpactFX</parentid>
+      <id>^Id^_Yamato_Impact</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MiraHorner_Battlecruiser_Coop_Yamato_Impact\MiraHorner_Battlecruiser_Coop_Yamato_Impact.m3</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^LaserBatteryLMWeapon</value>
+      </token>
+    </entry>
+    <entry type="CAbilBehavior" catalog="Abil">
+      <id>^Id^YamatoShots</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^YamatoShots</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^Shots</value>
+        <index>1</index>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>1;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Toggle</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+      <field id="BehaviorArray">
+        <value>^Id^YamatoShots</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^YamatoShots</id>
+      <field id="Alignment">
+        <value>Positive</value>
+      </field>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-battlecruiser-yamato.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Modification_WeaponEnableArray">
+        <value>^Id^LaserBattery</value>
+      </field>
+      <field id="Modification_WeaponDisableArray">
+        <value>^Id^ATALaserBattery</value>
+        <index>0</index>
+      </field>
+      <field id="Modification_WeaponDisableArray">
+        <value>^Id^ATSLaserBattery</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Shots</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-hornerhan-battlecruiser-laser.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-battlecruiser-laser.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^YamatoShots</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-hornerhan-battlecruiser-yamato.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-battlecruiser-yamato.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
