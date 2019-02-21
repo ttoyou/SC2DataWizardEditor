@@ -1,0 +1,1963 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="HHViking">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!---->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Fighter</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Fighter</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatAir</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>350</value>
+      </field>
+      <field id="LifeMax">
+        <value>350</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>2.75</value>
+      </field>
+      <field id="Acceleration">
+        <value>2.625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>42</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>178</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.75</value>
+      </field>
+      <field id="EditorSuffix">
+        <value>(Figther Mode)</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^AssaultMode</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^AssaultMode,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>3</value>
+        <index>5</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^AssaultMode</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Fighter</id>
+      <token id="unitName">
+        <value>^Id^Fighter</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>VikingFighterPortrait</value>
+      </field>
+      <parentid>GenericUnitMorph</parentid>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Fighter.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Viking_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Viking_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Viking_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Viking_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Viking_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Viking_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Viking_FighterMovement</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Fighter.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorDestruction; HasStatus FlyerHelper</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusDecrement FlyerHelper</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>72</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Stand PlayForever 0.000000</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create VikingFighter_Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeathCustomize; ValidateUnit HaveVoidShade</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>DeathCustomize Shadow</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeathCustomize; ValidateUnit HaveTerrazineShadow</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>DeathCustomize Shadow</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.MercAirDropB.Create</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create VikingFighterReentry</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Mira</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Transformation_Coop_^Id^</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Mira</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^_Upgrade_AirDropSound</value>
+        <index>78</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^FighterDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Viking_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.AssaultMode.Start</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Morph Morph</value>
+        <index>79</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Fighter</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.600000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VikingFighter_CovertOps_Collection\VikingFighter_CovertOps_Collection.m3</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\VikingFighter_SwarmAnims\VikingFighter_SwarmAnims.m3a</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+    </entry>
+    <category>合作任务/霍纳与汉</category>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Assault</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Assault</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatAir</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>350</value>
+      </field>
+      <field id="LifeMax">
+        <value>350</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="RepairTime">
+        <value>42</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>178</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.75</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>15</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>55</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>30</value>
+      </field>
+      <field id="EditorSuffix">
+        <value>(Assault Mode)</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^FighterMode</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^FighterMode,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^FighterMode</value>
+        <index>3</index>
+      </field>
+      <field id="HotkeyAlias">
+        <value>^Id^Fighter</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Assault</id>
+      <token id="unitName">
+        <value>^Id^Assault</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>VikingFighterPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.5468</value>
+      </field>
+      <field id="BarOffset">
+        <value>70</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Assault.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Viking_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Viking_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Viking_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Viking_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Viking_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Viking_Pissed</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Assault.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^AssaultDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Viking_Explode</value>
+      </field>
+      <field id="DeathArray_AnimProps">
+        <value>Death,Blast</value>
+        <index>2</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^AssaultDeath</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^Assault</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^Assault</value>
+        <index>65</index>
+      </field>
+      <field id="On_Target">
+        <value>FlyerHelperSplat</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^Assault</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Superior</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack,Inferior</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>73</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Visor 0.000000</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Viking_Land</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Mira</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Transformation_Coop_^Id^Assault</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Mira</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create HH_Viking_Upgrade_AirDropSound</value>
+        <index>76</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Assault</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+      <field id="TipabilityWidth">
+        <value>0.800000</value>
+      </field>
+      <field id="TipabilityLength">
+        <value>0.800000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VikingAssault_CovertOps_Collection\VikingAssault_CovertOps_Collection.m3</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\VikingAssault_SwarmAnims\VikingAssault_SwarmAnims.m3a</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon Left</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon Right</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>2;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>3</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>3;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 02</value>
+        <index>4</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>4;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 03</value>
+        <index>5</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>5;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 04</value>
+        <index>6</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>6;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 05</value>
+        <index>7</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>7;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 06</value>
+        <index>8</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>8;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 07</value>
+        <index>9</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>9;SetA</index>
+      </field>
+    </entry>
+    <name>德摩斯维京战机</name>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^FighterDeath</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranLargeUnitDeathLow</value>
+      </field>
+      <field id="VariationCount">
+        <value>2</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VikingFighter_CovertOps_Collection_Death\VikingFighter_CovertOps_Collection_Death.m3</value>
+      </field>
+      <field id="Events_Variation">
+        <value>1</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.600000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^Fighter</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^FighterDamage</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+      <field id="Period">
+        <value>2</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^Fighter</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^FighterLM</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^FighterLM</value>
+        <index>1</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.21</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_SPLASH</parentid>
+      <id>^Id^FighterDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>20</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>15</value>
+        <index>Armored</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^FighterLM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^FighterDamage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^FighterWeapon</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>RangeCheckLE15</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^FighterAttack</id>
+      <token id="effectImpact">
+        <value>^Id^FighterDamage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^FighterLM</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterVikingFighter AMPattern^Id^Fighter</value>
+      </field>
+      <field id="LaunchAssets_Model">
+        <value>^Id^FighterAttackLaunch</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>VikingFighter_AttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^FighterAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>VikingFighter_AttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>BloodTargetImpact</value>
+        <index>6;0</index>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <id>^Id^FighterAttackMissile</id>
+      <field id="Aliases">
+        <value>_Unit</value>
+        <index>0</index>
+      </field>
+      <field id="Aliases">
+        <value>_Missile</value>
+        <index>1</index>
+      </field>
+      <field id="PreHost">
+        <value>_ActorAction</value>
+      </field>
+      <field id="Model">
+        <value>^Id^FighterWeapon</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^FighterWeapon</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth PlayForever,NonLooping</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>MotionPhaseStart; MotionPhase 2</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>MotionPhaseStart; MotionPhase 2</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Turbo Turbo PlayForever</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>MotionPhaseStart; MotionPhase 3</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Turbo</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>MotionPhaseStart; MotionPhase 3</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Stand Stand PlayForever</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeath</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>7</index>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE_HALFLIFE</parentid>
+      <id>^Id^FighterWeapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mover">
+        <value>VikingFighterMissile</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^FighterWeapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingFighterMissile\VikingFighterMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^FighterAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingFighterMissileImpact\VikingFighterMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^FighterAttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <objecttypes create="Unit" />
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^Fighter</id>
+      <field id="Keyword">
+        <value>Weapon</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^FighterLM</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^AssaultDeath</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranLargeUnitDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VikingAssault_CovertOps_Collection_Death\VikingAssault_CovertOps_Collection_Death.m3</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Death01Impact</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.900000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>VikingAssault_Death01Impact</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Death01Impact</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.900000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>VikingAssault_Death01Impact</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,02</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,03</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,Blast,01</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>6</index>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^Assault</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^Assault</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MinScanRange">
+        <value>6.5</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Arc">
+        <value>5.625</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Assault</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^Assault</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>18</value>
+      </field>
+      <field id="Death">
+        <value>Silentkill</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^Assault_AttackLaunchSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^Assault.Start; At Caster</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+      </field>
+      <field id="Sound">
+        <value>VikingAssault_AttackLaunch</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AssaultAttack</id>
+      <token id="effectAttack">
+        <value>^Id^Assault</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AssaultAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Viking_AssaultAttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <value>BloodTargetImpact</value>
+      </field>
+      <field id="LaunchAssets_Model">
+        <value>^Id^AssaultAttackLaunch</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AssaultAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingAssaultWeaponImpact\VikingAssaultWeaponImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^AssaultAttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\VikingAssaultWeaponLaunch\VikingAssaultWeaponLaunch.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^FighterMode</id>
+      <field id="AbilSetId">
+        <value>FighterMode</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^FighterMode</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Fighter</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.5</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <index>0;1;1</index>
+        <value>2.333</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <index>0;2;0</index>
+        <value>1.5</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <index>0;4;0</index>
+        <value>0.6</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <index>0;4;1</index>
+        <value>0.85</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <index>0;5;1</index>
+        <value>2.333</value>
+      </field>
+      <field id="InfoArray_RallyResetPhase">
+        <value>Duration</value>
+      </field>
+      <field id="InfoArray_RallyResetSection">
+        <value>Stats</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^FighterMode</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^FighterMode</id>
+      <field id="Sound">
+        <value>Viking_MorphToFighter</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Fighter</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>Transformation_Coop_^Id^</id>
+      <field id="On_Terms">
+        <value>ActorDestruction</value>
+        <index>3</index>
+      </field>
+      <field id="On_Target">
+        <value>_Unit</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap VikingFighter_Junker_Collection</value>
+        <index>3</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>BaseModelScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Scale</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>Transformation_Coop_^Id^Assault</id>
+      <field id="On_Terms">
+        <value>ActorDestruction</value>
+        <index>3</index>
+      </field>
+      <field id="On_Target">
+        <value>_Unit</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap VikingAssault_Junker_Collection</value>
+        <index>3</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>BaseModelScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Scale</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^AssaultMorphModel</id>
+      <token id="unitName">
+        <value>^Id^AssaultMorphModel</value>
+      </token>
+      <field id="Model">
+        <value>^Id^Morph</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^FighterDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Viking_Explode</value>
+      </field>
+      <field id="PortraitModel">
+        <value>VikingFighterPortrait</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="BarOffset">
+        <value>70</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Assault.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Assault.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="AbilSoundArray_AbilCmd">
+        <value>FighterMode,Execute</value>
+      </field>
+      <field id="AbilSoundArray_Sound">
+        <value>Viking_FighterModeVO</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Assault</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Assault</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Start Morph,Start PlayForever</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Assault</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Fighter</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,End</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>ModelEvent; ModelEventName VikingLandShock</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>Create VikingLandShock</value>
+        <index>72</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^FighterMorphModel</id>
+      <token id="unitName">
+        <value>^Id^FighterMorphModel</value>
+      </token>
+      <field id="Model">
+        <value>^Id^Morph</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^FighterDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Viking_Explode</value>
+      </field>
+      <field id="PortraitModel">
+        <value>VikingFighterPortrait</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingfighter-covertops.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Fighter.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Viking-Fighter.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Viking_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="AbilSoundArray_AbilCmd">
+        <value>AssaultMode,Execute</value>
+      </field>
+      <field id="AbilSoundArray_Sound">
+        <value>Viking_AssaultModeVO</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Fighter</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Fighter</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay End Morph,End PlayForever,NonLooping</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Fighter</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Assault</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Start PlayForever,NonLooping</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>71</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Unit</parentid>
+      <id>^Id^Morph</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.600000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.764400</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VikingMorph_CovertOps_Collection\VikingMorph_CovertOps_Collection.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^AssaultMode</id>
+      <field id="AbilSetId">
+        <value>AssaultMode</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^AssaultMode</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>IgnorePlacement</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Assault</value>
+      </field>
+      <field id="InfoArray_CollideRange">
+        <value>3.75</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.5</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>2.34</value>
+        <index>0;1;Duration</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.533</value>
+        <index>0;4;Delay</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.2</value>
+        <index>0;4;Duration</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>2.34</value>
+        <index>0;5;Duration</index>
+      </field>
+      <field id="InfoArray_RallyResetPhase">
+        <value>Duration</value>
+      </field>
+      <field id="InfoArray_RallyResetSection">
+        <value>Stats</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^AssaultMode</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-collection-vikingassault-covertops.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^AssaultMode</id>
+      <field id="Sound">
+        <value>HHViking_MorphToAssault</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Assault</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
