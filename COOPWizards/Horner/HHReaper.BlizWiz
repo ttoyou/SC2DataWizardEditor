@@ -1,0 +1,1959 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="HHReaper">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPressForwardDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="LifeStart">
+        <value>60</value>
+      </field>
+      <field id="LifeMax">
+        <value>60</value>
+      </field>
+      <field id="Mover">
+        <value>CliffJumper</value>
+      </field>
+      <field id="Speed">
+        <value>2.9531</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="RepairTime">
+        <value>14</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>150</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>33</value>
+      </field>
+      <field id="Height">
+        <value>0.5</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^P38ScytheGuassPistol</value>
+        <index>0</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^D8Charge</value>
+        <index>1</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^FlyMorph</value>
+        <index>3</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Fly</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Fly</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^Fly,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>5</index>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>MercReaperJump</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>ReaperPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2</value>
+      </field>
+      <field id="BarWidth">
+        <value>36</value>
+      </field>
+      <field id="BarOffset">
+        <value>40</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-reaper-junker.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-reaper-mercenary.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-reaper-mercenary.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Reaper_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Reaper_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Reaper_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Reaper_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Reaper_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Reaper_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Reaper_Movement</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Reaper_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^P38ScytheGuassPistol.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^P38ScytheGuassPistol.AttackStop</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^D8Charge.AttackStart</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Spell</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^D8Charge.AttackStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.On</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Fly Jump,Start IGNORE Jump,End</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.Off</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Fly</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.On</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Cover Cover,Start Cover Cover,End</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.Off</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Cover</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Unload DontResetOnUnhide 0.000000</value>
+        <index>74</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Reaper_Junker_Collection\Reaper_Junker_Collection.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.500000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.468700</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="Radius">
+        <value>0.375000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.468700</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\Reaper_SwarmAnims\Reaper_SwarmAnims.m3a</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Unload,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>HH_Reaper_Drop_Land</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>0.030000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>HH_Reaper_Drop_Land</value>
+      </field>
+    </entry>
+    <category>合作任务/霍纳与汉</category>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Flying</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PlaneArray">
+        <value>0</value>
+        <index>Ground</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPressForwardDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="LifeStart">
+        <value>60</value>
+      </field>
+      <field id="LifeMax">
+        <value>60</value>
+      </field>
+      <field id="Speed">
+        <value>2.9531</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="RepairTime">
+        <value>14</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>150</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Turn</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^FlyingP38ScytheGuassPistol</value>
+        <index>0</index>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^D8Charge</value>
+        <index>1</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^FlyMorph</value>
+        <index>3</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Fly</value>
+        <index>4</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^LandMorph</value>
+        <index>5</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Land</value>
+        <index>6</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Flying</id>
+      <token id="unitName">
+        <value>^Id^Flying</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>ReaperPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2</value>
+      </field>
+      <field id="BarWidth">
+        <value>36</value>
+      </field>
+      <field id="BarOffset">
+        <value>40</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-reaper-junker.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-reaper-mercenary.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-reaper-mercenary.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Reaper_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Reaper_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Reaper_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Reaper_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Reaper_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Reaper_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Reaper_Movement</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Reaper_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^FlyingP38ScytheGuassPistol.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^FlyingP38ScytheGuassPistol.AttackStop</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^D8Charge.AttackStart</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Spell</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.^Id^D8Charge.AttackStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>69</index>
+      </field>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^Placement</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.On</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Fly Jump,Start IGNORE Jump,End</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.Off</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Fly</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.On</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Cover Cover,Start Cover Cover,End</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.Off</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Cover</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Unload DontResetOnUnhide 0.000000</value>
+        <index>75</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Terran\Reaper_Junker_Collection_Death\Reaper_Junker_Collection_Death.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranSmallUnitDeathLow</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,03</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Reaper_Explode_Var1</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Reaper_Explode_Var1</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,04</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Reaper_Explode_Var2</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Reaper_Explode_Var2</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,05</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Reaper_Explode_Var3</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Reaper_Explode_Var3</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,06</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Reaper_Explode_Va4</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Reaper_Explode_Var4</value>
+        <index>3</index>
+      </field>
+      <field id="VariationCount">
+        <value>2</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^D8Charge</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^D8ChargeDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Structure,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>1.8</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^D8ChargeLaunchMissile</value>
+      </field>
+      <field id="RandomDelayMin">
+        <value>0.1</value>
+      </field>
+      <field id="RandomDelayMax">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^D8ChargeDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>20</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="ArmorReduction">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^D8ChargeLaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^D8ChargeDamage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^D8ChargeWeapon</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^D8Attack</id>
+      <token id="effectImpact">
+        <value>^Id^D8ChargeDamage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^D8ChargeLaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponRight</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Reaper_D8ChargeAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Reaper_D8ChargeExplode</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^D8AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^D8ChargeWeapon</value>
+      </token>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^D8AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\TerranSmallBlast\TerranSmallBlast.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^D8ChargeWeapon</id>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MagneticMineMissile\MagneticMineMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^D8ChargeWeapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mover">
+        <value>^Id^D8Charge</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^D8Charge</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Speed">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^P38ScytheGuassPistol</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>1.2</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0</value>
+      </field>
+      <field id="Backswing">
+        <value>0.75</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^P38ScytheGuassPistolBurst</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^P38ScytheGuassPistol</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>4</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^P38ScytheGuassPistolBurst</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^P38ScytheGuassPistol</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.122</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectAttack">
+        <value>^Id^P38ScytheGuassPistol</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMPatternReaper</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Reaper_AttackLaunch</value>
+      </field>
+      <field id="ContainerAssets_Model">
+        <value>^Id^BunkerAttackLaunch</value>
+      </field>
+      <field id="ContainerAssets_Sound">
+        <value>Reaper_BunkerAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Reaper_AttackImpact</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\ReaperWeaponImpact\ReaperWeaponImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\ReaperWeaponLaunch\ReaperWeaponLaunch.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^BunkerAttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\ReaperFireSprite\ReaperFireSprite.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^FlyingP38ScytheGuassPistol</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^P38ScytheGuassPistol</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>1.2</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0</value>
+      </field>
+      <field id="Backswing">
+        <value>0.75</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^P38ScytheGuassPistolBurst</value>
+      </field>
+    </entry>
+    <name>收割者</name>
+    <objecttypes create="Unit" />
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^FlyMorph</id>
+      <field id="AbilSetId">
+        <value>ReaperFly</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>Lift</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>WaitUntilStopped</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Flying</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectInstant" catalog="Abil">
+      <id>^Id^Fly</id>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^Fly</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^FlyCreatePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <value>20</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^FlyCreatePrecursor</id>
+      <field id="WhichLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>Birth</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>PlacementIgnoreBlockers</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>Precursor</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>ProvideFood</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>TechComplete</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>UseFood</index>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^FlyPrecursorSet</value>
+      </field>
+      <field id="SpawnUnit">
+        <value>^Id^FlyPrecursor</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^FlyingDurationAB</id>
+      <field id="Behavior">
+        <value>^Id^FlyingDuration</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^FlyIssueMorph</id>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Abil">
+        <value>ReaperFlyMorph</value>
+      </field>
+      <field id="Player_Value">
+        <value>Source</value>
+      </field>
+      <field id="CmdFlags">
+        <value>1</value>
+        <index>Preempt</index>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^FlyIssueMorphAB</id>
+      <field id="Behavior">
+        <value>^Id^FlyIssueMorph</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^FlyLM</id>
+      <field id="ImpactLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^FlyIssueMorphAB</value>
+      </field>
+      <field id="Movers_Link">
+        <value>^Id^Fly</value>
+      </field>
+      <field id="DeathType">
+        <value>Unknown</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FlyPrecursorSet</id>
+      <field id="EffectArray">
+        <value>^Id^LandPrecursorAB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^FlyLM</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^FlyingDurationAB</value>
+        <index>2</index>
+      </field>
+      <field id="TargetLocationType">
+        <value>Point</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^LandCreatePrecursor</id>
+      <field id="WhichLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>Birth</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>DropOff</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>PlacementIgnoreBlockers</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>PlacementIgnoreCliffTest</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>Precursor</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>ProvideFood</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>TechComplete</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>UseFood</index>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>NormalizeSpawnOffset</index>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^LandPrecursorSet</value>
+      </field>
+      <field id="SpawnUnit">
+        <value>^Id^Precursor</value>
+      </field>
+      <field id="SpawnRange">
+        <value>100</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^LandIssueLandRetryAB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^LandIssueLandRetry</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^LandIssueMorphAB</id>
+      <field id="Behavior">
+        <value>^Id^LandIssueMorph</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LandLM</id>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^LandIssueMorphAB</value>
+      </field>
+      <field id="Movers_Link">
+        <value>^Id^Land</value>
+      </field>
+      <field id="DeathType">
+        <value>Unknown</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^LandPrecursorAB</id>
+      <field id="Behavior">
+        <value>^Id^LandPrecursor</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^LandPrecursorSet</id>
+      <field id="EffectArray">
+        <value>^Id^LandPrecursorAB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^LandLM</value>
+        <index>1</index>
+      </field>
+      <field id="TargetLocationType">
+        <value>Point</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^_JetPackOverdrive_Start_AS</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^FlyingDuration.On</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="Sound">
+        <value>HH_Reaper_JetPackOverdrive_Start</value>
+      </field>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Spell</parentid>
+      <id>HH_Reaper_JetPackOverdrive_Start</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Medivac_AfterburnerOn_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Medivac_AfterburnerOn_02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Medivac_AfterburnerOn_03.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Medivac_AfterburnerOn_04.wav</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Medivac_AfterburnerOn_05.wav</value>
+        <index>4</index>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>3</value>
+      </field>
+      <field id="DupeMaximumMethod">
+        <value>Replace</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>3</value>
+      </field>
+      <field id="DupePrioritization">
+        <value>Oldest</value>
+      </field>
+      <field id="Pitch">
+        <value>5.000000,7.000000</value>
+      </field>
+      <field id="PlayDelay">
+        <value>0,100</value>
+      </field>
+      <field id="Volume">
+        <value>-11.000000,-11.000000</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^FlyPrecursor</id>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unselectable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Untargetable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Uncursorable</index>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>KillCredit</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoScore</index>
+      </field>
+      <field id="EditorFlags">
+        <value>1</value>
+        <index>NoPlacement</index>
+      </field>
+      <field id="EditorFlags">
+        <value>0</value>
+        <index>BlockStructures</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <value>1</value>
+        <index>16</index>
+      </field>
+      <field id="LifeStart">
+        <value>65</value>
+      </field>
+      <field id="LifeMax">
+        <value>65</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Height">
+        <value>4</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Other,ObjectFamily:FactionMarauder</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^Precursor</id>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unselectable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Untargetable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Uncursorable</index>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>KillCredit</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoScore</index>
+      </field>
+      <field id="EditorFlags">
+        <value>1</value>
+        <index>NoPlacement</index>
+      </field>
+      <field id="EditorFlags">
+        <value>0</value>
+        <index>BlockStructures</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <value>1</value>
+        <index>1</index>
+      </field>
+      <field id="Collide">
+        <value>1</value>
+        <index>8</index>
+      </field>
+      <field id="LifeStart">
+        <value>65</value>
+      </field>
+      <field id="LifeMax">
+        <value>65</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="Height">
+        <value>0.5</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Other,ObjectFamily:FactionMarauder</value>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBase</parentid>
+      <id>^Id^FlyPrecursor</id>
+      <token id="unitName">
+        <value>^Id^FlyPrecursor</value>
+      </token>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBase</parentid>
+      <id>^Id^Precursor</id>
+      <token id="unitName">
+        <value>^Id^Precursor</value>
+      </token>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^FlyingDuration</id>
+      <field id="Duration">
+        <value>10</value>
+      </field>
+      <field id="DisplayDuration">
+        <value>1</value>
+        <index>Self</index>
+      </field>
+      <field id="DisplayDuration">
+        <value>1</value>
+        <index>Ally</index>
+      </field>
+      <field id="DisplayDuration">
+        <value>1</value>
+        <index>Neutral</index>
+      </field>
+      <field id="ExpireEffect">
+        <value>^Id^LandIssueLandRetryAB</value>
+      </field>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="FinalEffect">
+        <value>^Id^LandIssueLandRetryAB</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^FlyIssueMorph</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^FlyIssueMorph</value>
+      </field>
+      <field id="Period">
+        <value>0.0625</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^FlyIssueMorph</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>SourceIs^Id^</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^LandIssueLandRetry</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^LandCreatePrecursor</value>
+      </field>
+      <field id="Period">
+        <value>0.5</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^LandCreatePrecursor</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>NotMover^Id^Land</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^LandIssueMorph</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^LandIssueMorph</value>
+      </field>
+      <field id="Period">
+        <value>0.0625</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^LandIssueMorph</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>SourceIs^Id^Flying</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^LandPrecursor</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="Modification_SightMaximum">
+        <value>0</value>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;DisableAbils</index>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;SuppressMoving</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Invulnerable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressCollision</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressFoodUsed</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;NoDraw</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Uncommandable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Unselectable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Untargetable</index>
+      </field>
+      <field id="Duration">
+        <value>0.5</value>
+      </field>
+      <field id="FinalEffect">
+        <value>SuicideRemove</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitType" catalog="Validator">
+      <id>SourceIs^Id^</id>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Value">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitMover" catalog="Validator">
+      <id>NotMover^Id^Land</id>
+      <field id="Value">
+        <value>^Id^Land</value>
+      </field>
+      <field id="WhichUnit_Effect">
+        <value>Source</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitType" catalog="Validator">
+      <id>SourceIs^Id^Flying</id>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Value">
+        <value>^Id^Flying</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Land</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>40</value>
+      </field>
+      <field id="MotionPhases_ArrivalTestType">
+        <value>3D</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>RestoreHeight</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreNoFlyZones</index>
+      </field>
+      <field id="RestoreHeightDuration">
+        <value>0.625</value>
+      </field>
+      <field id="RotationIgnoredByUnit">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Fly</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-hornerhan-reaper-flightmode.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-reaper-flightmode.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Fly</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>40</value>
+      </field>
+      <field id="MotionPhases_ArrivalTestType">
+        <value>3D</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+      </field>
+      <field id="RotationIgnoredByUnit">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^LandMorph</id>
+      <field id="AbilSetId">
+        <value>ReaperLand</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>WaitUntilStopped</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^Land</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LandCreatePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>BestUnit</index>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>4</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^Fly</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^LandIssueMorph</id>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Abil">
+        <value>ReaperLandMorph</value>
+      </field>
+      <field id="Player_Value">
+        <value>Source</value>
+      </field>
+      <field id="CmdFlags">
+        <value>1</value>
+        <index>Preempt</index>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
