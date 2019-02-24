@@ -1,0 +1,1110 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="ZeratulXelNagaConstructCyan">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unradarable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>4</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>5</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="LifeStart">
+        <value>2800</value>
+      </field>
+      <field id="LifeMax">
+        <value>2800</value>
+      </field>
+      <field id="LifeArmor">
+        <value>4</value>
+      </field>
+      <field id="Mover">
+        <value>Colossus</value>
+      </field>
+      <field id="Speed">
+        <value>2</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="Sight">
+        <value>13</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.75</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>5</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>20</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>70</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>10</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.3867</value>
+      </field>
+      <field id="BarOffset">
+        <value>220</value>
+      </field>
+      <field id="BarWidth">
+        <value>102</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-protoss-contructform_zeratul.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-contructform_zeratul.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-zeratulconstructform.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Zeratul_AC_Construct_Birth_VxFx</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Zeratul_AC_Construct_Ready_VxFx</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Zeratul_AC_Construct_Ready_VxFx</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Zeratul_AC_Construct_Attack_VxFx</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Zeratul_AC_Construct_Move_VxFx</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Zeratul_AC_Construct_Death</value>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <value>Zeratul_AC_Construct_DeathVox</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 1.000000 2.000000</value>
+        <index>65</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Portraits\Construct_Essence_Zeratul_COOP_Portrait\Construct_Essence_Zeratul_COOP_Portrait.m3</value>
+      </field>
+    </entry>
+    <category>合作任务/泽拉图</category>
+    <entry type="CModel" catalog="Model">
+      <parentid>Unit</parentid>
+      <id>^Id^</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Units\Construct_Essence_Zeratul_COOP\Construct_Essence_Zeratul_COOP.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.500000</value>
+      </field>
+      <field id="Radius">
+        <value>1.500000</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoUnload</index>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.500000</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>3.000000</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Walk,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_Walk</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <count>20</count>
+        <index>^VALUEINDEX^</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_Walk</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWork</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWork</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,A,End,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkAEnd_A</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkAEnd_A</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,A,End,00</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkAEnd_B</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.519000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkAEnd_B</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelNagaConstruct_AttackLaunch_A</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelNagaConstruct_AttackLaunch_A</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelNagaConstruct_AttackLaunch_B</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.538000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelNagaConstruct_AttackLaunch_B</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,00</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelNagaConstruct_AttackLaunch_C</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.573000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelNagaConstruct_AttackLaunch_C</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,A,Start,00</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkAStart_A</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkAStart_A</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,A,Start,00</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkAStart_B</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.476000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkAStart_B</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,B,00</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkB</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkB</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,B,End,00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkBEnd</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkBEnd</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,B,Start,00</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkBStart</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkBStart</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,End,00</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkEnd_A</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkEnd_A</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,End,00</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkEnd_B</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.169000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkEnd_B</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,End,00</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkEnd_C</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.259000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkEnd_C</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,End,00</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkEnd_D</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Time">
+        <value>4.337000</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkEnd_D</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,Start,00</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkStart_A</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.001000</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkStart_A</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,Start,00</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkStart_B</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.719000</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkStart_B</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,Start,00</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkStart_C</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.308000</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkStart_C</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Work,Start,00</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Name">
+        <value>XelnagaConstruct_StandWorkStart_D</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.157000</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Payload">
+        <value>XelnagaConstruct_StandWorkStart_D</value>
+        <index>19</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Units\Construct_Essence_Zeratul_COOP_Death\Construct_Essence_Zeratul_COOP_Death.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>7</value>
+      </field>
+      <field id="Period">
+        <value>2</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Persistent</value>
+      </field>
+      <field id="MinScanRange">
+        <value>7.5</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ArmorReduction">
+        <value>1</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>40</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>OffsetByUnitRadius</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^Persistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="ExpireDelay">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^BeamLeft</id>
+      <field id="Model">
+        <value>^Id^Beam</value>
+      </field>
+      <field id="HostLaunch_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostImpact_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpAttachHarness</value>
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachWeapon SOpXelNagaConstructBeamLeftOffset</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start; At Target</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start; At Target</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Create XelNagaConstructBeam_AttackLaunchSound</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop; FromEffectTreeDescendant</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop; FromEffectTreeDescendant</value>
+        <index>6</index>
+      </field>
+      <field id="On_Target">
+        <value>XelNagaConstructBeam_AttackLaunchSound</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>6</index>
+      </field>
+      <field id="HostLaunch_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostLaunch_Subject">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^BeamRight</id>
+      <field id="Model">
+        <value>^Id^Beam</value>
+      </field>
+      <field id="HostLaunch_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostImpact_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpAttachHarness</value>
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachWeapon SOpXelNagaConstructBeamRightOffset</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create StoneZealotAttackLaunchSound</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start; At Target</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Start; At Target</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create XelNagaConstructBeam_AttackLaunchSound</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop; FromEffectTreeDescendant</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Persistent.Stop; FromEffectTreeDescendant</value>
+        <index>7</index>
+      </field>
+      <field id="On_Target">
+        <value>XelNagaConstructBeam_AttackLaunchSound</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>7</index>
+      </field>
+      <field id="HostLaunch_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostLaunch_Subject">
+        <value>^Id^</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^Beam</id>
+      <field id="Model">
+        <value>Assets\COOP\Zeratul\Effects\Construct_Essence_Zeratul_COOP_Beam\Construct_Essence_Zeratul_COOP_Beam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Voice</parentid>
+      <id>Zeratul_AC_Construct_Attack_VxFx</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Blast_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Blast_02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Blast_04.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Blast_05.wav</value>
+        <index>3</index>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>32</value>
+      </field>
+      <field id="Spread">
+        <value>90.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-8.000000,-8.000000</value>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>5.000000</value>
+        <index>0</index>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>1000.000000</value>
+        <index>1</index>
+      </field>
+      <field id="VolumeRolloffPoints_Volume">
+        <value>-96.000000</value>
+        <index>1</index>
+      </field>
+      <field id="Pitch">
+        <value>-1.000000,0.000000</value>
+      </field>
+      <field id="Chance">
+        <value>20</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Combat</parentid>
+      <id>Zeratul_AC_Construct_Birth_VxFx</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_ShutDown_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_ShutDown_02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="Pitch">
+        <value>-1.000000,0.000000</value>
+      </field>
+      <field id="Spread">
+        <value>20.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-2.000000,-2.000000</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Death</parentid>
+      <id>Zeratul_AC_Construct_Death</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Protoss\Zeratul\Z_Construct_RockDeath_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Protoss\Zeratul\Z_Construct_RockDeath_02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Protoss\Zeratul\Z_Construct_RockDeath_03.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Protoss\Zeratul\Z_Construct_RockDeath_04.wav</value>
+        <index>3</index>
+      </field>
+      <field id="Pitch">
+        <value>-2.000000,0.000000</value>
+      </field>
+      <field id="Spread">
+        <value>20.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-1.000000,0.000000</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>DeathVoice</parentid>
+      <id>Zeratul_AC_Construct_DeathVox</id>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox03.wav</value>
+        <index>2</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox04.wav</value>
+        <index>3</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox05.wav</value>
+        <index>4</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox06.wav</value>
+        <index>5</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\StoneZealot_deathVox07.wav</value>
+        <index>6</index>
+      </field>
+      <field id="Chance">
+        <value>100</value>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>3</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>3</value>
+      </field>
+      <field id="Pitch">
+        <value>-3.000000,-1.000000</value>
+      </field>
+      <field id="Spread">
+        <value>12.000000</value>
+      </field>
+      <field id="Volume">
+        <value>3.000000,3.000000</value>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>10.000000</value>
+        <index>0</index>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>50.000000</value>
+        <index>1</index>
+      </field>
+      <field id="VolumeRolloffPoints_Volume">
+        <value>-96.000000</value>
+        <index>1</index>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Combat</parentid>
+      <id>Zeratul_AC_Construct_Move_VxFx</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Mv_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Mv_02.wav</value>
+        <index>1</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Mv_03.wav</value>
+        <index>2</index>
+      </field>
+      <field id="DupeDestroyCount">
+        <value>4</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>2</value>
+      </field>
+      <field id="Pitch">
+        <value>-3.000000,-2.000000</value>
+      </field>
+      <field id="Spread">
+        <value>45.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-6.000000,-6.000000</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Voice</parentid>
+      <id>Zeratul_AC_Construct_Ready_VxFx</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Mv_01.wav</value>
+        <index>0</index>
+      </field>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\XelNaga_Construct_Vx_Mv_03.wav</value>
+        <index>1</index>
+      </field>
+      <field id="Spread">
+        <value>45.000000</value>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>5.000000</value>
+        <index>0</index>
+      </field>
+      <field id="VolumeRolloffPoints_Distance">
+        <value>1000.000000</value>
+        <index>1</index>
+      </field>
+      <field id="VolumeRolloffPoints_Volume">
+        <value>-96.000000</value>
+        <index>1</index>
+      </field>
+      <field id="Pitch">
+        <value>1.000000,2.000000</value>
+      </field>
+      <field id="Volume">
+        <value>-6.000000,-6.000000</value>
+      </field>
+      <allowmodify />
+    </entry>
+    <name>精华化身</name>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>
