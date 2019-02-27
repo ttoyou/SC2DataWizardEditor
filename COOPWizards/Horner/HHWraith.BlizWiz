@@ -1,0 +1,1283 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="HHWraith">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>400</value>
+      </field>
+      <field id="LifeMax">
+        <value>400</value>
+      </field>
+      <field id="EnergyStart">
+        <value>200</value>
+      </field>
+      <field id="EnergyMax">
+        <value>200</value>
+      </field>
+      <field id="EnergyRegenRate">
+        <value>0.5625</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>3.75</value>
+      </field>
+      <field id="Acceleration">
+        <value>2.625</value>
+      </field>
+      <field id="Sight">
+        <value>8</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>50</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.625</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.625</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>170</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>WraithPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="AnimBlendTime">
+        <value>0.300000</value>
+      </field>
+      <field id="BarWidth">
+        <value>66</value>
+      </field>
+      <field id="BarOffset">
+        <value>55</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-wraith.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-wraith.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-wraith.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-wraith.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Wraith_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Wraith_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Wraith_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Wraith_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Wraith_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Wraith_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Wraith_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Wraith_Movement</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Wraith_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Fury10.On</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Cover Cover,Start Cover Cover,End</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Fury10.Off</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Cover</value>
+        <index>69</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Wraith\Wraith.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+      <field id="Radius">
+        <value>0.625000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.625000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.300000,1.300000,1.300000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.300000,1.300000,1.300000</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon Left</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;Weapon</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon Right</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>1;Weapon</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon Bottom</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>2</value>
+        <index>2;Weapon</index>
+      </field>
+    </entry>
+    <category>合作任务/霍纳与汉</category>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Radius">
+        <value>0.625000</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>TerranMediumUnitDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\WraithDeath\WraithDeath.m3</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^U</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>0.85</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LaunchMissileSet</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury10AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury10</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury1AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury1</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury1RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury1</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury2AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury2</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury2RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury2</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury3AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury3</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury3RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury3</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury4AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury4</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury4RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury4</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury5AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury5</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury5RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury5</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury6AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury6</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury6RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury6</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury7AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury7</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury7RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury7</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury8AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury8</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury8RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury8</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Fury9AB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Fury9</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^Fury9RB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^Fury9</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^FurySwitch</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury1</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch1</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury2</value>
+        <index>1</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch2</value>
+        <index>1</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury3</value>
+        <index>2</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch3</value>
+        <index>2</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury4</value>
+        <index>3</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch4</value>
+        <index>3</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury5</value>
+        <index>4</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch5</value>
+        <index>4</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury6</value>
+        <index>5</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch6</value>
+        <index>5</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury7</value>
+        <index>6</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch7</value>
+        <index>6</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury8</value>
+        <index>7</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch8</value>
+        <index>7</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury9</value>
+        <index>8</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch9</value>
+        <index>8</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>Have^Id^Fury10</value>
+        <index>9</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^FurySwitch10</value>
+        <index>9</index>
+      </field>
+      <field id="CaseDefault">
+        <value>^Id^FurySwitch0</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>Have^Id^Fury</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch0</id>
+      <field id="EffectArray">
+        <value>^Id^Fury1AB</value>
+        <index>0</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch1</id>
+      <field id="EffectArray">
+        <value>^Id^Fury1RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury2AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch10</id>
+      <field id="EffectArray">
+        <value>^Id^Fury10AB</value>
+        <index>0</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch2</id>
+      <field id="EffectArray">
+        <value>^Id^Fury2RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury3AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch3</id>
+      <field id="EffectArray">
+        <value>^Id^Fury3RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury4AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch4</id>
+      <field id="EffectArray">
+        <value>^Id^Fury4RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury5AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch5</id>
+      <field id="EffectArray">
+        <value>^Id^Fury5RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury6AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch6</id>
+      <field id="EffectArray">
+        <value>^Id^Fury6RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury7AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch7</id>
+      <field id="EffectArray">
+        <value>^Id^Fury7RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury8AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch8</id>
+      <field id="EffectArray">
+        <value>^Id^Fury8RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury9AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^FurySwitch9</id>
+      <field id="EffectArray">
+        <value>^Id^Fury9RB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Fury10AB</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^U</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^LaunchMissileSet</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^FurySwitch</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^LaunchMissile</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^U</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>16</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury10</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>2</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury1</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.1</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury2</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.2</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury3</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.3</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury4</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.4</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury5</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.5</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury6</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.6</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury7</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.7</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury8</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.8</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Fury9</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-wraith-attackspeed.dds</value>
+      </field>
+      <field id="BehaviorCategories">
+        <value>1</value>
+        <index>Fast</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Modification_AttackSpeedMultiplier">
+        <value>1.9</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectImpact">
+        <value>^Id^U</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMPattern^Id^</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>WraithGroundAttackLaunch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Wraith_GroundAttackImpact</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <parentid>MissileDefault</parentid>
+      <id>^Id^Weapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>18.75</value>
+      </field>
+      <field id="MotionPhases_ClearanceAcceleration">
+        <value>75</value>
+      </field>
+      <field id="MotionPhases_ActorTracking">
+        <value>Actual</value>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-1</value>
+      </field>
+      <field id="MotionPhases_RotationLaunchActorType">
+        <value>LaunchToTarget</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>719.2968</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithLaserMissileImpact\WraithLaserMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Units\Test\InvisibleUnit\InvisibleUnit.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\WraithLaserMissile\WraithLaserMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury1</id>
+      <field id="Behavior">
+        <value>^Id^Fury1</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury10</id>
+      <field id="Behavior">
+        <value>^Id^Fury10</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury2</id>
+      <field id="Behavior">
+        <value>^Id^Fury2</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury3</id>
+      <field id="Behavior">
+        <value>^Id^Fury3</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury4</id>
+      <field id="Behavior">
+        <value>^Id^Fury4</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury5</id>
+      <field id="Behavior">
+        <value>^Id^Fury5</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury6</id>
+      <field id="Behavior">
+        <value>^Id^Fury6</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury7</id>
+      <field id="Behavior">
+        <value>^Id^Fury7</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury8</id>
+      <field id="Behavior">
+        <value>^Id^Fury8</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Have^Id^Fury9</id>
+      <field id="Behavior">
+        <value>^Id^Fury9</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <name>阿斯忒瑞亚怨灵战机</name>
+    <objecttypes create="Unit" />
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^</id>
+      <field id="Keyword">
+        <value>Weapon</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^LaunchMissile</value>
+      </field>
+      <field id="Base">
+        <value>::RollingIndex</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
