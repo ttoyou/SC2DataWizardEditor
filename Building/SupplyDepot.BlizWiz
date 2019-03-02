@@ -1,0 +1,1184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="SupplyDepot">
+    <name>SupplyDepot</name>
+    <category>Building</category>
+    <objecttypes create="Unit" />
+    <input id="Id" type="CString" />
+    <input id="Name" type="CStringLink" />
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^</id>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Facing">
+        <value>315</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mob">
+        <value>Multiplayer</value>
+      </field>
+      <field id="FogVisibility">
+        <value>Snapshot</value>
+      </field>
+      <field id="LifeStart">
+        <value>350</value>
+      </field>
+      <field id="LifeMax">
+        <value>350</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <!--Delete it-->
+      <field id="LifeArmorName">
+        <value>Unit/LifeArmorName/TerranBuildingPlating</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="TurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="Food">
+        <value>8</value>
+      </field>
+      <field id="CostCategory">
+        <value>Economy</value>
+      </field>
+      <field id="CostResource">
+        <value>100</value>
+        <index>Minerals</index>
+      </field>
+      <field id="RepairTime">
+        <value>30</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>11</value>
+      </field>
+      <field id="Radius">
+        <value>1.25</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.25</value>
+      </field>
+      <field id="Footprint">
+        <value>Footprint2x2Contour</value>
+      </field>
+      <field id="PlacementFootprint">
+        <value>Footprint2x2</value>
+      </field>
+      <field id="ScoreMake">
+        <value>100</value>
+      </field>
+      <field id="ScoreKill">
+        <value>100</value>
+      </field>
+      <field id="ScoreResult">
+        <value>BuildOrder</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>3</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.25</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Structure,ObjectFamily:Melee</value>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>Turnable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDefeat</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PenaltyRevealed</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>TownAlert</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoPortraitTalk</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmorDisabledWhileConstructing</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Structure</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <!--Index Burrow-->
+      <field id="Collide">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <!--Index Ground-->
+      <field id="Collide">
+        <value>1</value>
+        <index>1</index>
+      </field>
+      <!--Index Structure-->
+      <field id="Collide">
+        <value>1</value>
+        <index>5</index>
+      </field>
+      <!--Index RoachBurrow-->
+      <field id="Collide">
+        <value>1</value>
+        <index>6</index>
+      </field>
+      <!--Index ForceField-->
+      <field id="Collide">
+        <value>1</value>
+        <index>8</index>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>BuildInProgress</value>
+        <index>0</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Lower</value>
+        <index>1</index>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>TerranBuildingBurnDown</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Halt</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>BuildInProgress,Halt</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>3</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>CancelBuilding</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>BuildInProgress,Cancel</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>4</value>
+        <index>1</index>
+      </field>
+      <!--was modified-->
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Lower</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^Lower,Execute</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>SelectBuilder</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>SelectBuilder</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>1</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>3</value>
+        <index>3</index>
+      </field>
+      <field id="GlossaryPriority">
+        <value>10</value>
+      </field>
+      <!--add-->
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Lower</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-building-terran-supplydepotlowered.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepotlowered.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <!--was modified-->
+      <field id="Name">
+        <value>Lower</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>SupplyDepotBase</parentid>
+      <id>^Id^</id>
+      <field id="Model">
+        <value>Assets\Buildings\Terran\SupplyDepotEx1\SupplyDepotEx1.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>SupplyDepotDeathBase</parentid>
+      <id>^Id^Death</id>
+      <field id="Model">
+        <value>Assets\Buildings\Terran\SupplyDepotDeathEx1\SupplyDepotDeathEx1.m3</value>
+      </field>
+    </entry>
+    <!--Parent dont use ^Id^-->
+    <entry type="CModel" catalog="Model">
+      <parentid>SupplyDepotPlacementBase</parentid>
+      <id>^Id^Placement</id>
+      <token id="low">
+        <value>^Id^</value>
+      </token>
+    </entry>
+    <!--Parent dont use ^Id^-->
+    <entry type="CModel" catalog="Model">
+      <parentid>SupplyDepot</parentid>
+      <id>^Id^Lowered</id>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Splat</parentid>
+      <id>^Id^Splat</id>
+      <field id="Model">
+        <value>Assets\Splats\Splat_SupplyDepot\Splat_SupplyDepot.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>AdjutantPortrait</parentid>
+      <id>^Id^Portrait</id>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>TerranBuildingEx</parentid>
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <!--Index start at 3(View in SC2editor)-->
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+      </field>
+      <!--Index start at 80(View in SC2editor)-->
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Lowered</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Unburrow</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Lowered</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Burrow Burrow Stand,Burrow ClosingFull</value>
+        <index>81</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>82</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>82</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Lowered</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>83</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Lowered</value>
+        <index>84</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Burrow</value>
+        <index>84</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Lowered</value>
+        <index>85</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Unburrow Stand,Unburrow Stand,Unburrow Instant</value>
+        <index>85</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Drop</value>
+        <index>86</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>86</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Drop</value>
+        <index>87</index>
+      </field>
+      <!---->
+      <field id="On_Send">
+        <value>Create BuildingTerrainFlatten</value>
+        <index>87</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Drop</value>
+        <index>88</index>
+      </field>
+      <field id="On_Send">
+        <value>QueryRadius 1.750000 BuildingCrushQueryResponse</value>
+        <index>88</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.ColonyInfestation.On</value>
+        <index>89</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Infestation^Id^</value>
+        <index>89</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Incoming</value>
+        <index>90</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSetFromMsg ::actor.SupplyDropModel ::Sender</value>
+        <index>90</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Incoming</value>
+        <index>91</index>
+      </field>
+      <field id="On_Target">
+        <value>::actor.SupplyDropModel</value>
+        <index>91</index>
+      </field>
+      <field id="On_Send">
+        <value>Signal Raised</value>
+        <index>91</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; PlayerHasReward ^Id^Skin</value>
+        <index>92</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet CE 1</value>
+        <index>92</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; PlayerHasReward ^Id^Skin</value>
+        <index>93</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop ::GL_BSD Instant</value>
+        <index>93</index>
+      </field>
+      <field id="CreepHeightClass">
+        <value>Small</value>
+      </field>
+      <!--Index Normal-->
+      <field id="DeathArray_SoundLink">
+        <index>0</index>
+        <value>^Id^_Explode</value>
+      </field>
+      <!--index UnderConstruction-->
+      <field id="DeathArray_ModelLink">
+        <index>15</index>
+        <value>TerranBuildingDeath</value>
+      </field>
+      <!---->
+      <field id="DeathArray_SoundLink">
+        <index>15</index>
+        <value>^Id^_Explode</value>
+      </field>
+      <field id="PlacementSound">
+        <value>Terran_BuildingPlacementSmall</value>
+      </field>
+      <field id="BarOffset">
+        <value>70</value>
+      </field>
+      <field id="BarWidth">
+        <value>80</value>
+      </field>
+      <!--was modified-->
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-SupplyDepot-Raised.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepot.dds</value>
+      </field>
+      <field id="NameOffset">
+        <value>40</value>
+      </field>
+      <field id="UnitFlags">
+        <value>0</value>
+        <index>ShowBlobShadow</index>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepot.dds</value>
+      </field>
+      <!--was modified-->
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-SupplyDepot-Raised.dds</value>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>GenericUnitSplat</parentid>
+      <id>^Id^Splat</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Terran_ExplosionMedium</parentid>
+      <id>^Id^_Explode</id>
+      <field id="DupeMaximumMethod">
+        <value>Prevent</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>0</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>0</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>1</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>1</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>2</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>2</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>3</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>3</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>4</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>4</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>5</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>5</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>6</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>6</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>7</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>7</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>8</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>8</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="AssetArray_File">
+        <index>9</index>
+        <value>Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav</value>
+      </field>
+      <field id="AssetArray_Pitch">
+        <index>9</index>
+        <value>-3.000000,3.000000</value>
+      </field>
+      <field id="Pitch">
+        <value>0.000000,0.000000</value>
+      </field>
+      <field id="DupeMuteCount">
+        <value>10</value>
+      </field>
+      <field id="Volume">
+        <value>0.000000,0.000000</value>
+      </field>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Ready</parentid>
+      <id>^Id^_Ready</id>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Terran\SupplyDepot\SupplyDepot_What.ogg</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Volume">
+        <value>-6.000000,-6.000000</value>
+      </field>
+    </entry>
+    <entry type="CSound" catalog="Sound">
+      <parentid>Voice</parentid>
+      <id>^Id^_What</id>
+      <field id="AssetArray_File">
+        <value>Assets\Sounds\Terran\SupplyDepot\SupplyDepot_What.ogg</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Volume">
+        <value>-6.000000,-6.000000</value>
+      </field>
+    </entry>
+    <!--was modified a lot-->
+    <entry type="CActorStateMonitor" catalog="Actor">
+      <parentid>TerranFlames</parentid>
+      <id>^Id^TerranFlamesMediumBuilding</id>
+      <!--was modified-->
+      <field id="On_Terms">
+        <value>UnitCreation.^Id^</value>
+        <index>13</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>13</index>
+      </field>
+      <!--was modified-->
+      <field id="On_Terms">
+        <value>UnitCreation.^Id^Lowered</value>
+        <index>14</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>14</index>
+      </field>
+      <field id="On_Terms">
+        <value>StateChange; StateValid Fire</value>
+        <index>15</index>
+      </field>
+      <field id="On_Send">
+        <value>Create TerranFlameLoopMedium</value>
+        <index>15</index>
+      </field>
+      <field id="On_Terms">
+        <value>StateChange; !StateValid Fire</value>
+        <index>16</index>
+      </field>
+      <field id="On_Target">
+        <value>TerranFlameLoopMedium</value>
+        <index>16</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>16</index>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^Lowered</id>
+      <field id="SelectAlias">
+        <value>^Id^</value>
+      </field>
+      <field id="TechAliasArray">
+        <value>Alias_^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Facing">
+        <value>315</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mob">
+        <value>Multiplayer</value>
+      </field>
+      <field id="FogVisibility">
+        <value>Snapshot</value>
+      </field>
+      <field id="LifeStart">
+        <value>350</value>
+      </field>
+      <field id="LifeMax">
+        <value>350</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <!--Delete it-->
+      <field id="LifeArmorName">
+        <value>Unit/LifeArmorName/TerranBuildingPlating</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="TurningRate">
+        <value>719.4726</value>
+      </field>
+      <field id="Food">
+        <value>8</value>
+      </field>
+      <field id="CostCategory">
+        <value>Economy</value>
+      </field>
+      <field id="CostResource">
+        <value>100</value>
+        <index>Minerals</index>
+      </field>
+      <field id="RepairTime">
+        <value>30</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>11</value>
+      </field>
+      <field id="Radius">
+        <value>1.25</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.25</value>
+      </field>
+      <field id="Footprint">
+        <value>Footprint2x2Underground</value>
+      </field>
+      <field id="ScoreKill">
+        <value>100</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>3</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.25</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Structure,ObjectFamily:Melee</value>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>Turnable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDefeat</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PenaltyRevealed</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>TownAlert</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoPortraitTalk</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmorDisabledWhileConstructing</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Structure</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <!--index Burrow-->
+      <field id="Collide">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <!--index Ground-->
+      <field id="Collide">
+        <value>1</value>
+        <index>1</index>
+      </field>
+      <!--index Structure-->
+      <field id="Collide">
+        <value>1</value>
+        <index>5</index>
+      </field>
+      <!--index RoachBurrow-->
+      <field id="Collide">
+        <value>1</value>
+        <index>6</index>
+      </field>
+      <!--index ForceField-->
+      <field id="Collide">
+        <value>1</value>
+        <index>8</index>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>BuildInProgress</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Raise</value>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>TerranBuildingBurnDown</value>
+      </field>
+      <!--was modified-->
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Raise</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^Raise,Execute</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+      </field>
+      <field id="LeaderAlias">
+        <value>^Id^</value>
+      </field>
+      <field id="HotkeyAlias">
+        <value>^Id^</value>
+      </field>
+      <!--add-->
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <!--Parent dont use ^Id^-->
+    <entry type="CModel" catalog="Model">
+      <parentid>SupplyDepotLoweredDeathBase</parentid>
+      <id>^Id^LoweredDeath</id>
+      <field id="Model">
+        <value>Assets\Buildings\Terran\SupplyDepotLoweredDeathEx1\SupplyDepotLoweredDeathEx1.m3</value>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>TerranBuildingEx</parentid>
+      <id>^Id^Lowered</id>
+      <token id="unitName">
+        <value>^Id^Lowered</value>
+      </token>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>3</index>
+      </field>
+      <!--Index start at 80-->
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^Lowered</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Burrow Burrow Stand,Burrow ClosingFull</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Burrow</value>
+        <index>81</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>82</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Unburrow Unburrow Stand ClosingFull</value>
+        <index>82</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Lowered</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>83</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>84</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>84</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>85</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Unburrow</value>
+        <index>85</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>86</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Burrow Stand,Burrow Stand,Burrow Instant</value>
+        <index>86</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.ColonyInfestation.On</value>
+        <index>87</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Infestation^Id^</value>
+        <index>87</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.SupplyDrop.TargetApproachStart</value>
+        <index>88</index>
+      </field>
+      <!--replace $spell with  AnimPlay Spell Spell-->
+      <field id="On_Send">
+        <value>AnimPlay Spell Spell</value>
+        <index>88</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Incoming</value>
+        <index>89</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSetFromMsg ::actor.SupplyDropModel ::Sender</value>
+        <index>89</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Incoming</value>
+        <index>90</index>
+      </field>
+      <field id="On_Target">
+        <value>::actor.SupplyDropModel</value>
+        <index>90</index>
+      </field>
+      <field id="On_Send">
+        <value>Signal Lowered</value>
+        <index>90</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; PlayerHasReward ^Id^Skin</value>
+        <index>91</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet CE 1</value>
+        <index>91</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; PlayerHasReward ^Id^Skin</value>
+        <index>92</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop ::GL_BSD Instant</value>
+        <index>92</index>
+      </field>
+      <field id="CreepHeightClass">
+        <value>Tiny</value>
+      </field>
+      <!--index Normal-->
+      <field id="DeathArray_SoundLink">
+        <index>0</index>
+        <value>^Id^_Explode</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
+      </field>
+      <field id="PlacementSound">
+        <value>Terran_BuildingPlacementSmall</value>
+      </field>
+      <field id="BarOffset">
+        <value>70</value>
+      </field>
+      <field id="BarWidth">
+        <value>80</value>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantBuildLocationInvalid</value>
+        <index>0</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>UI_GenericError</value>
+        <index>0</index>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantFindPlacementLocation</value>
+        <index>1</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>UI_GenericError</value>
+        <index>1</index>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantBuildOnThat</value>
+        <index>2</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>UI_GenericError</value>
+        <index>2</index>
+      </field>
+      <!--was modified-->
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-SupplyDepot-Lowered.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepotlowered.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^Yes</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="UnitFlags">
+        <value>0</value>
+        <index>ShowBlobShadow</index>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepotlowered.dds</value>
+      </field>
+      <!--was modified-->
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-SupplyDepot-Lowered.dds</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^Portrait</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Raise</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-building-terran-supplydepot.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-building-terran-supplydepot.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^Raise</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Structures</value>
+      </field>
+      <!--was modified. index Execute-->
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>^Id^Raise</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>IgnorePlacement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>MoveBlockers</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_CollideRange">
+        <value>0</value>
+      </field>
+      <!--index 0;Abils;Start-->
+      <field id="InfoArray_SectionArray_EffectArray">
+        <value>^Id^MorphingApplyBehavior</value>
+        <index>0;0;Start</index>
+      </field>
+      <!--index 0;Actor;Duration-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;1;Duration</index>
+      </field>
+      <!--index 0;Mover;Duration-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;4;Duration</index>
+      </field>
+      <!--index 0;Stats;Delay-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;5;Delay</index>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^Lower</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Structures</value>
+      </field>
+      <!--was modified. index Execute-->
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>^Id^Lower</value>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Lowered</value>
+      </field>
+      <field id="InfoArray_CollideRange">
+        <value>0</value>
+      </field>
+      <!--index 0;Abils;Start-->
+      <field id="InfoArray_SectionArray_EffectArray">
+        <value>^Id^MorphingApplyBehavior</value>
+        <index>0;0;Start</index>
+      </field>
+      <!--index 0;Actor;Duration-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;1;Duration</index>
+      </field>
+      <!--index 0;Collide;Delay-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;2;Delay</index>
+      </field>
+      <!--index 0;Mover;Duration-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;4;Duration</index>
+      </field>
+      <!--index 0;Stats;Delay-->
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.3</value>
+        <index>0;5;Delay</index>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
