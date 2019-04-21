@@ -1,0 +1,889 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="Vortex">
+    <name>星河漩涡</name>
+    <macro id="CardCount1">ref=Unit,^WhichUnit^,CardLayouts[0].LayoutButtons#</macro>
+    <macro id="CardCount2">^CardCount1^-1</macro>
+    <macro id="On1">ref=Actor,^WhichUnit^,On#</macro>
+    <macro id="On2">^On1^-1</macro>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+    </input>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+    </input>
+    <input id="WhichUnit" type="CUnitLink">
+      <name>添加到单位</name>
+    </input>
+    <condition id="AddToUnit" input="WhichUnit" empty="0" />
+    <condition id="AddAction" value="1" input="EnableAction" operator="equal" />
+    <input id="EnableAction" type="WizardCheckbox">
+      <name>同时添加施法动作</name>
+      <condition id="AddToUnit" />
+    </input>
+    <validate type="warning">
+      <text>没有添加到单位</text>
+      <condition id="AddToUnit" />
+    </validate>
+    <entry catalog="Unit" type="CUnit">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <condition id="AddToUnit" />
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^</value>
+        <index>^CardCount1^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^,Execute</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>^CardCount2^</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^</value>
+        <index>ref=Unit,^WhichUnit^,AbilArray#</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <id>^WhichUnit^</id>
+      <allowmodify />
+      <field id="On_Terms">
+        <index>^On1^</index>
+        <value>Abil.^Id^.SourceCastStart</value>
+      </field>
+      <field id="On_Send">
+        <index>^On2^</index>
+        <value>AnimPlay Spell Spell</value>
+      </field>
+      <condition id="AddToUnit" />
+      <condition id="AddAction" />
+    </entry>
+    <category>技能</category>
+    <objecttypes create="Abil" />
+    <entry type="CButton" catalog="Button">
+      <id>^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\BTN-Ability-Protoss-Blackhole-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\BTN-Ability-Protoss-Blackhole-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="Cost_Vital">
+        <value>100</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Cooldown_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="CursorEffect">
+        <value>^Id^SearchArea</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^CreatePersistentInitial</value>
+        <index>0</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>AbortOnAllianceChange</index>
+      </field>
+      <field id="AutoCastFilters">
+        <value>Visible;Self,Player,Ally</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^CreatePersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="PeriodCount">
+        <value>320</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^SearchArea</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.0625</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyForce" catalog="Effect">
+      <id>^Id^Force</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Effect">
+        <value>^Id^CreatePersistent</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="Amount">
+        <value>-0.1</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>IsNotWarpBubble</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^KillForceField</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Marker_Link">
+        <value>Effect/^Id^KillForcefield</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Kill</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>TargetIsForceField</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Dummy</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>NoBehaviorResponse</index>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^ApplyDisable</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>TargetIsEnemy</value>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^ApplyDisableEnemy</value>
+      </field>
+      <field id="CaseDefault">
+        <value>^Id^ApplyDisableOther</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^ApplyDisableEnemy</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^BehaviorEnemy</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>IsNotWarpingIn</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^ApplyDisableOther</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Behavior</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>IsNotWarpingIn</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^CreatePersistentInitial</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^CreatePersistent</value>
+      </field>
+      <field id="PeriodCount">
+        <value>336</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^EventHorizonSearchArea</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.0625</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^Effect</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^KillForceField</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Unburrow</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Dummy</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Unsiege</value>
+        <index>3</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^ApplyDisable</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^EventHorizon</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^EventHorizonSearchArea</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="SearchFilters">
+        <value>-;Self,Structure,Missile,Item,Dead,Hidden</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>2.75</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^EventHorizon</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^SearchArea</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="SearchFilters">
+        <value>-;Self,Structure,Missile,Item,Dead,Hidden</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>2.5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^Effect</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^Unburrow</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Marker_Link">
+        <value>Effect/^Id^</value>
+      </field>
+      <field id="Abil">
+        <value>BurrowZerglingUp</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^Unsiege</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Marker_Link">
+        <value>Effect/^Id^</value>
+      </field>
+      <field id="Abil">
+        <value>Unsiege</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Behavior</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-blackhole.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Replace">
+        <value>FarthestDistance</value>
+      </field>
+      <field id="ReplaceLocation_Effect">
+        <value>^Id^CreatePersistentInitial</value>
+      </field>
+      <field id="ReplaceLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="Modification_MoveSpeedMinimum">
+        <value>2</value>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;DisableAbils</index>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;Detected</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Invulnerable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Stasis</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressAttack</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressCloak</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressCollision</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressDetection</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressPassenger</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressLifeRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressShieldsRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressEnergyRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Uncommandable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Unselectable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Untargetable</index>
+      </field>
+      <field id="Modification_AbilClassEnableArray">
+        <value>1</value>
+        <index>0;CAbilMorph</index>
+      </field>
+      <field id="Modification_AbilLinkEnableArray">
+        <value>BroodLordQueue2</value>
+        <index>0;0</index>
+      </field>
+      <field id="Modification_AbilLinkEnableArray">
+        <value>BroodLordHangar</value>
+        <index>0;1</index>
+      </field>
+      <field id="Modification_AbilLinkDisableArray">
+        <value>MorphToOverseer</value>
+        <index>0;0</index>
+      </field>
+      <field id="Modification_AbilLinkDisableArray">
+        <value>MorphToBroodLord</value>
+        <index>0;1</index>
+      </field>
+      <field id="Modification_BehaviorClassDisableArray">
+        <value>1</value>
+        <index>0;CBehaviorPowerSource</index>
+      </field>
+      <field id="Modification_BehaviorLinkEnableArray">
+        <value>ReaperJump</value>
+      </field>
+      <field id="Modification_BehaviorLinkDisableArray">
+        <value>CloakField</value>
+      </field>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="Duration">
+        <value>0.125</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^Force</value>
+      </field>
+      <field id="RefreshEffect">
+        <value>^Id^Force</value>
+      </field>
+      <field id="ExpireEffect">
+        <value>PhaseShiftSet</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^EventHorizon</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-blackhole.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Replace">
+        <value>FarthestDistance</value>
+      </field>
+      <field id="ReplaceLocation_Effect">
+        <value>^Id^CreatePersistentInitial</value>
+      </field>
+      <field id="ReplaceLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;Warpable</index>
+      </field>
+      <field id="Duration">
+        <value>0.125</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^BirthSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Mothership_VortexStart</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>ProtossCursorSplat</parentid>
+      <id>^Id^CursorSplat</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^DeathSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Stop</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Mothership_VortexEnd</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^LoopSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>Mothership_VortexLoop</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^Model</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreatePersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^Model</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\SingularityAreaImpact\SingularityAreaImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>0.750000</value>
+      </field>
+    </entry>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Id^Range</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="On_Terms">
+        <index>1</index>
+        <value>Abil.^Id^.TargetOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>2</index>
+        <value>Abil.^Id^.TargetOff</value>
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Abil.^Id^.ButtonHoverOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Abil.^Id^.ButtonHoverOff</value>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>ProtossCursorSplat</parentid>
+      <id>^Id^CursorSplat</id>
+      <token id="abil">
+        <value>^Id^</value>
+      </token>
+      <field id="Model">
+        <value>^Id^CursorSplat</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^.Cursor</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UI</parentid>
+      <id>^Id^CursorSplat</id>
+      <field id="Model">
+        <value>Assets\UI\Cursors\ProtossCursor1\ProtossCursor1.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.225555,0.225555,0.225555</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.225555,0.225555,0.225555</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>2.500000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>2.500000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Is^Id^dEnemy</id>
+      <field id="Behavior">
+        <value>^Id^BehaviorEnemy</value>
+      </field>
+      <field id="ResultFailed">
+        <value>CantTargetThatUnit</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Is^Id^dFriendly</id>
+      <field id="Behavior">
+        <value>^Id^Behavior</value>
+      </field>
+      <field id="ResultFailed">
+        <value>CantTargetThatUnit</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Not^Id^dEnemy</id>
+      <field id="Behavior">
+        <value>^Id^BehaviorEnemy</value>
+      </field>
+      <field id="ResultFailed">
+        <value>CantTargetThatUnit</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Not^Id^dFriendly</id>
+      <field id="Behavior">
+        <value>^Id^Behavior</value>
+      </field>
+      <field id="ResultFailed">
+        <value>CantTargetThatUnit</value>
+      </field>
+    </entry>
+    <entry type="CValidatorLocationCompareRange" catalog="Validator">
+      <id>^Id^HideRange</id>
+      <field id="Compare">
+        <value>LT</value>
+      </field>
+      <field id="Range">
+        <value>0.5</value>
+      </field>
+      <field id="Value_Effect">
+        <value>^Id^SearchArea</value>
+      </field>
+      <field id="Value_Value">
+        <value>TargetPoint</value>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>Is^Id^ed</id>
+      <field id="CombineArray">
+        <value>Is^Id^dFriendly</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>Is^Id^dEnemy</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>Not^Id^d</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>Not^Id^dFriendly</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>Not^Id^dEnemy</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^ApplyHide</id>
+      <field id="CombineArray">
+        <value>^Id^HideRange</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>IsConstructing</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^BehaviorEnemy</id>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-protoss-blackhole.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Replace">
+        <value>FarthestDistance</value>
+      </field>
+      <field id="ReplaceLocation_Effect">
+        <value>^Id^CreatePersistentInitial</value>
+      </field>
+      <field id="ReplaceLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="Modification_MoveSpeedMinimum">
+        <value>2</value>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;DisableAbils</index>
+      </field>
+      <field id="Modification_ModifyFlags">
+        <value>1</value>
+        <index>0;Detected</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Invulnerable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Stasis</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressAttack</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressCloak</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressCollision</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressDetection</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressPassenger</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressLifeRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressShieldsRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;SuppressEnergyRegen</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Uncommandable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Unselectable</index>
+      </field>
+      <field id="Modification_StateFlags">
+        <value>1</value>
+        <index>0;Untargetable</index>
+      </field>
+      <field id="Modification_AbilClassEnableArray">
+        <value>1</value>
+        <index>0;CAbilMorph</index>
+      </field>
+      <field id="Modification_AbilLinkEnableArray">
+        <value>BroodLordQueue2</value>
+      </field>
+      <field id="Modification_AbilLinkEnableArray">
+        <value>BroodLordHangar</value>
+      </field>
+      <field id="Modification_AbilLinkDisableArray">
+        <value>MorphToOverseer</value>
+      </field>
+      <field id="Modification_AbilLinkDisableArray">
+        <value>MorphToBroodLord</value>
+      </field>
+      <field id="Modification_BehaviorClassDisableArray">
+        <value>1</value>
+        <index>0;CBehaviorPowerSource</index>
+      </field>
+      <field id="Modification_BehaviorLinkEnableArray">
+        <value>ReaperJump</value>
+      </field>
+      <field id="Modification_BehaviorLinkDisableArray">
+        <value>CloakField</value>
+      </field>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="Duration">
+        <value>0.125</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^Force</value>
+      </field>
+      <field id="RefreshEffect">
+        <value>^Id^Force</value>
+      </field>
+      <field id="ExpireEffect">
+        <value>PhaseShiftSet</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
