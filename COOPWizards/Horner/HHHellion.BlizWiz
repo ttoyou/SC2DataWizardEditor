@@ -1,6 +1,5 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
-  <!--合作任务单位向导-->
   <wizard id="HHHellion">
     <input id="Id" type="CString">
       <name>Id</name>
@@ -9,7 +8,6 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
-    <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
       <field id="AbilArray_Link">
@@ -170,6 +168,30 @@
       <field id="WeaponArray_Turret">
         <value>Hellion</value>
       </field>
+      <field id="AbilArray_Link">
+        <value>MorphTo^Id^Tank</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MorphTo^Id^Tank</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>MorphTo^Id^Tank,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>5</index>
+      </field>
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -235,6 +257,194 @@
       <field id="DeathArray_SoundLink">
         <value>Hellion_Explode</value>
       </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.250000 KillBeam</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.250000 KillBeam</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName KillBeam</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>HellionAttackBeam</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>74</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Visor 0.000000</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Hellion_Land</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.InfernalFlameThrowerCoop.Start; At Caster</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create HellionInfernalFlameThrowerModelCoop</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName KillBeam</value>
+        <index>77</index>
+      </field>
+      <field id="On_Target">
+        <value>HellionInfernalFlameThrowerModelCoop</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.HHHellionBomb.SourceCastStart</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Spell Cover,Start Cover Cover,End ContentPlayOnce</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.HHHellion</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Unload DontResetOnUnhide 0.000000</value>
+        <index>83</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>84</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponNext 1</value>
+        <index>84</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster</value>
+        <index>85</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusIncrement WeaponNext</value>
+        <index>85</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 2</value>
+        <index>86</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponNext 0</value>
+        <index>86</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 0</value>
+        <index>87</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>87</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 0</value>
+        <index>88</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackLeft Cover,Left</value>
+        <index>88</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 1</value>
+        <index>89</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>89</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 1</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackRight Cover,Right</value>
+        <index>79</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>81</index>
+      </field>
+      <field id="On_Terms">
+        <value>ModelEvent; ModelEventName AnimClear</value>
+        <index>82</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>82</index>
+      </field>
+      <field id="On_Terms">
+        <value>ModelEvent; ModelEventName AnimClear</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>83</index>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -242,7 +452,6 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--修改-->
       <field id="Occlusion">
         <value>Show</value>
       </field>
@@ -315,11 +524,9 @@
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
-      <!--修改-->
       <field id="DisplayEffect">
         <value>^Id^Damage</value>
       </field>
-      <!--修改-->
       <field id="Effect">
         <value>^Id^LM</value>
       </field>
@@ -389,10 +596,13 @@
       <id>^Id^_Portrait</id>
       <parentid>FXAPortrait</parentid>
       <field id="Name">
-        <value>^Name^头像</value>
+        <value>^Name^_Portrait</value>
       </field>
       <field id="Model">
         <value>Assets\Portraits\Terran\Hellion_HornerHan_Portrait\Hellion_HornerHan_Portrait.m3</value>
+      </field>
+      <field id="FacialController">
+        <value>LocalizedData\Facial\HellionPortrait.fxa</value>
       </field>
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
@@ -463,6 +673,1758 @@
         <value>Assets\Units\Terran\Hellion_Junker_Collection_Death\Hellion_Junker_Collection_Death.m3</value>
       </field>
       <id>^Id^Death</id>
+    </entry>
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^</id>
+      <field id="Keyword">
+        <value>SetA</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^LM</value>
+      </field>
+      <field id="Base">
+        <value>::RollingIndex</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>MorphTo^Id^Tank</id>
+      <field id="AbilSetId">
+        <value>TankMode</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>MorphTo^Id^Tank</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Tank</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.25</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.33</value>
+        <index>0;1;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.67</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>4</value>
+        <index>0;2;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.33</value>
+        <index>0;5;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.67</value>
+        <index>0;5;1</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>MorphTo^Id^Tank</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-terran-hellionbattlemode.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-terran-hellionbattlemode.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Tank</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name2^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Tank</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISplash</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>235</value>
+      </field>
+      <field id="LifeMax">
+        <value>235</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="RepairTime">
+        <value>14</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.625</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>175</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.625</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>MorphTo^Id^</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MorphTo^Id^</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>MorphTo^Id^,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Tank</id>
+      <token id="unitName">
+        <value>^Id^Tank</value>
+      </token>
+      <field id="Name">
+        <value>^Name2^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.25</value>
+      </field>
+      <field id="BarOffset">
+        <value>65</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-HellionTankEx1.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-hellbat-junker.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-hellbat-junker.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-HellionTankEx1.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>HellionTank_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>HellionTank_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>HellionTank_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>HellionTank_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>HellionTank_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>HellionTank_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>HellionTank_Movement</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.HellionTankReady.On</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart CoverA Cover,A,Start Cover,A Cover,A,End</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.HellionTankReady.Off</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop CoverA</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay CoverB Cover,B,00 PlayForever</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear CoverB</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Attack</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^Tank</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^Tank</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.250000 KillBeam</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.250000 KillBeam</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName KillBeam</value>
+        <index>74</index>
+      </field>
+      <field id="On_Target">
+        <value>HellionAttackBeam</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>75</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Stand PlayForever 0.000000</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Hellion_Land</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeathCustomize; ValidateUnit HaveHHHellionFearDeath</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Create HHHellionTankDeathExplosion</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeathCustomize; ValidateUnit HaveHHHellionFearDeath</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Create HH_Hellbat_WildfireExplosiveSound</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitDeathCustomize; ValidateUnit HaveHHHellionFearDeath</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>Create HHHellionTankDeathExplosionCrater</value>
+        <index>79</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^Tank</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Unload DontResetOnUnhide 0.000000</value>
+        <index>80</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^TankDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Hellion_Explode</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Tank</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name2^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Hellbat_Junker_Collection\Hellbat_Junker_Collection.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.866400</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.866400</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^Tank</id>
+      <field id="DisplayEffect">
+        <value>^Id^TankDamage</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^Tank</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="Period">
+        <value>2</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorAction">
+      <id>^Id^TankAttack</id>
+      <parentid>GenericAttackBase</parentid>
+      <token id="effectAttack">
+        <value>^Id^Tank</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeapon01</value>
+      </field>
+      <field id="LaunchModel">
+        <value>^Id^TankAttackLaunch</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Tank.Start; At Caster</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^TankDamage.Start; At Caster; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>Hellion_AttackImpact</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>HellionTank_AttackLaunch</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Tank_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name2^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\Hellion_HornerHan_Portrait\Hellion_HornerHan_Portrait.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^DoTAB</id>
+      <field id="Behavior">
+        <value>^Id^DoT</value>
+      </field>
+      <field id="ValidatorArray">
+        <index>0</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>WeaponInRange</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^DoTDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Amount">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^Tank</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>HellionTankApplyBehavior</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TankDamageSet</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TankSearch</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^TankDamage</id>
+      <field id="ValidatorArray">
+        <value>WeaponInRange</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="AttributeBonus">
+        <value>12</value>
+        <index>Light</index>
+      </field>
+      <field id="ArmorReduction">
+        <value>1</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="KindSplash">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>18</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^TankDamageSet</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TankDamage</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^DoTAB</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^TankSearch</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>SourceUnit</value>
+      </field>
+      <field id="ExcludeArray_Effect">
+        <value>^Id^Tank</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Ground;Self,Player,Ally,Missile,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AreaArray_Arc">
+        <value>45</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>10</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^TankDamageSet</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>ExtendByUnitRadius</index>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>OffsetByUnitRadius</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^DoTImpact</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^DoT.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^DoT.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^TankFear.On</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^TankFear.Off</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>6</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+      </field>
+      <field id="AutoScaleFactor">
+        <value>1.000000</value>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleOneShot</parentid>
+      <id>^Id^TankAttackLaunch</id>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart GL_BSD GLbirth GLstand GLdeath</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.750000 Kill</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName Kill</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap MiraHorner_Hellbat_Coop_RedBlackAttack</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>SetScaleFromWeaponRange 0.000000,1.000000,0.000000</value>
+        <index>7</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressCreationErrors</index>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^DoT</id>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-hornerhan-hellbat-dot.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^DoTDamage</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>MorphTo^Id^</id>
+      <field id="AbilSetId">
+        <value>HellionMode</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>MorphTo^Id^</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.25</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.33</value>
+        <index>0;0;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.67</value>
+        <index>0;0;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>4</value>
+        <index>0;2;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.33</value>
+        <index>0;5;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.67</value>
+        <index>0;5;1</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>MorphTo^Id^</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-collection-hellion-junker.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-collection-hellion-junker.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <input id="Name2" type="CStringLink">
+      <name>名称（战斗模式）</name>
+      <tooltip>单位名称（战斗模式）</tooltip>
+    </input>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^MorphModel</id>
+      <token id="unitName">
+        <value>TankModeMorphModel</value>
+      </token>
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>0</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>1</index>
+      </field>
+      <field id="Remove_Send">
+        <value>AnimPlay End Morph,End</value>
+        <index>1</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Tank</value>
+        <index>3</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Destroy</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay End Morph,End</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Tank</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,End PlayForever,NonLooping 0.250000 0.250000 3.660000 AsDuration</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Hellion_Land</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^.Start; MorphTo ^Id^</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^.Start; MorphTo ^Id^</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay End Morph,End</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^.Finish; MorphFrom ^Id^</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^.Finish; MorphFrom ^Id^Tank</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Upgrade</value>
+        <index>77</index>
+      </field>
+      <field id="Model">
+        <value>^Id^TankMorph</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>TerranLargeUnitDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Hellion_Explode</value>
+      </field>
+      <field id="PortraitActor">
+        <value>HellionPortrait</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Hellion_HornerHan_Portrait</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-hellionex1.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-hellion-junker.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-hellion-junker.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-hellionex1.dds</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Unit</parentid>
+      <id>^Id^TankMorph</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Terran\HellionHellbat_Junker_Collection_Morph\HellionHellbat_Junker_Collection_Morph.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.866400</value>
+      </field>
+      <field id="Radius">
+        <value>0.650000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.866400</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>^VALUEINDEX^</index>
+        <count>20</count>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage01</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage01</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage02</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.850000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage02</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage03</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.000000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage03</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage04</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.740000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage04</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphEndStage00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphEndStage01</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.440000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage01</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphEndStage02</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.000000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage02</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphEndStage03</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.000000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage03</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphEndStage04</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.660000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage04</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start,Upgrade,00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start,Upgrade,00</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage01</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage01</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start,Upgrade,00</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage02</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.100000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage02</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start,Upgrade,00</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage03</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.400000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage03</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,Start,Upgrade,00</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage04</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphStart_Stage04</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End,Upgrade,00</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage00</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage00</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End,Upgrade,00</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage01</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage01</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End,Upgrade,00</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage02</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage02</value>
+        <index>17</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End,Upgrade,00</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage03</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.400000</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage03</value>
+        <index>18</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,Morph,End,Upgrade,00</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Name">
+        <value>HellionTankMorphStage04</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.500000</value>
+        <index>19</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HellionTankMorph_StandMorphEnd_Stage04</value>
+        <index>19</index>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Terran\HellionHellbat_Morph_ServoAnims\HellionHellbat_Morph_ServoAnims.m3a</value>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^TankMorphModel</id>
+      <token id="unitName">
+        <value>SiegeModeMorphModel</value>
+      </token>
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Tank</value>
+        <index>0</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Tank</value>
+        <index>1</index>
+      </field>
+      <field id="Remove_Send">
+        <value>AnimPlay Start Morph,Start</value>
+        <index>1</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Tank</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="Remove_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>3</index>
+      </field>
+      <field id="Remove_Send">
+        <value>Destroy</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Tank</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^Tank</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Start Morph,Start</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^Tank</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Start PlayForever,NonLooping 0.250000 0.250000 3.660000 AsDuration</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Hellion_Land</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^Tank.Start; MorphTo ^Id^Tank</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^Tank.Start; MorphTo ^Id^Tank</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Start Morph,Start</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^Tank.Finish; MorphFrom ^Id^Tank</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.MorphTo^Id^Tank.Finish; MorphFrom ^Id^</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Upgrade</value>
+        <index>77</index>
+      </field>
+      <field id="Model">
+        <value>^Id^TankMorph</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>TerranLargeUnitDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Hellion_Explode</value>
+      </field>
+      <field id="PortraitActor">
+        <value>HellionPortrait</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Hellion_HornerHan_Portrait</value>
+      </field>
+      <field id="BarOffset">
+        <value>65</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-HellionTankEx1.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-hellbat-junker.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-vehicleplatinglevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Hellion_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-hellbat-junker.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-HellionTankEx1.dds</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^DoTImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\Colossus_FireBeam_Unit_Impact\Colossus_FireBeam_Unit_Impact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^TankAttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MiraHorner_Hellbat_Coop_RedAttack\MiraHorner_Hellbat_Coop_RedAttack.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.650000,1.650000,1.000000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.650000,1.650000,1.000000</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>HellionTankAttackLaunchLow</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^TankDeath</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>TerranSmallUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Hellbat_Junker_Collection_Death\Hellbat_Junker_Collection_Death.m3</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.600000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,01</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.600000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
     </entry>
   </wizard>
 </wizardfile>
