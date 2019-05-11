@@ -253,6 +253,25 @@
       <field id="DeathArray_SoundLink">
         <value>Raven_Explode</value>
       </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Raven_Land</value>
+        <index>69</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpBankerRaven</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -283,6 +302,21 @@
       </field>
       <field id="Model">
         <value>Assets\Units\Terran\Raven_BlackOps\Raven_BlackOps.m3</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Fidget,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>Raven_Fidget_Spin</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>0.014000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Raven_Fidget_Spin</value>
       </field>
     </entry>
     <category>合作任务/诺娃</category>

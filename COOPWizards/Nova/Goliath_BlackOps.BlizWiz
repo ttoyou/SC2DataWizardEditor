@@ -182,6 +182,9 @@
         <value>SpartanCompany</value>
         <index>1</index>
       </field>
+      <field id="KillDisplay">
+        <value>Always</value>
+      </field>
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -285,6 +288,18 @@
       <field id="On_Send">
         <value>AnimBracketStop Spell</value>
         <index>67</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
       </field>
     </entry>
     <entry catalog="Model" type="CModel">

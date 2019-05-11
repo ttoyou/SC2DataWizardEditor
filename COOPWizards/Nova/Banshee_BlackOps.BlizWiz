@@ -265,6 +265,10 @@
       <field id="HostSiteOps_Ops">
         <value>SOpBanker</value>
       </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>

@@ -245,6 +245,76 @@
       <field id="LifeArmorIcon">
         <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
       </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusIncrement WeaponNext</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 2</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponNext 0</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 0</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackLeft Attack,Left</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 1</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackRight Attack,Right</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Marauder_Land</value>
+        <index>70</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Marauder_Explode</value>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -379,5 +449,119 @@
     <category>合作任务/诺娃</category>
     <name>劫掠者突击手</name>
     <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^_Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>TerranSmallUnitDeathLow</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>^VALUEINDEX^</index>
+        <count>6</count>
+      </field>
+      <field id="Events_Time">
+        <value>0.950000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,Blast</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.950000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Marauder_Death_Evis_PiecesFall</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.043000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Marauder_Death_Evis_PiecesFall</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Marauder_Death_Evis_Ronk_02</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.526000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Marauder_Death_Evis_Ronk_02</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Marauder_Death_Evis_ArmsMove</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.042000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Marauder_Death_Evis_ArmsMove</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Marauder_Death_Evis_HeadGround</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.213000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Marauder_Death_Evis_HeadGround</value>
+        <index>5</index>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+    </entry>
   </wizard>
 </wizardfile>

@@ -293,6 +293,14 @@
       <field id="DeathArray_SoundLink">
         <value>Ghost_Explode</value>
       </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>

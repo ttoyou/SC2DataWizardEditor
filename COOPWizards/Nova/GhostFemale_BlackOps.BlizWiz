@@ -175,6 +175,21 @@
       <field id="AttackTargetPriority">
         <value>20</value>
       </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>33</value>
+        <index>0;Turn</index>
+      </field>
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -298,6 +313,14 @@
       </field>
       <field id="DeathArray_SoundLink">
         <value>Ghost_Explode</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
