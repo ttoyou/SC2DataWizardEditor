@@ -1,0 +1,2536 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Liberator_BlackOps">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatAir</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>450</value>
+      </field>
+      <field id="LifeMax">
+        <value>450</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>3.375</value>
+      </field>
+      <field id="Acceleration">
+        <value>3.5</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="TurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>60</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>118</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.75</value>
+      </field>
+      <field id="KillDisplay">
+        <value>Always</value>
+      </field>
+      <field id="RankDisplay">
+        <value>Never</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^MorphtoAG</value>
+        <index>3</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^AGTarget</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^MorphtoAG</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^AGTarget,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+        <index>5</index>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>^Id^</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Liberator_CovertOps_Collection_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>LiberatorBlackOps_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>TerranFlyer_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>TerranFlyer_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>TerranFlyer_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>TerranFlyer_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>TerranFlyer_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Liberator_BlackOps_Move_Start</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Liberator_BlackOps_Land</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Cover,Start Cover Cover,End</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 2.000000 Liberator_BlackOpsAttack</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName Liberator_BlackOpsAttack; ValidateUnitType CasterNotAttacking</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Visor 0.000000</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBlendTimeApply 0.000000</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBaselineStop</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBaselineStart</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBlendTimeApply</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet Morphed 0</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^TargetMorphDelayPersistent.Start</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^AGBirthSearchIndicatorModel</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; FlyerHelper All; !ScopeContains FlyerHelperSplat</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Create FlyerHelperSplat</value>
+        <index>77</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Liberator_Death</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Radius">
+        <value>0.875000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.250000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.400000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.200000,1.200000,1.200000</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 02</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>1</value>
+        <index>2;SetA</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Liberator_BlackOps\Liberator_BlackOps.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^MissileDamage</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Period">
+        <value>1.8</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^MissileBurstPersistent</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^AG</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^AG</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>Turnable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatAir</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>450</value>
+      </field>
+      <field id="LifeMax">
+        <value>450</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="TurningRate">
+        <value>1499.9414</value>
+      </field>
+      <field id="Sight">
+        <value>13</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="RepairTime">
+        <value>60</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>118</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.75</value>
+      </field>
+      <field id="KillDisplay">
+        <value>Always</value>
+      </field>
+      <field id="RankDisplay">
+        <value>Never</value>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>^Id^AG</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^MorphtoAA</value>
+        <index>3</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^MorphtoAG</value>
+        <index>4</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^AATarget</value>
+        <index>5</index>
+      </field>
+      <field id="LeaderAlias">
+        <value>^Id^</value>
+      </field>
+      <field id="SelectAlias">
+        <value>^Id^</value>
+      </field>
+      <field id="SubgroupAlias">
+        <value>^Id^</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^MorphtoAA</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^AATarget,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^AG</id>
+      <token id="unitName">
+        <value>^Id^AG</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Liberator_CovertOps_Collection_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>TerranFlyer_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>TerranFlyer_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>TerranFlyer_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>TerranFlyerAG_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>TerranFlyerAG_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>TerranFlyer_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Liberator_BlackOps_Move_Start</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Morph_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Liberator_Death</value>
+      </field>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^AGTurret</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGTurret</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtEngage</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerKill ResetOnNoTargets</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGTurret</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>RefClear ::HostTarget</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 2.000000 ResetOnNoTargets</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName ResetOnNoTargets</value>
+        <index>69</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGTurret</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtStop</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart AttackA Attack,A</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop AttackA</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Work {} Stand,Work Stand,Work,End Instant</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^AG</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^AG</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>75</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Stand PlayForever 0.000000</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; FlyerHelper All; !ScopeContains FlyerHelperSplat</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create FlyerHelperSplat</value>
+        <index>76</index>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^AG</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-shipweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^AGDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>13</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="Period">
+        <value>1.6</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.125</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^AGMissileLMSet</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LiberatorDeathBase</parentid>
+      <id>^Id^_Death</id>
+      <field id="VariationCount">
+        <value>1</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Liberator_BlackOps_Death\Liberator_BlackOps_Death.m3</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^DamageMissile</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="Mover">
+        <value>^Id^Missile</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionCovertOps</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_Missile_Impact\Liberator_Missile_Impact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^DamageMissile</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_Missile\Liberator_Missile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^DamageMissileLM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="LaunchLocation_Value">
+        <value>CasterUnit</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^MissileDamage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^DamageMissile</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^MissileBurstPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>RandomOffset</index>
+      </field>
+      <field id="PeriodCount">
+        <value>2</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^DamageMissileLM</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^DamageMissileLM</value>
+        <index>1</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.05</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^MissileDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="LaunchLocation_Value">
+        <value>SourceUnitOrPoint</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>13</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>1.5</value>
+      </field>
+      <field id="AreaArray_Fraction">
+        <value>1</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Air;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^DamageAttack</id>
+      <token id="effectImpact">
+        <value>^Id^MissileDamage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^DamageMissileLM</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Liberator_AA_Launch</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachCenter SOpRandomPointInCircle1Dot5</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Liberator_AA_Launch_Impact</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Full</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^DamageAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^DamageMissile</value>
+      </token>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>AoESplashShieldHitter</parentid>
+      <id>^Id^ShieldHitter</id>
+      <token id="effectHit">
+        <value>^Id^MissileDamage</value>
+      </token>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Missile</id>
+      <field id="MotionPhases_Driver">
+        <value>Throw</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Speed">
+        <value>1</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>8</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>2.5,3.5</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowRotationType">
+        <value>ThrowForward</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowVector">
+        <value>0,-1,0</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowBandYaw">
+        <value>74.9926,-74.9926,64.995,-64.995</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_ThrowBandPitch">
+        <value>45,-45,4.9987,-4.9987</value>
+        <index>0</index>
+      </field>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_AccelerationRange">
+        <value>7</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>16</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_ActorTracking">
+        <value>Actual</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-2.5,-1.5</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>359.2968</value>
+        <index>1</index>
+      </field>
+      <field id="MotionPhases_Overlays_Scale">
+        <index>1;0;0</index>
+        <value>1,1</value>
+      </field>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_ThrowBandYaw">
+        <value>-360,-360,-360,-360</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_ThrowBandPitch">
+        <value>-360,-360,-360,-360</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>5759.6484</value>
+        <index>2</index>
+      </field>
+      <field id="MotionPhases_Overlays_Scale">
+        <index>2;0;0</index>
+        <value>0.5,0.5</value>
+      </field>
+      <field id="MotionOverlays_Type">
+        <value>Revolver</value>
+      </field>
+      <field id="MotionOverlays_RevolverSpeed">
+        <value>119.5312</value>
+      </field>
+      <field id="MotionOverlays_RevolverSpeedRange">
+        <value>119.5312</value>
+      </field>
+      <field id="MotionOverlays_RevolverMaxSpeed">
+        <value>719.2968</value>
+      </field>
+      <field id="MotionOverlays_RevolverMaxSpeedRange">
+        <value>719.2968</value>
+      </field>
+      <field id="MotionOverlays_RevolverAccel">
+        <value>45</value>
+      </field>
+      <field id="MotionOverlays_RevolverAccelRange">
+        <value>337.5</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LiberatorSiegedDeathBase</parentid>
+      <id>^Id^_Morph_Death</id>
+      <field id="Model">
+        <value>Assets\Units\Terran\Liberator_BlackOps_Morph_Death\Liberator_BlackOps_Morph_Death.m3</value>
+      </field>
+    </entry>
+    <entry type="CTurret" catalog="Turret">
+      <parentid>FreeRotate</parentid>
+      <id>^Id^</id>
+      <field id="Idle">
+        <value>ResetIfMoving</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>0</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>100</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>0</value>
+        <index>0;Turn</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AGAttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_GroundCannon_Impact\Liberator_GroundCannon_Impact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_GroundCannon\Liberator_GroundCannon.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^AGDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>125</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^AGMissileLM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^AGDamage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^AGMissile</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^AGMissileLMSet</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^AGTargets</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^AGMissileLM</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AGAttack</id>
+      <token id="effectImpact">
+        <value>^Id^AGDamage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^AGMissileLM</value>
+      </token>
+      <field id="LaunchAssets_Sound">
+        <value>Liberator_AG_Launch</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Liberator_AG_Launch_Impact</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AGAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^AGMissile</value>
+      </token>
+      <field id="Model">
+        <value>Invisible</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleOneShot</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachWeapon</value>
+      </field>
+      <field id="HostLaunch_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostLaunch_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Missile</value>
+      </field>
+      <field id="HostImpact_Actor">
+        <value>Find</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^AGMissileLM.Start; At Caster</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^AGDamage.Start; At Target</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^ImpactHoldingSite</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^AGDamage.Start</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSet ::HostImpact ^Id^ImpactHoldingSite</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <parentid>MissileDefault</parentid>
+      <id>^Id^AGMissile</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>40</value>
+      </field>
+      <field id="MotionPhases_ClearanceAcceleration">
+        <value>75</value>
+      </field>
+      <field id="MotionPhases_ActorTracking">
+        <value>Actual</value>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-1</value>
+      </field>
+      <field id="MotionPhases_RotationLaunchActorType">
+        <value>LaunchToTarget</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>719.2968</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE_INVULNERABLE</parentid>
+      <id>^Id^AGMissile</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionCovertOps</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>100</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^AGTarget</id>
+      <field id="EditorCategories">
+        <value>AbilityorEffectType:Units</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^TargetMorphOrderInitialSet</value>
+        <index>0</index>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^MorphtoAG</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^InterruptedMorphDelayPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ExpireEffect">
+        <value>^Id^TargetAAMorphOrderSet</value>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.125</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^TargetAAMorphOrder</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Abil">
+        <value>^Id^MorphtoAA</value>
+      </field>
+      <field id="Player_Value">
+        <value>Source</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^TargetAAMorphOrderSet</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetAAMorphRB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetAAMorphOrder</value>
+        <index>1</index>
+      </field>
+      <field id="TargetLocationType">
+        <value>Point</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^TargetAAMorphRB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^TargetMorphBehavior</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^TargetMorphAB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^TargetMorphBehavior</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^TargetMorphAGOrder</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Abil">
+        <value>^Id^MorphtoAG</value>
+      </field>
+      <field id="Player_Value">
+        <value>Creator</value>
+      </field>
+      <field id="Target_Value">
+        <value>CasterUnit</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^TargetMorphDelayPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ExpireEffect">
+        <value>^Id^TargetMorphPersistent</value>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>4</value>
+      </field>
+      <field id="AINotifyEffect">
+        <value>^Id^TargetMorphSearchArea</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^TargetMorphOrderInitialSet</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetMorphAB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetMorphAGOrder</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetMorphDelayPersistent</value>
+        <index>2</index>
+      </field>
+      <field id="TargetLocationType">
+        <value>Point</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^TargetMorphPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>PersistUntilDestroyed</index>
+      </field>
+      <field id="FinalEffect">
+        <value>^Id^InterruptedMorphDelayPersistent</value>
+      </field>
+      <field id="PeriodicValidator">
+        <value>^Id^MorphValidatorCombine</value>
+      </field>
+      <field id="AINotifyEffect">
+        <value>^Id^TargetMorphSearchArea</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^TargetMorphSearchArea</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.25</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^TargetMorphSearchAB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^TargetMorphAGAttackable</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^TargetMorphSearchArea</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^TargetMorphSearchAB</value>
+      </field>
+      <field id="AINotifyFlags">
+        <value>1</value>
+        <index>HurtEnemy</index>
+      </field>
+      <field id="AINotifyFlags">
+        <value>1</value>
+        <index>MajorDanger</index>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^TargetMorphAGAttackable</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="MaxStackCount">
+        <value>65535</value>
+      </field>
+      <field id="MaxStackCountPerCaster">
+        <value>1</value>
+      </field>
+      <field id="Duration">
+        <value>0.3125</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^TargetMorphBehavior</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>HasNoLiberatorYoink</value>
+        <index>0</index>
+      </field>
+      <field id="RemoveValidatorArray">
+        <value>IsNotRecallingCombine</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>CursorSplat</parentid>
+      <id>^Id^AGTargetCursorSplat</id>
+      <token id="abil">
+        <value>^Id^AGTarget</value>
+      </token>
+      <field id="On_Terms">
+        <index>0</index>
+        <value>Abil.^Id^AGTarget.Cursor</value>
+      </field>
+    </entry>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Id^AGTargetRange</id>
+      <token id="abil">
+        <value>^Id^AGTarget</value>
+      </token>
+      <field id="Icon">
+        <value>Assets\Textures\RadarIcon2.dds</value>
+      </field>
+      <field id="IconArcLength">
+        <value>3.250000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^AGTarget.TargetOn</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^AGTarget.TargetOff</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^AGTarget.ButtonHoverOn</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^AGTarget.ButtonHoverOff</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^DummyRange</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^TargetMorphPersistent.Start</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^TargetMorphPersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^AGSearchRange</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorDestruction</value>
+        <index>6</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGSearchRange</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>6</index>
+      </field>
+      <field id="Model">
+        <value>LiberatorRangeIndicatorDummy</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RacePersistentSpellFX</parentid>
+      <id>^Id^AGTargetCursorSplat</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_GroundTargetSplat_Placement\Liberator_GroundTargetSplat_Placement.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.375000,1.375000,1.375000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.375000,1.375000,1.375000</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^MorphtoAG</id>
+      <field id="AbilSetId">
+        <value>^Id^AG</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>^Id^MorphtoAG</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>WaitUntilStopped</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^AG</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;0;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;1;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.5417</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;3;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;5;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>3.5417</value>
+        <index>0;5;1</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^MorphtoAG</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="HotkeySet">
+        <value>RaidLiberatorModes</value>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>^Id^MorphtoAA</id>
+      <field id="AbilSetId">
+        <value>LiberatorAA_BlackOps</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^MorphtoAA</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="CancelUnit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;0;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;1;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.5417</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;4;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5</value>
+        <index>0;5;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.5417</value>
+        <index>0;5;1</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^AGMorphModel</id>
+      <token id="unitName">
+        <value>^Id^AGMorphModel</value>
+      </token>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Liberator_CovertOps_Collection_Portrait</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^AG</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^AG</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Start Work,Start</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^AG</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed LE Normal</value>
+        <index>70</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Start PlayForever,NonLooping 0.250000 0.250000 4.000000 AsDuration</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed Eq Fast</value>
+        <index>71</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Start PlayForever,NonLooping 0.250000 0.250000 3.330000 AsDuration</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed GE Faster</value>
+        <index>72</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,Start PlayForever,NonLooping 0.250000 0.250000 2.850000 AsDuration</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>73</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^_Land</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; FlyerHelper All; !ScopeContains FlyerHelperSplat</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Create FlyerHelperSplat</value>
+        <index>75</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Morph_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Liberator_Death</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-liberator-agmodeblackops.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="SoundArray">
+        <value>^Id^_Move_Start</value>
+        <index>Movement</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitBaseMorphTransition</parentid>
+      <id>^Id^MorphModel</id>
+      <token id="unitName">
+        <value>^Id^MorphModel</value>
+      </token>
+      <field id="Model">
+        <value>^Id^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Liberator_CovertOps_Collection_Portrait</value>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay End Work,End</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphTo ^Id^</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.100000 StartDisengage</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName StartDisengage</value>
+        <index>69</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGTurret</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>LookAtDisengage</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^AG</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphFrom ^Id^AG</value>
+        <index>72</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^AGTurret</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed LE Normal</value>
+        <index>73</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,End PlayForever,NonLooping 0.250000 0.250000 2.000000 AsDuration</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed Eq Fast</value>
+        <index>74</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,End PlayForever,NonLooping 0.250000 0.250000 1.660000 AsDuration</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure; GameSpeed GE Faster</value>
+        <index>75</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Visor Morph,End PlayForever,NonLooping 0.250000 0.250000 1.420000 AsDuration</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitPortrait.*.Configure</value>
+        <index>76</index>
+      </field>
+      <field id="On_Target">
+        <value>::PortraitGameSelf</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Liberator_Land</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; FlyerHelper All; !ScopeContains FlyerHelperSplat</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Create FlyerHelperSplat</value>
+        <index>78</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Liberator_Death</value>
+      </field>
+      <field id="BarOffset">
+        <value>50</value>
+      </field>
+      <field id="BarWidth">
+        <value>70</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-shipplatinglevel0.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>TerranFlyer_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="SoundArray">
+        <value>Liberator_Move_Start</value>
+        <index>Movement</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^MorphtoAA</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-terran-liberatorblackops.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="HotkeySet">
+        <value>RaidLiberatorModes</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectInstant" catalog="Abil">
+      <id>^Id^AATarget</id>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^TargetAAMorphOrderSet</value>
+        <index>0</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^MorphtoAA</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^TargetAAMorphOrder</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="Abil">
+        <value>^Id^MorphtoAA</value>
+      </field>
+      <field id="Player_Value">
+        <value>Source</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^TargetAAMorphOrderSet</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetAAMorphRB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TargetAAMorphOrder</value>
+        <index>1</index>
+      </field>
+      <field id="TargetLocationType">
+        <value>Point</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^TargetAAMorphRB</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^TargetMorphBehavior</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>Has^Id^MorphBehavior</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Value">
+        <value>1</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^TargetMorphBehavior</value>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^MorphValidatorCombine</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>CasterNotDead</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>Has^Id^MorphBehavior</value>
+        <index>1</index>
+      </field>
+      <field id="CombineArray">
+        <value>^Id^AGNotOutOfRange</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CValidatorLocationCompareRange" catalog="Validator">
+      <id>^Id^AGNotOutOfRange</id>
+      <field id="Compare">
+        <value>LE</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+    </entry>
+    <entry type="CActorSite" catalog="Actor">
+      <id>^Id^ImpactHoldingSite</id>
+    </entry>
+    <entry type="CActorLookAt" catalog="Actor">
+      <parentid>UnitTurret</parentid>
+      <id>^Id^AGTurret</id>
+      <field id="Type">
+        <value>LiberatorAG</value>
+      </field>
+    </entry>
+    <entry type="CTurret" catalog="Turret">
+      <parentid>FreeRotate</parentid>
+      <id>^Id^AG</id>
+      <field id="Idle">
+        <value>ResetIfMoving</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>0</value>
+        <index>0;Anim</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>100</value>
+        <index>0;Idle</index>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <value>0</value>
+        <index>0;Turn</index>
+      </field>
+    </entry>
+    <entry type="CActorSiteOpBankerUnit" catalog="Actor">
+      <parentid>SOpBankerUnit</parentid>
+      <id>SOpBanker^Id^</id>
+      <field id="RollMax">
+        <value>30.000000,10.000000</value>
+      </field>
+      <field id="RollInActivationAngle">
+        <value>5.000000</value>
+      </field>
+      <field id="RollInArc">
+        <value>105.000000,30.000000</value>
+      </field>
+      <field id="RollOutDuration">
+        <value>0.400000,0.100000</value>
+      </field>
+    </entry>
+    <name>掠袭解放者</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
+    <entry type="CActorRange" catalog="Actor">
+      <id>^Id^AGSearchRange</id>
+      <field id="Host_Subject">
+        <value>::Creator</value>
+      </field>
+      <field id="Range">
+        <value>4.600000</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\liberatorradius.dds</value>
+      </field>
+      <field id="IconArcLength">
+        <value>3.000000</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^AGTargets</id>
+      <field id="ResultFailed">
+        <value>TargetIsOutOfRange</value>
+      </field>
+      <field id="Compare">
+        <value>GT</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^TargetMorphAGAttackable</value>
+      </field>
+      <field id="RequireCasterUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^AGSearchIndicatorModel</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TeamColor</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="HostForProps_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostForProps_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpTargetPoint SOpShadowSyncGround</value>
+      </field>
+      <field id="ScopeBearingsTracking">
+        <value>ForceOff</value>
+      </field>
+      <field id="Model">
+        <value>^Id^AGSearchIndicator</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^AGSearchIndicator</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\Liberator_GroundTargetSplat\Liberator_GroundTargetSplat.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>FOW</index>
+      </field>
+      <field id="Radius">
+        <value>4.000000</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>4.000000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.306250,1.306250,1.306250</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.306250,1.306250,1.306250</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^AGBirthSearchIndicatorModel</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TeamColor</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart BSD Birth Stand Death</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; ValidateUnit HaveLiberatorMAFServos</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimSetTimeScaleGlobal 4.000000 BSD</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^TargetMorphDelayPersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="HostForProps_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostForProps_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpTargetPoint SOpShadowSyncGround</value>
+      </field>
+      <field id="ScopeBearingsTracking">
+        <value>ForceOff</value>
+      </field>
+      <field id="Model">
+        <value>^Id^AGSearchIndicator</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
