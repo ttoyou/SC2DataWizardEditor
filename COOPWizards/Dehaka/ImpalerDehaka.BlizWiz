@@ -1,0 +1,1251 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="ImpalerDehaka">
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Race">
+        <value>PZrg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISplash</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPressForwardDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPreferBurrow</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="LifeStart">
+        <value>200</value>
+      </field>
+      <field id="LifeMax">
+        <value>200</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="Speed">
+        <value>2.75</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>88</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>33</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>ImpalerBurrowDown</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>Burrow^Id^Down,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>4</value>
+        <index>5</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>Burrow^Id^Down</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Lurker_Primal_Collection_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.2968</value>
+      </field>
+      <field id="BarOffset">
+        <value>55</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-primal-Lurker.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-primal-Lurker.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-collection-primal-Lurker.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-collection-primal-Lurker.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-dehaka-groundcarapace-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Lurker_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Lurker_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Primal_Impaler_Movement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Lurker_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Lurker_Pissed</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^_Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Lurker_Explode</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^Burrowed</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^Burrowed</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Burrow Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever,Instant</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; AbilKey BurrowDown</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create BurrowDownMedium</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; AbilKey BurrowDown</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Fidget</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Cancel; MorphFrom ImpalerDehaka; MorphTo ImpalerBurrowed</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Burrow</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ImpalerDehaka; MorphFrom ImpalerBurrowed</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Burrow</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ImpalerDehaka; MorphFrom ImpalerBurrowed</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Burrow</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk; AnimPlaying Birth</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk; AnimPlaying Birth</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Lurker_Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack DontResetOnUnhide</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; AnimPlaying Birth</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>79</index>
+      </field>
+      <field id="Macros">
+        <value>ZergBurrowStandardAnimMacro</value>
+        <index>1</index>
+      </field>
+      <field id="Macros">
+        <value>ZergMediumBurrowEffects</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>3</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>0.700000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.590500</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.900000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+      <field id="TipabilityLength">
+        <value>0.800000</value>
+      </field>
+      <field id="TipabilityWidth">
+        <value>0.800000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>1.400000,1.400000,1.400000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>1.400000,1.400000,1.400000</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Lurker_Primal_Collection\Lurker_Primal_Collection.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-zerg-missileattacks-level0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MinScanRange">
+        <value>11.5</value>
+      </field>
+      <field id="Range">
+        <value>11</value>
+      </field>
+      <field id="ArcSlop">
+        <value>0</value>
+      </field>
+      <field id="Period">
+        <value>1.45</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LM</value>
+      </field>
+      <field id="LegacyOptions">
+        <value>1</value>
+        <index>KeepChanneling</index>
+      </field>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Burrowed</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>PZrg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Cloaked</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Buried</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISplash</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPressForwardDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIPreferBurrow</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>0</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="LifeStart">
+        <value>200</value>
+      </field>
+      <field id="LifeMax">
+        <value>200</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="Mover">
+        <value>Burrowed</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.75</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>18</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>Burrow^Id^Up</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>ImpalerBurrowUp</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>Burrow^Id^Up,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>4</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^_Death</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>ZergMediumUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Lurker_Primal_Collection_Death\Lurker_Primal_Collection_Death.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="ArmorReduction">
+        <value>1</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>20</value>
+        <index>Armored</index>
+      </field>
+      <field id="Amount">
+        <value>40</value>
+      </field>
+      <field id="Death">
+        <value>Blast</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^ImpactSet</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Damage</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^TenderizeAB</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LM</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^ImpactSet</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>TargetNotAcrossChasm</value>
+        <index>0</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>ImpalerIsBurrowed</value>
+        <index>1</index>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^TenderizeAB</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Tenderize</value>
+      </field>
+      <field id="Chance">
+        <value>0</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^TenderizeDamage</id>
+      <field id="Amount">
+        <value>10</value>
+      </field>
+      <field id="Death">
+        <value>Eviscerate</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>NotInvulnerable</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Tenderize</id>
+      <field id="Duration">
+        <value>10</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="PeriodCount">
+        <value>10</value>
+      </field>
+      <field id="PeriodicEffect">
+        <value>^Id^TenderizeDamage</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\BTN-Ability-Zerg-Dehaka-Impaler-Tenderize.dds</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^TenderizeModel</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCenterSoft</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Model">
+        <value>Primal_Lurker_Coop_Tenderize</value>
+      </field>
+      <field id="AutoScaleFromSelectionFactor">
+        <value>0.300000</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectImpact">
+        <value>^Id^Damage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LM</value>
+      </token>
+      <field id="LaunchAssets_Sound">
+        <value>Lurker_AttackLaunch2</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Origin</value>
+      </field>
+      <field id="ImpactMap_Model">
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>DehakerImpaler_TentacleImpact1</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpShadow SOpForwardLaunchGuide</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Full</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^AttackLaunchSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Lurker_AttackLaunch2</value>
+      </field>
+      <field id="Layers_Sound">
+        <value>Impaler_TentacleVox</value>
+      </field>
+      <field id="Layers_PitchSource">
+        <value>Sound</value>
+      </field>
+      <field id="Layers_PlayDelaySource">
+        <value>Sound</value>
+      </field>
+      <field id="Layers_VolumeSource">
+        <value>Sound</value>
+      </field>
+      <field id="Layers_Chance">
+        <value>100</value>
+      </field>
+      <field id="Layers_Pitch">
+        <value>0.000000,0.000000</value>
+      </field>
+      <field id="Layers_PlayDelay">
+        <value>0,0</value>
+      </field>
+      <field id="Layers_Volume">
+        <value>0.000000,0.000000</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^AttackImpact</id>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressSaveLoad</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth 0 0.000000 0.000000 1.500000 AsDuration</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Birth</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow SOpAttachOriginStationary</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^_Tenderize_Bloodpool</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="AutoScaleFromSelectionFactor">
+        <value>0.600000</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^_Tenderize_Impact</id>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^Tenderize.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="AutoScaleFromSelectionFactor">
+        <value>0.600000</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachCenterSoft</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\PrimalSunkenColonyAttackImpact\PrimalSunkenColonyAttackImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.550000,0.550000,0.550000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.550000,0.550000,0.550000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RacePersistentSpellFX</parentid>
+      <id>^Id^_Tenderize_Bloodpool</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\Primal_Lurker_Coop_Tenderize_Bloodpool\Primal_Lurker_Coop_Tenderize_Bloodpool.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RacePersistentSpellFX</parentid>
+      <id>^Id^_Tenderize_Impact</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\Primal_Lurker_Coop_Tenderize_Impact\Primal_Lurker_Coop_Tenderize_Impact.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RacePersistentSpellFX</parentid>
+      <id>^Id^_Tenderize</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="EditorCategories">
+        <value>Race:PrimalZerg</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\Primal_Lurker_Coop_Tenderize\Primal_Lurker_Coop_Tenderize.m3</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+      <field id="Model">
+        <value>Invisible</value>
+      </field>
+      <field id="Baselines_AnimProps">
+        <index>0</index>
+        <value>Unburrow</value>
+      </field>
+      <field id="Baselines_BlendIn">
+        <index>0</index>
+        <value>-1.000000</value>
+      </field>
+      <field id="Baselines_BlendOut">
+        <index>0</index>
+        <value>-1.000000</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 0.500000</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>ImpalerMissileGroundCracks</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectFamily:Campaign,ObjectType:Projectile</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <parentid>MissileDefault</parentid>
+      <id>^Id^Weapon</id>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>BurrowedSplat</parentid>
+      <id>^Id^BurrowedSplat</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+    </entry>
+    <category>合作任务/德哈卡</category>
+    <name>穿刺者</name>
+    <objecttypes create="Unit" />
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>Burrow^Id^Down</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>BurrowDown</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>1</index>
+        <value>Cancel</value>
+      </field>
+      <field id="ActorKey">
+        <value>BurrowDown</value>
+      </field>
+      <field id="AbilSetId">
+        <value>BrwDb</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Interruptible</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>IgnorePlacement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressMovement</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Burrowed</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.25</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>2</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.8332</value>
+        <index>0;2;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.8332</value>
+        <index>0;5;0</index>
+      </field>
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>Burrow^Id^Up</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>BurrowUp</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="ActorKey">
+        <value>BurrowUp</value>
+      </field>
+      <field id="AbilSetId">
+        <value>BrwUb</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressMovement</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.5</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1</value>
+        <index>0;1;1</index>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>
