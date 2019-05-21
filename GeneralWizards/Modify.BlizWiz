@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="WeaponMutiAttack">
+    <objecttypes create="Weapon" />
+    <instructions page="1">
+        将一个武器变为多重攻击。
+    </instructions>
+    <input type="CWeaponLink" id="Weapon">
+      <name>武器</name>
+      <tooltip>要变为多重攻击的武器</tooltip>
+    </input>
+    <name>将武器变为多重攻击</name>
+    <entry catalog="Effect" type="CEffectEnumArea">
+      <id>^Weapon^MutiAttackSearch</id>
+      <field id="AreaArray_Radius">
+        <value>ref=Weapon,^Weapon^,Range</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>ref=Weapon,^Weapon^,Effect</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>SourceUnit</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="SearchFilters">
+        <value>^SearchFilters^</value>
+      </field>
+    </entry>
+    <entry catalog="Effect" type="CEffectSet">
+      <id>^Weapon^MutiAttack</id>
+      <field id="EffectArray">
+        <index>0</index>
+        <value>ref=Weapon,^Weapon^,Effect</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Weapon^MutiAttackSearch</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CWeapon" catalog="Weapon">
+      <allowmodify />
+      <id>^Weapon^</id>
+      <field id="Effect">
+        <value>^Weapon^MutiAttack</value>
+      </field>
+    </entry>
+    <input id="SearchFilters" type="CTargetFilters">
+      <name>目标筛选</name>
+      <default value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable" />
+    </input>
+  </wizard>
+  <wizard id="AbilMutiAttack">
+    <input id="Abil" type="CAbilLink">
+      <name>技能</name>
+      <tooltip>要修改的技能。</tooltip>
+    </input>
+    <instructions page="1">
+        将一个技能变为群体技能。
+        仅用于目标为单位的技能。（例如把猎杀飞弹变为群体猎杀飞弹）
+        配合“为技能创建射程范围演算体”向导可以做范围指示圈。
+    </instructions>
+    <input id="Radius" type="real32">
+      <name>目标半径</name>
+      <default value="3" />
+    </input>
+    <input id="SearchFilters" type="CTargetFilters">
+      <name>筛选器</name>
+      <default value="Visible;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable" />
+    </input>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Abil^MutiAttackSearch</id>
+      <field id="AreaArray_Radius">
+        <value>^Radius^</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>ref=Abil,^Abil^,Effect</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetPoint</value>
+      </field>
+      <field id="SearchFilters">
+        <value>^SearchFilters^</value>
+      </field>
+    </entry>
+    <entry catalog="Abil" type="CAbilEffectTarget">
+      <allowmodify />
+      <id>^Abil^</id>
+      <field id="Effect">
+        <value>^Abil^MutiAttackSearch</value>
+      </field>
+    </entry>
+    <objecttypes create="Abil" />
+    <name>将技能变为多重攻击</name>
+  </wizard>
+</wizardfile>
