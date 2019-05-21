@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="CreateMissileDamage">
+    <name>创建发射物</name>
+    <objecttypes create="Effect" />
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <default value="无名称" />
+    </input>
+    <input id="Id" type="CString">
+      <name>Id</name>
+      <tooltip>要创建的发射物Id</tooltip>
+    </input>
+    <input id="Model" type="CModelPath">
+      <name>模型</name>
+      <tooltip>要创建的发射物的模型</tooltip>
+    </input>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <field id="Name">
+        <value>^Name^ 伤害</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LaunchMissile</id>
+      <field id="ImpactEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Missile</value>
+      </field>
+      <field id="Name">
+        <value>^Name^ 发射发射物</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <id>^Id^Missile</id>
+      <parentid>MISSILE</parentid>
+      <field id="Name">
+        <value>^Name^ 发射物</value>
+      </field>
+    </entry>
+    <instructions page="1">
+        创建发射物，并且附带发射效果以及伤害效果。
+        如果不需要创建移动器的话请取消勾选“同时创建移动器”
+    </instructions>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^Missile</id>
+      <field id="Model">
+        <value>^Model^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <id>^Id^Missile</id>
+      <parentid>GenericAttackMissile</parentid>
+      <field id="Model">
+        <value>^Id^Missile</value>
+      </field>
+      <field id="Name">
+        <value>^Name^ 发射物</value>
+      </field>
+      <token id="unitName">
+        <value>^Id^Missile</value>
+      </token>
+    </entry>
+    <validate type="error">
+      <text>Id不能为空</text>
+      <condition id="IdNotEmpty" />
+    </validate>
+    <condition id="IdNotEmpty" empty="0" input="Id" />
+    <entry type="CActorAction" catalog="Actor">
+      <id>^Id^</id>
+      <token id="effectLaunch">
+        <value>^Id^LaunchMissile</value>
+      </token>
+      <parentid>GenericAttack</parentid>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Weapon 0</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <validate type="warning">
+      <condition empty="0" input="Model" />
+      <text>发射物没有模型</text>
+    </validate>
+    <validate type="warning">
+      <condition input="Name" empty="0" />
+      <text>发射物没有名称</text>
+    </validate>
+    <input type="WizardCheckbox" id="AndCreateMover">
+      <name>同时创建移动器</name>
+      <default value="1" />
+    </input>
+    <condition id="CreateMover" input="AndCreateMover" value="1" operator="equal" />
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Missile</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <condition id="CreateMover">
+      </condition>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>18.75</value>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-1</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>719.2968</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="CreateActorModelForEffect">
+    <name>为效果创建视觉效果（模型）</name>
+    <input id="EffectLink" type="CEffectLink">
+      <name>链接效果</name>
+      <tooltip>选择要创建视觉特效的效果</tooltip>
+    </input>
+    <input id="Model" type="CModelPath">
+      <name>模型</name>
+      <tooltip>要应用的视觉模型</tooltip>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <default value="无名称" />
+    </input>
+    <macro id="EntryId">^EffectLink^^suffix^</macro>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^EntryId^</id>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Effect.^EffectLink^.Start</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^EffectLink^.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <index>3</index>
+        <value>Create</value>
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>AnimBracketStop BSD</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="EditorPrefix">
+        <value>ref=Effect,^EffectLink^,EditorPrefix</value>
+      </field>
+      <field id="EditorSuffix">
+        <value>ref=Effect,^EffectLink^,EditorSuffix</value>
+      </field>
+      <condition id="EffectLinkExist" />
+    </entry>
+    <instructions page="1">
+        为效果创建视觉效果
+        当效果发生时会创建特效
+        不支持某些模型，如果遇到这种情况，请自行修改演算体。
+    </instructions>
+    <entry type="CModel" catalog="Model">
+      <id>^EntryId^</id>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>^Model^</value>
+      </field>
+      <condition id="EffectLinkExist" />
+    </entry>
+    <objecttypes create="Effect" />
+    <input id="suffix" type="CString">
+      <name>Id后缀</name>
+      <tooltip>默认不需要你选择后缀，但提供一个可选参数供你使用。</tooltip>
+      <default value="Model" />
+    </input>
+    <validate type="error">
+      <text>链接效果不能为空</text>
+      <condition id="EffectLinkExist" />
+    </validate>
+    <condition id="EffectLinkExist" input="EffectLink" empty="0" />
+    <validate type="warning">
+      <condition input="Model" empty="0" />
+      <text>特效没有模型</text>
+    </validate>
+    <validate type="warning">
+      <condition input="Name" empty="0" />
+      <text>特效没有名称</text>
+    </validate>
+  </wizard>
+  <wizard id="CreateActorRangeForAbil">
+    <objecttypes create="Abil" />
+    <input id="Abil" type="CAbilLink">
+      <name>链接技能</name>
+      <tooltip>要链接的技能</tooltip>
+    </input>
+    <input id="OptionRange" type="WizardCheckbox">
+      <name>射程范围圈</name>
+      <tooltip>创建范围圈</tooltip>
+      <default value="1" />
+    </input>
+    <input id="OptionCursorSplat" type="WizardCheckbox">
+      <name>指针范围圈</name>
+      <tooltip>创建指针范围圈</tooltip>
+      <default value="0" />
+    </input>
+    <validate type="error">
+      <condition empty="0" input="Abil" />
+      <text>链接技能不能为空</text>
+    </validate>
+    <condition id="ConditionRange" input="OptionRange" value="1" operator="equal" />
+    <condition id="ConditionCursorSplat" input="OptionCursorSplat" value="1" operator="equal" />
+    <input id="CursorSplatModel" type="CModelPath">
+      <name>指针模型</name>
+      <tooltip>范围鼠标指针的模型。请搜索Splat的模型，非泼溅图模型不能正常使用。</tooltip>
+      <condition id="ConditionCursorSplat" />
+    </input>
+    <macro id="AbilName">ref=Abil,^Abil^,Name </macro>
+    <entry type="CActorRange" catalog="Actor">
+      <parentid>RangeAbil</parentid>
+      <id>^Abil^Range</id>
+      <field id="IconArcLength">
+        <value>3.25</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\RadarIcon2.dds</value>
+      </field>
+      <condition id="ConditionRange" />
+      <field id="Name">
+        <value>^AbilName^范围</value>
+      </field>
+      <token id="abil">
+        <value>^Abil^</value>
+      </token>
+      <field id="On_Terms">
+        <index>1</index>
+        <value>Abil.^Abil^.TargetOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>2</index>
+        <value>Abil.^Abil^.TargetOff</value>
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Abil.^Abil^.ButtonHoverOn</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Abil.^Abil^.ButtonHoverOff</value>
+      </field>
+    </entry>
+    <entry type="CActorSplat" catalog="Actor">
+      <parentid>CursorSplat</parentid>
+      <id>^Abil^CursorSplat</id>
+      <condition id="ConditionCursorSplat" />
+      <field id="Model">
+        <value>^Abil^CursorSplat</value>
+      </field>
+      <field id="Name">
+        <value>^AbilName^泼溅图</value>
+      </field>
+      <field id="On_Terms">
+        <index>0</index>
+        <value>Abil.^Abil^.Cursor</value>
+      </field>
+      <token id="abil">
+        <value>^Abil^</value>
+      </token>
+    </entry>
+    <name>为技能创建射程范围演算体</name>
+    <entry type="CModel" catalog="Model">
+      <id>^Abil^CursorSplat</id>
+      <condition id="ConditionCursorSplat" />
+      <field id="Model">
+        <value>^CursorSplatModel^</value>
+      </field>
+      <field id="Name">
+        <value>^AbilName^泼溅图</value>
+      </field>
+    </entry>
+    <instructions page="1">
+        为技能创建射程范围演算体和鼠标指针范围演算体(AOE圈)
+    </instructions>
+  </wizard>
+  <wizard id="CreateBeamForEffect">
+    <name>为效果创建光束</name>
+    <objecttypes create="Effect" />
+    <input id="EffectLink" type="CEffectLink">
+      <name>链接效果</name>
+      <tooltip>选择要创建光束的效果</tooltip>
+    </input>
+    <input id="Model" type="CModelPath">
+      <name>光束模型</name>
+    </input>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^EffectLink^Beam</id>
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <field id="HostLaunch_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostLaunch_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="HostLaunch_Actor">
+        <value>Find</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Unit</value>
+        <condition id="TargetIsUnit" />
+      </field>
+      <field id="HostImpact_Scope">
+        <value>Target</value>
+        <condition id="TargetIsUnit" />
+      </field>
+      <field id="HostImpact_Actor">
+        <value>Find</value>
+        <condition id="TargetIsUnit" />
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachWeapon</value>
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+        <condition id="TargetIsUnit" />
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Effect.^EffectLink^.Start</value>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Effect.^EffectLink^.Stop</value>
+        <condition id="isPersistent" />
+      </field>
+      <field id="On_Send">
+        <index>3</index>
+        <value>Create</value>
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>Destroy</value>
+        <condition id="isPersistent" />
+      </field>
+      <field id="Name">
+        <value>ref=Effect,^EffectLink^,Name 光束</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^EffectLink^.Start</value>
+        <index>4</index>
+        <condition id="isDuration" />
+      </field>
+      <field id="On_Send">
+        <value>TimerSet ^Duration^ Kill</value>
+        <index>4</index>
+        <condition id="isDuration" />
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName Kill</value>
+        <index>5</index>
+        <condition id="isDuration" />
+      </field>
+      <field id="On_Send">
+        <index>5</index>
+        <value>Destroy</value>
+        <condition id="isDuration" />
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpTargetPointStationary SOpShadow</value>
+        <condition id="TargetIsPoint" />
+      </field>
+      <field id="EditorPrefix">
+        <value>ref=Effect,^EffectLink^,EditorPrefix</value>
+      </field>
+      <field id="EditorSuffix">
+        <value>ref=Effect,^EffectLink^,EditorSuffix</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>^EffectLink^Site</value>
+        <condition id="TargetIsPoint" />
+      </field>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Effect.^EffectLink^.TargetStart</value>
+        <condition id="isHeal" />
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Effect.^EffectLink^.TargetStop</value>
+        <condition id="isHeal" />
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>Destroy</value>
+        <condition id="isHeal" />
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^EffectLink^Beam</id>
+      <field id="Model">
+        <value>^Model^</value>
+      </field>
+      <field id="Name">
+        <value>ref=Effect,^EffectLink^,Name 光束</value>
+      </field>
+    </entry>
+    <instructions page="1">
+        为效果创建光束特效。
+        如果是持续治疗效果请选择持续治疗效果。
+    </instructions>
+    <condition id="isPersistent" input="Type" match="equal" value="Persistent" />
+    <input id="Type" type="WizardRadio">
+      <name>光束持续时间类型</name>
+      <tooltip>如果要创建光束的效果是持续性效果，请选择持续性效果。</tooltip>
+      <item value="Duration" text="持续时间" />
+      <item value="Persistent" text="持续性效果" />
+      <item value="null" text="无" />
+      <default value="Persistent" />
+      <item value="Heal" text="持续治疗效果" />
+    </input>
+    <input id="TargetType" type="WizardRadio">
+      <name>目标类型</name>
+      <item value="Unit" text="单位目标" />
+      <default value="Unit" />
+      <item value="Point" text="点" />
+    </input>
+    <condition id="isDuration" input="Type" value="Duration" match="equal" />
+    <input id="Duration" type="real32">
+      <name>光束持续时间</name>
+      <tooltip>光束持续指定的时间。</tooltip>
+      <condition id="isDuration" />
+    </input>
+    <validate type="error">
+      <condition empty="0" input="EffectLink" />
+      <text>要链接的效果为空</text>
+    </validate>
+    <validate type="warning">
+      <condition empty="0" input="Model" />
+      <text>光束没有模型</text>
+    </validate>
+    <condition id="TargetIsPoint" input="TargetType" match="equal" value="Point" />
+    <condition id="TargetIsUnit" input="TargetType" match="equal" value="Unit" />
+    <entry type="CActorSiteMover" catalog="Actor">
+      <id>^EffectLink^Site</id>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+      <field id="Sharing">
+        <value>PerEffectTree</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^EffectLink^.Start</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+      </field>
+      <condition id="TargetIsPoint" />
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <condition id="isHeal" input="Type" value="Heal" match="equal" />
+  </wizard>
+  <wizard id="AddShieldModelForModel">
+    <name>为模型添加护盾附着</name>
+    <input id="Model" type="CModelLink">
+      <name>模型</name>
+    </input>
+    <input id="Range" type="real32">
+      <name>护盾范围</name>
+      <default value="0.5" />
+    </input>
+    <objecttypes create="Model" />
+    <entry type="CActorShieldImpact" catalog="Actor">
+      <allowmodify />
+      <id>ShieldImpact</id>
+      <field id="On_Terms">
+        <index>0</index>
+        <value>UnitCreation; Exclude Missile</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <allowmodify />
+      <id>^Model^</id>
+      <field id="AttachProps_Id">
+        <value>Ref_Center</value>
+      </field>
+      <field id="AttachProps_SquibType">
+        <value>Shield</value>
+      </field>
+      <field id="AttachProps_RadiusShield">
+        <value>^Range^</value>
+      </field>
+    </entry>
+  </wizard>
+</wizardfile>

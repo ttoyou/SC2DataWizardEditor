@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="CreateItemNormal">
+    <instructions page="1">
+        创建一个新的普通物品
+        新创建的物品以Item_开头
+    </instructions>
+    <objecttypes create="Item" />
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>要定义的物品名称</tooltip>
+      <default value="无名称的物品" />
+    </input>
+    <input id="ItemId" type="CString">
+      <name>物品Id</name>
+      <tooltip>要定义的物品Id</tooltip>
+    </input>
+    <input id="ItemType" type="WizardRadio">
+      <name>物品类型</name>
+      <item value="CItem" text="普通" />
+      <item value="CItemEffectInstant" text="即时" />
+      <item value="CItemEffectTarget" text="目标" />
+      <default value="CItem" />
+    </input>
+    <name>创建普通物品</name>
+    <description>创建普通物品</description>
+    <input id="Description" type="CStringLink">
+      <name>描述</name>
+      <tooltip>要定义的物品的描述</tooltip>
+    </input>
+    <input id="Image" type="CImagePath">
+      <name>图标</name>
+      <tooltip>要定义的物品的图标</tooltip>
+    </input>
+    <entry type="^ItemType^" catalog="Item">
+      <id>^EntryId^</id>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^EntryId^</id>
+      <field id="Icon">
+        <value>^Image^</value>
+      </field>
+      <field id="AlertIcon">
+        <value>^Image^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Tooltip">
+        <value>^Description^</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>ITEM</parentid>
+      <id>^EntryId^</id>
+      <field id="Sight">
+        <value>0</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <macro id="EntryId">Item_^ItemId^</macro>
+    <entry type="CActorUnit" catalog="Actor">
+      <parentid>GenericUnitStandard</parentid>
+      <id>^EntryId^</id>
+      <field id="UnitIcon">
+        <value>^Image^</value>
+      </field>
+      <field id="HeroIcon">
+        <value>^Image^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <token id="unitName">
+        <value>^EntryId^</value>
+      </token>
+      <field id="StatusBarFlags">
+        <index>1</index>
+        <value>0</value>
+      </field>
+    </entry>
+    <input id="Model" type="CModelPath">
+      <name>模型</name>
+      <tooltip>指定要定义的物品的模型</tooltip>
+    </input>
+    <validate type="error">
+      <condition empty="0" input="ItemId" />
+      <text>id不能为空</text>
+    </validate>
+    <entry type="CModel" catalog="Model">
+      <id>^EntryId^</id>
+      <field id="Model">
+        <value>^Model^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <validate type="warning">
+      <condition id="NameNotEmpty" />
+      <text>名称为空，新创建的物品将没有名称</text>
+    </validate>
+    <condition id="NameNotEmpty" empty="0" input="Name" />
+    <validate type="warning">
+      <text>物品没有模型</text>
+      <condition empty="0" input="Model" />
+    </validate>
+  </wizard>
+</wizardfile>

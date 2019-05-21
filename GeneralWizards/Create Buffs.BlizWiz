@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="CreateBuffVisual">
+    <objecttypes create="Behavior" />
+    <name>创建有视觉特效的Buff</name>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <default value="无名称" />
+    </input>
+    <input id="Id" type="CString">
+      <name>Id</name>
+      <tooltip>Buff的Id</tooltip>
+    </input>
+    <instructions page="1">
+        创建一个有视觉特效的Buff
+    </instructions>
+    <input id="Model" type="CModelPath">
+      <name>模型</name>
+      <tooltip>视觉特效模型</tooltip>
+    </input>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^</id>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOrigin</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <index>4</index>
+        <value>Behavior.^Id^.Off</value>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>AnimBracketStop BSD</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^</id>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^</id>
+      <field id="Model">
+        <value>^Model^</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+  </wizard>
+  <wizard id="CreateBuffDeath">
+    <name>创建buff亡语（召唤生物）</name>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input type="CUnitLink" id="UnitType">
+      <name>单位类型</name>
+      <tooltip>死亡后创建的单位类型</tooltip>
+    </input>
+    <input id="UnitCount" type="int32">
+      <default value="1" />
+      <name>单位计数</name>
+      <tooltip>创建的单位计数</tooltip>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>Buff的名称</tooltip>
+      <default value="没有名称" />
+    </input>
+    <input id="EffectModel" type="CModelPath">
+      <name>死亡时特效模型</name>
+      <tooltip>单位死亡时创建的特效模型。</tooltip>
+    </input>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^</id>
+      <field id="DamageResponse_Handled">
+        <value>^Id^CreateUnit</value>
+      </field>
+      <field id="DamageResponse_Chance">
+        <value>1</value>
+      </field>
+      <field id="DamageResponse_Fatal">
+        <value>1</value>
+      </field>
+      <field id="InfoFlags">
+        <index>Hidden</index>
+        <value>1</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^CreateUnit</id>
+      <field id="SpawnUnit">
+        <value>^UnitType^</value>
+      </field>
+      <field id="SpawnCount">
+        <value>^UnitCount^</value>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^TimedLife</value>
+        <condition id="isTimedLife" />
+      </field>
+      <field id="Name">
+        <value>^Name^ 创建单位</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>SourceUnitOrPoint</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^Model</id>
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <field id="On_Terms">
+        <index>3</index>
+        <value>Effect.^Id^CreateUnit.Start</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^CreateUnit.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <index>3</index>
+        <value>Create</value>
+      </field>
+      <field id="On_Send">
+        <index>4</index>
+        <value>AnimBracketStop BSD</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpShadow</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <condition id="ModelPathExist" />
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="Host_Scope">
+        <value>Source</value>
+      </field>
+      <field id="Host_Actor">
+        <value>Find</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^Model</id>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>^EffectModel^</value>
+      </field>
+      <condition id="ModelPathExist" />
+    </entry>
+    <condition id="ModelPathExist" input="EffectModel" empty="0" />
+    <condition id="isTimedLife" operator="equal" value="1" input="TimedLifeCheck" />
+    <input id="TimedLifeCheck" type="WizardCheckbox">
+      <name>召唤物有持续时间</name>
+    </input>
+    <input id="TimedLife" type="real32">
+      <name>召唤物持续时间</name>
+      <default value="0.0" />
+      <condition id="isTimedLife" />
+    </input>
+    <entry catalog="Behavior" type="CBehaviorBuff">
+      <id>^Id^TimedLife</id>
+      <field id="Duration">
+        <value>^TimedLife^</value>
+      </field>
+      <parentid>TimedLife</parentid>
+      <condition id="isTimedLife" />
+      <field id="Name">
+        <value>^Name^ 限时生命</value>
+      </field>
+    </entry>
+    <objecttypes create="Behavior" />
+    <instructions page="1">
+        创建一个行为，当拥有此行为的单位死亡时会召唤生物。
+    </instructions>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^TimedLife</id>
+      <field id="Behavior">
+        <value>^Id^TimedLife</value>
+      </field>
+    </entry>
+    <validate type="error">
+      <condition input="UnitType" empty="0" />
+      <text>需要一个召唤单位类型</text>
+    </validate>
+  </wizard>
+</wizardfile>
