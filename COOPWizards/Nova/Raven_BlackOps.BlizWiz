@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Raven_BlackOps">
+    <name>铁鸦II型</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -319,7 +322,6 @@
         <value>Raven_Fidget_Spin</value>
       </field>
     </entry>
-    <category>合作任务/诺娃</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^_Death</id>
@@ -407,7 +409,5 @@
         <value>Assets\Units\Terran\Raven_BlackOps_Death\Raven_BlackOps_Death.m3</value>
       </field>
     </entry>
-    <name>铁鸦II型</name>
-    <objecttypes create="Unit" />
   </wizard>
 </wizardfile>

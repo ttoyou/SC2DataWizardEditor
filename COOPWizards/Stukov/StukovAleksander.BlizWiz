@@ -246,6 +246,9 @@
       <field id="DeathArray_ModelLink">
         <value>^Id^_Death</value>
       </field>
+      <field id="PortraitActor">
+        <value>InfestedStukovPortrait</value>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -1498,6 +1501,9 @@
       <field id="Occlusion">
         <value>Show</value>
         <index>5</index>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Aleksander_Stukov_Coop_Death\Aleksander_Stukov_Coop_Death.m3</value>
       </field>
     </entry>
   </wizard>

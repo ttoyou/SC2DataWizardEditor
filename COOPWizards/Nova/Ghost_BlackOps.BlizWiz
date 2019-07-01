@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Ghost_BlackOps">
+    <name>特战幽灵</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -82,61 +97,47 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--修改-->
       <field id="LifeStart">
         <value>250</value>
       </field>
-      <!--修改-->
       <field id="LifeMax">
         <value>250</value>
       </field>
-      <!--修改-->
       <field id="Speed">
         <value>2.25</value>
       </field>
-      <!--修改-->
       <field id="Acceleration">
         <value>1000</value>
       </field>
-      <!--修改-->
       <field id="LateralAcceleration">
         <value>46.0625</value>
       </field>
-      <!--修改-->
       <field id="StationaryTurningRate">
         <value>999.8437</value>
       </field>
-      <!--修改-->
       <field id="TurningRate">
         <value>999.8437</value>
       </field>
-      <!--重要-->
       <field id="FlagArray">
         <index>PreventDestroy</index>
         <value>1</value>
       </field>
-      <!--重要-->
       <field id="Radius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="SeparationRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="InnerRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="MinimapRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="PlaneArray">
         <index>Ground</index>
         <value>1</value>
       </field>
-      <!--重要-->
       <field id="Collide">
         <index>1</index>
         <value>1</value>
@@ -160,7 +161,6 @@
         <index>ArmySelect</index>
         <value>1</value>
       </field>
-      <!--修改-->
       <field id="Sight">
         <value>11</value>
       </field>
@@ -175,40 +175,32 @@
       <field id="AttackTargetPriority">
         <value>20</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
       <token id="unitName">
         <value>^Id^</value>
       </token>
-      <!--重要-->
       <field id="GroupIcon_Image">
         <value>Assets\Textures\Wireframe-Terran-Ghost.dds</value>
       </field>
-      <!--重要-->
       <field id="LifeArmorIcon">
         <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
       </field>
-      <!--重要-->
       <field id="UnitIcon">
         <value>Assets\Textures\btn-unit-terran-blackops-ghost.dds</value>
       </field>
-      <!--重要-->
       <field id="Wireframe_Image">
         <value>Assets\Textures\Wireframe-Terran-Ghost.dds</value>
       </field>
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--重要-->
       <field id="WalkAnimMoveSpeed">
         <value>2.25</value>
       </field>
-      <!--修改-->
-      <!--修改-->
-      <!--修改-->
       <parentid>GenericUnitBase</parentid>
-      <!---->
       <field id="SoundArray">
         <index>Ready</index>
         <value>Ghost_Ready</value>
@@ -301,6 +293,7 @@
         <value>UnloadDropAnim</value>
         <index>1</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -308,7 +301,6 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--修改-->
       <field id="Model">
         <value>Assets\Units\Terran\Ghost_BlackOps\Ghost_BlackOps.m3</value>
       </field>
@@ -321,30 +313,25 @@
       <field id="SelectionRadius">
         <value>0.375000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
-      <!--修改-->
       <field id="Icon">
         <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
       </field>
-      <!--修改-->
       <field id="DisplayEffect">
         <value>^Id^Damage</value>
       </field>
-      <!--修改-->
       <field id="TargetFilters">
         <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
       </field>
-      <!--修改-->
       <field id="Period">
         <value>1.5</value>
       </field>
-      <!--修改-->
       <field id="DamagePoint">
         <value>0.083</value>
       </field>
-      <!--修改-->
       <field id="Effect">
         <value>^Id^Damage</value>
       </field>
@@ -354,6 +341,7 @@
       <field id="Backswing">
         <value>1.167</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Actor" type="CActorAction">
       <id>^Id^Attack</id>
@@ -361,11 +349,9 @@
       <token id="effectAttack">
         <value>^Id^Damage</value>
       </token>
-      <!--修改-->
       <field id="LaunchAssets_Sound">
         <value>Ghost_AttackLaunch</value>
       </field>
-      <!--修改-->
       <field id="ImpactMap_Sound">
         <index>0</index>
         <value>Ghost_AttackImpact</value>
@@ -383,10 +369,8 @@
       <field id="AccuracyHalfArc">
         <value>5.000000</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <objecttypes create="Unit" />
-    <category>合作任务/诺娃</category>
-    <name>特战幽灵</name>
     <entry type="CEffectDamage" catalog="Effect">
       <id>^Id^Damage</id>
       <parentid>DU_WEAP</parentid>
@@ -400,6 +384,7 @@
       <field id="Amount">
         <value>15</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^AttackImpact</id>
@@ -407,6 +392,7 @@
       <field id="Model">
         <value>Assets\Effects\Terran\GhostWeaponImpact\GhostWeaponImpact.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^AttackLaunch</id>
@@ -414,6 +400,7 @@
       <field id="Model">
         <value>Assets\Effects\Terran\GhostWeaponLaunch\GhostWeaponLaunch.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^_Portrait</id>
@@ -424,6 +411,7 @@
       <field id="Model">
         <value>Assets\Portraits\Terran\Ghost_BlackOps_Portrait\Ghost_BlackOps_Portrait.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
@@ -440,6 +428,7 @@
       <field id="Model">
         <value>Assets\Units\Terran\Ghost_BlackOps_Death\Ghost_BlackOps_Death.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

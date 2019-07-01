@@ -1,0 +1,832 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="HybridNemesis">
+    <name>混合体天罚者</name>
+    <category>合作任务/埃蒙</category>
+    <objecttypes create="Unit" />
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Weapon</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="LifeStart">
+        <value>600</value>
+      </field>
+      <field id="LifeMax">
+        <value>600</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>300</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>300</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>2.7968</value>
+      </field>
+      <field id="Acceleration">
+        <value>1.0625</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>360</value>
+      </field>
+      <field id="TurningRate">
+        <value>360</value>
+      </field>
+      <field id="Sight">
+        <value>9</value>
+      </field>
+      <field id="Height">
+        <value>4</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.25</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.25</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.5</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>18</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.25</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>50</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>50</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>HybridNemesisPortrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>1.7031</value>
+      </field>
+      <field id="BarOffset">
+        <value>75</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-protoss-hybridnemesis.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-zerg-ancillaryarmor.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>HybridDBirth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>HybridZerg_Roar</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>QueenHelp</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>QueenWhat</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>QueenYes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>HybridF_Attack_vox</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Queen_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>zQueen_moveLoop</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>Queen_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>Queen_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>Queen_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>Queen_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>Queen_Highlight</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-hybridnemesis.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\wireframe-protoss-hybridnemesis-shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\wireframe-protoss-hybridnemesis-shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\wireframe-protoss-hybridnemesis-shield03.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Work,Start Work</value>
+        <index>69</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <index>0</index>
+        <value>HybridNemesisDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <index>0</index>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <index>0</index>
+        <value>Hybrid_Zerg_Death</value>
+      </field>
+      <field id="Remove_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+      </field>
+      <field id="Remove_Send">
+        <value>AnimBracketStart Attack Attack</value>
+      </field>
+      <field id="UnitFlags">
+        <value>0</value>
+        <index>StandAnimBirthVariation</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitHuge</value>
+        <index>2</index>
+      </field>
+      <field id="MovementHerdNode">
+        <value>HerdNode_ZergQueens</value>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantSeeBuildLocation</value>
+        <index>0</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>Alert_ZergBuildError</value>
+        <index>0</index>
+      </field>
+      <field id="ErrorArray_GroupSound">
+        <value>Alert_ZergBuildError</value>
+        <index>0</index>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantSeeLandLocation</value>
+        <index>1</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>Alert_ZergBuildError</value>
+        <index>1</index>
+      </field>
+      <field id="ErrorArray_GroupSound">
+        <value>Alert_ZergBuildError</value>
+        <index>1</index>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantBuildLocationInvalid</value>
+        <index>2</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>Alert_ZergBuildError</value>
+        <index>2</index>
+      </field>
+      <field id="ErrorArray_GroupSound">
+        <value>Alert_ZergBuildError</value>
+        <index>2</index>
+      </field>
+      <field id="ErrorArray_Error">
+        <value>CantLandLocationInvalid</value>
+        <index>3</index>
+      </field>
+      <field id="ErrorArray_Sound">
+        <value>Alert_ZergBuildError</value>
+        <index>3</index>
+      </field>
+      <field id="ErrorArray_GroupSound">
+        <value>Alert_ZergBuildError</value>
+        <index>3</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Hybrid_Nemesis\Hybrid_Nemesis.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>1.250000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.400000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.250000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="TechPurchaseCamera">
+        <value>Star2CameraLow08</value>
+      </field>
+      <field id="UnitGlossaryCamera">
+        <value>Star2CameraLow08</value>
+      </field>
+      <field id="PlanetPanelCamera">
+        <value>Star2CameraLow08</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.250000</value>
+      </field>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Hybrid_Nemesis_Death\Hybrid_Nemesis_Death.m3</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ZergMediumUnitDeathLow</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>HybridNemesisDeathSound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Actor</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.017000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>HybridNemesisDeathSound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXAcid</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.021000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXAcid</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXAcid</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.004000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXAcid</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.011000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.810000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.607000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>2.389000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Hybrid_Nemesis_DeathScreams</value>
+        <index>6</index>
+      </field>
+      <field id="LowQualityModel">
+        <value>ZergLargeUnitDeathLow</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^Weapon</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Period">
+        <value>1</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^WeaponPersistent</value>
+      </field>
+      <field id="LegacyOptions">
+        <value>1</value>
+        <index>CanRetargetWhileChanneling</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^WeaponDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>20</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^WeaponPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>PersistUntilDestroyed</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^WeaponDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>1</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^WeaponBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\HybridEnergizeBeamLarge\HybridEnergizeBeamLarge.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^WeaponAttack</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponDamage.Start; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+      <field id="Beam">
+        <value>^Id^WeaponBeam</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide</value>
+      </field>
+      <field id="AcquisitionYawHalfArc">
+        <value>10.000000</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>-1.000000</value>
+      </field>
+      <field id="LaunchSiteOps_Ops">
+        <value>SOpAttachWeapon</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^WeaponBeam</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Stop; At Effect</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^WeaponLoopSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Start; At Caster</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>HybridNemesisWeaponLoop</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^WeaponStartSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Start; At Target</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>HybridNemesisWeaponStart</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^WeaponStopSound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Stop; At Caster</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>HybridNemesisWeaponEnd</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^Weapon_Vx_01_Sound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Start; At Caster</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>HybridNemesisWeapon_Vx_01</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^Weapon_Vx_02_Sound</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^WeaponPersistent.Stop; At Caster</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>HybridNemesisWeapon_Vx_02</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+  </wizard>
+</wizardfile>

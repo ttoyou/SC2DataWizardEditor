@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="HHViking">
+    <name>德摩斯维京战机</name>
+    <category>合作任务/霍纳与汉</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,7 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
-    <!---->
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <entry catalog="Unit" type="CUnit">
       <id>^Id^Fighter</id>
       <field id="AbilArray_Link">
@@ -199,6 +213,7 @@
         <value>^Id^AssaultMode</value>
         <index>3</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^Fighter</id>
@@ -343,6 +358,7 @@
         <value>AnimPlay Morph Morph</value>
         <index>79</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^Fighter</id>
@@ -380,8 +396,9 @@
       <field id="ScaleMin">
         <value>1.200000,1.200000,1.200000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <category>合作任务/霍纳与汉</category>
+
     <entry catalog="Unit" type="CUnit">
       <id>^Id^Assault</id>
       <field id="AbilArray_Link">
@@ -585,6 +602,7 @@
       <field id="HotkeyAlias">
         <value>^Id^Fighter</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^Assault</id>
@@ -772,6 +790,7 @@
         <value>Create HH_Viking_Upgrade_AirDropSound</value>
         <index>76</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^Assault</id>
@@ -895,8 +914,8 @@
         <value>2</value>
         <index>9;SetA</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <name>德摩斯维京战机</name>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^FighterDeath</id>
@@ -938,6 +957,7 @@
         <value>Uni_DeathFXincidentallFire</value>
         <index>0</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^Fighter</id>
@@ -965,6 +985,7 @@
       <field id="AllowedMovement">
         <value>Slowing</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectCreatePersistent" catalog="Effect">
       <id>^Id^Fighter</id>
@@ -993,6 +1014,7 @@
         <value>0.21</value>
         <index>1</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP_SPLASH</parentid>
@@ -1013,6 +1035,7 @@
         <value>15</value>
         <index>Armored</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^FighterLM</id>
@@ -1029,6 +1052,7 @@
         <value>RangeCheckLE15</value>
         <index>0</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -1058,6 +1082,7 @@
         <value>BloodTargetImpact</value>
         <index>6;0</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <id>^Id^FighterAttackMissile</id>
@@ -1139,6 +1164,7 @@
         <value>Destroy</value>
         <index>7</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE_HALFLIFE</parentid>
@@ -1152,6 +1178,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -1162,6 +1189,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -1172,6 +1200,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>LaunchFX</parentid>
@@ -1182,8 +1211,8 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <objecttypes create="Unit" />
     <entry type="CAttachMethodPattern" catalog="AttachMethod">
       <id>AMPattern^Id^Fighter</id>
       <field id="Keyword">
@@ -1192,6 +1221,7 @@
       <field id="Driver">
         <value>^Id^FighterLM</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
@@ -1348,6 +1378,7 @@
         <value>Uni_DeathFXincidentallFire</value>
         <index>6</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^Assault</id>
@@ -1378,6 +1409,7 @@
       <field id="Effect">
         <value>^Id^Assault</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP</parentid>
@@ -1394,6 +1426,7 @@
       <field id="Death">
         <value>Silentkill</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorSound" catalog="Actor">
       <parentid>SoundOneShot</parentid>
@@ -1407,6 +1440,7 @@
       <field id="Sound">
         <value>VikingAssault_AttackLaunch</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -1429,6 +1463,7 @@
       <field id="LaunchAssets_Model">
         <value>^Id^AssaultAttackLaunch</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -1439,6 +1474,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>LaunchFX</parentid>
@@ -1449,6 +1485,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CAbilMorph" catalog="Abil">
       <id>^Id^FighterMode</id>
@@ -1501,6 +1538,7 @@
       <field id="InfoArray_RallyResetSection">
         <value>Stats</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CButton" catalog="Button">
       <id>^Id^FighterMode</id>
@@ -1516,6 +1554,7 @@
       <field id="Universal">
         <value>1</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorSound" catalog="Actor">
       <parentid>SoundOneShot</parentid>
@@ -1531,6 +1570,7 @@
         <value>Create</value>
         <index>1</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorModel" catalog="Actor">
       <parentid>ModelAnimationStyleOneShot</parentid>
@@ -1555,6 +1595,7 @@
         <value>1</value>
         <index>Scale</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorModel" catalog="Actor">
       <parentid>ModelAnimationStyleOneShot</parentid>
@@ -1579,6 +1620,7 @@
         <value>1</value>
         <index>Scale</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorUnit" catalog="Actor">
       <parentid>GenericUnitBaseMorphTransition</parentid>
@@ -1713,6 +1755,7 @@
         <value>Create VikingLandShock</value>
         <index>72</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorUnit" catalog="Actor">
       <parentid>GenericUnitBaseMorphTransition</parentid>
@@ -1839,6 +1882,7 @@
         <value>PortraitAnimSetTimeFrom Visor MorphStart</value>
         <index>71</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>Unit</parentid>
@@ -1873,6 +1917,7 @@
       <field id="ScaleMin">
         <value>1.200000,1.200000,1.200000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CAbilMorph" catalog="Abil">
       <id>^Id^AssaultMode</id>
@@ -1928,6 +1973,7 @@
       <field id="InfoArray_RallyResetSection">
         <value>Stats</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CButton" catalog="Button">
       <id>^Id^AssaultMode</id>
@@ -1943,6 +1989,7 @@
       <field id="Universal">
         <value>1</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorSound" catalog="Actor">
       <parentid>SoundOneShot</parentid>
@@ -1958,6 +2005,7 @@
         <value>Create</value>
         <index>1</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

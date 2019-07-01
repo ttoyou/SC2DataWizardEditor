@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Vulture">
+    <name>秃鹫</name>
+    <category>合作任务/雷诺</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -165,6 +180,7 @@
       <field id="SubgroupPriority">
         <value>112</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -233,6 +249,7 @@
         <value>Vulture_Movement</value>
         <index>Movement</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -273,6 +290,21 @@
       <field id="TipabilityLength">
         <value>0.800000</value>
       </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="LowQualityModel">
+        <value>TerranMediumUnitDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\VultureDeath\VultureDeath.m3</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
@@ -297,8 +329,8 @@
       <field id="Backswing">
         <value>0</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <category>合作任务/雷诺</category>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^</id>
       <field id="EditorCategories">
@@ -307,6 +339,7 @@
       <field id="ImpactEffect">
         <value>^Id^U</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP_MISSILE</parentid>
@@ -321,6 +354,7 @@
         <value>15</value>
         <index>Light</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -337,6 +371,7 @@
       <field id="ImpactMap_Sound">
         <value>VultureAttackImpact</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <parentid>GenericAttackMissile</parentid>
@@ -344,6 +379,7 @@
       <token id="unitName">
         <value>^Id^Weapon</value>
       </token>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -354,6 +390,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>LaunchFX</parentid>
@@ -364,6 +401,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -374,22 +412,8 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <entry type="CModel" catalog="Model">
-      <parentid>UnitDeath</parentid>
-      <id>^Id^Death</id>
-      <token id="Race">
-        <value>Terran</value>
-      </token>
-      <field id="LowQualityModel">
-        <value>TerranMediumUnitDeathLow</value>
-      </field>
-      <field id="Model">
-        <value>Assets\Units\Terran\VultureDeath\VultureDeath.m3</value>
-      </field>
-    </entry>
-    <name>秃鹫</name>
-    <objecttypes create="Unit" />
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
       <id>^Id^Weapon</id>
@@ -402,6 +426,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
   </wizard>
 </wizardfile>

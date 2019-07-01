@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="SISCV">
+    <name>被感染的SCV</name>
+    <category>合作任务/斯托科夫</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -83,7 +98,7 @@
         <value>^Name^</value>
       </field>
       <field id="WeaponArray_Link">
-        <value>FusionCutter</value>
+        <value>^Id^</value>
       </field>
       <field id="Race">
         <value>InfT</value>
@@ -190,6 +205,7 @@
         <index>0;Turn</index>
         <value>33</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -253,6 +269,11 @@
         <value>SISCV_Ready</value>
         <index>Ready</index>
       </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -260,7 +281,6 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!---->
       <field id="RequiredAnims">
         <value>Assets\Units\Terran\SCV_SwarmAnims\SCV_SwarmAnims.m3a</value>
       </field>
@@ -304,6 +324,7 @@
       <field id="Model">
         <value>Assets\Units\Zerg\SCV_Stukov_Coop\SCV_Stukov_Coop.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^_Portrait</id>
@@ -317,8 +338,8 @@
       <field id="Model">
         <value>Assets\Portraits\Zerg\InfestedGenericUnit_Portrait_Stukov\InfestedGenericUnit_Portrait_Stukov.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <category>合作任务/斯托科夫</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^_Death</id>
@@ -334,8 +355,79 @@
       <field id="Model">
         <value>Assets\Units\Zerg\SCV_Stukov_Coop_Death\SCV_Stukov_Coop_Death.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <name>被感染的SCV</name>
-    <objecttypes create="Unit" />
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>0.1</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Melee</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Amount">
+        <value>5</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectAttack">
+        <value>^Id^</value>
+      </token>
+      <field id="ShieldFlashType">
+        <value>Header</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Sound">
+        <value>SCV_AttackLaunch</value>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^.AttackStart</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RaceImpactFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <token id="Race">
+        <value>Terran</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Other\PhysicsImpactSparksLight\PhysicsImpactSparksLight.m3</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
   </wizard>
 </wizardfile>

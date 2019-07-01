@@ -1,7 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
-  <!---->
+  <!--合作任务单位向导-->
   <wizard id="Scout">
+    <name>侦察机</name>
+    <category>合作任务/菲尼克斯</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,7 +12,19 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
-    <!---->
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
       <field id="AbilArray_Link">
@@ -177,6 +192,7 @@
         <value>^Id^AA</value>
         <index>1</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -353,6 +369,7 @@
         <value>ModelSwap ^Id^</value>
         <index>75</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>Unit</parentid>
@@ -378,6 +395,7 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^AA</id>
@@ -405,6 +423,7 @@
       <field id="AllowedMovement">
         <value>Slowing</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -424,6 +443,7 @@
       <field id="ImpactMap_Sound">
         <value>Scout_AirAttackImpact</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <parentid>GenericAttackMissile</parentid>
@@ -431,6 +451,7 @@
       <token id="unitName">
         <value>^Id^AAWeaponLeft</value>
       </token>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -444,6 +465,7 @@
       <field id="LaunchAttachQuery_Methods">
         <value>AMFilterWeaponRight</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <parentid>GenericAttackMissile</parentid>
@@ -451,6 +473,7 @@
       <token id="unitName">
         <value>^Id^AAWeaponRight</value>
       </token>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectCreatePersistent" catalog="Effect">
       <id>^Id^AA</id>
@@ -479,6 +502,7 @@
         <value>0</value>
         <index>1</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^AALMLeft</id>
@@ -503,6 +527,7 @@
       <field id="Movers_IfRangeLTE">
         <value>4</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^AALMRight</id>
@@ -527,6 +552,7 @@
       <field id="Movers_IfRangeLTE">
         <value>4</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <id>^Id^AAU</id>
@@ -546,6 +572,7 @@
       <field id="Visibility">
         <value>Visible</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -556,6 +583,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ScoutAirLeftAttackImpact</parentid>
@@ -563,6 +591,7 @@
       <field id="Model">
         <value>Assets\Effects\Protoss\PhoenixMissileImpact\PhoenixMissileImpact.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -573,6 +602,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -583,6 +613,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
@@ -593,6 +624,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
@@ -603,6 +635,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CMoverMissile" catalog="Mover">
       <id>^Id^AAWeaponLeft</id>
@@ -651,6 +684,7 @@
         <value>MAX</value>
         <index>2;0</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CMoverMissile" catalog="Mover">
       <id>^Id^AAWeaponRight</id>
@@ -699,6 +733,7 @@
         <value>MAX</value>
         <index>2;0</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^AG</id>
@@ -720,6 +755,7 @@
       <field id="AllowedMovement">
         <value>Slowing</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <id>^Id^AG</id>
@@ -739,6 +775,7 @@
       <field id="Amount">
         <value>16</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -755,10 +792,12 @@
       <field id="ImpactMap_Sound">
         <value>Scout_GroundAttackImpact</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorModel" catalog="Actor">
       <parentid>GenericAttackModel</parentid>
       <id>^Id^AGAttackModel</id>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -769,6 +808,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>LaunchFX</parentid>
@@ -779,6 +819,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
@@ -804,6 +845,7 @@
       <field id="Model">
         <value>Assets\Units\Protoss\ScoutDeath\ScoutDeath.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>OneShotSpellFX</parentid>
@@ -835,10 +877,8 @@
       <field id="ShadowRadius">
         <value>0.750000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <name>侦察机</name>
-    <category>合作任务/菲尼克斯</category>
-    <objecttypes create="Unit" />
     <entry type="CActorModel" catalog="Actor">
       <parentid>ModelAddition</parentid>
       <id>^Id^WarpInStargate</id>
@@ -853,6 +893,7 @@
         <value>Destroy</value>
         <index>3</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>PersistentSpellFX</parentid>
@@ -872,6 +913,7 @@
       <field id="ShadowRadius">
         <value>0.750000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

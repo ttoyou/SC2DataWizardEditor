@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="CorsairMP">
+    <name>海盗船</name>
+    <category>合作任务/沃拉尊</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -175,6 +190,7 @@
       <field id="SubgroupPriority">
         <value>119</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -251,6 +267,25 @@
       <field id="DeathArray_SoundLink">
         <value>Corsair_Explode</value>
       </field>
+      <condition id="CreateUnit" />
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Corsair_Land</value>
+        <index>69</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -282,8 +317,8 @@
       <field id="ShadowRadius">
         <value>0.882000</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <category>合作任务/沃拉尊</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^Death</id>
@@ -311,6 +346,7 @@
       <field id="VariationCount">
         <value>2</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^</id>
@@ -339,6 +375,7 @@
       <field id="Period">
         <value>0.55</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP</parentid>
@@ -368,6 +405,7 @@
         <value>5</value>
         <index>Light</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -384,6 +422,7 @@
       <field id="LaunchModel">
         <value>^Id^AttackLaunchModel</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -394,6 +433,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>LaunchFX</parentid>
@@ -404,9 +444,8 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <name>海盗船</name>
-    <objecttypes create="Unit" />
     <entry type="CActorModel" catalog="Actor">
       <parentid>GenericAttackLaunchModel</parentid>
       <id>^Id^AttackLaunchModel</id>
@@ -418,6 +457,56 @@
         <value>SetTintColor {32,32,255 2.000000}</value>
         <index>2</index>
       </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^Placement</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Corsair_Placement\Corsair_Placement.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.750000</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Corsair_WarpIn\Corsair_WarpIn.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossUnitBirth</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.750000</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

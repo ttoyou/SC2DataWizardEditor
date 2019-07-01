@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="SiegeTank_BlackOps">
+    <name>重型攻城坦克</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -784,7 +787,6 @@
         <value>SOpAttachHarness</value>
       </field>
     </entry>
-    <category>合作任务/诺娃</category>
     <entry type="CModel" catalog="Model">
       <parentid>SiegeTankDeath</parentid>
       <id>^Id^_Death</id>
@@ -1298,8 +1300,6 @@
         <index>2</index>
       </field>
     </entry>
-    <name>重型攻城坦克</name>
-    <objecttypes create="Unit" />
     <entry type="CAbilMorph" catalog="Abil">
       <id>^Id^Unsiege</id>
       <field id="AbilSetId">

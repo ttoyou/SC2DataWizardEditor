@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Supplicant">
+    <name>死徒</name>
+    <category>合作任务/阿拉纳克</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -166,6 +181,7 @@
         <value>1</value>
         <index>Ground</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -242,6 +258,40 @@
       <field id="DeathArray_SoundLink">
         <value>Supplicant_DeathFX</value>
       </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Adept_Land</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Templar_LandSweetener</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk; AnimPlaying Spell</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Spell</value>
+        <index>71</index>
+      </field>
+      <field id="PlacementSound">
+        <value>Protoss_BuildingPlacementSmall</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^PlacementModel</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -262,6 +312,75 @@
       <field id="Model">
         <value>Assets\Units\Protoss\Supplicant\Supplicant.m3</value>
       </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^_Portrait</id>
+      <parentid>Portrait</parentid>
+      <field id="Name">
+        <value>^Name^头像</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\supplicantportrait_static.dds</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Portraits\Protoss\Supplicant_Portrait\Supplicant_Portrait.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^_Death</id>
+      <parentid>UnitDeath</parentid>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossSpiritDeathLow</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Supplicant_Death\Supplicant_Death.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^Supplicant_WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Supplicant_WarpIn\Supplicant_WarpIn.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossUnitBirth</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Placement</parentid>
+      <id>^Id^PlacementModel</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Supplicant_PlacementModel\Supplicant_PlacementModel.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
@@ -288,6 +407,7 @@
       <field id="DamagePoint">
         <value>0.125</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Actor" type="CActorAction">
       <id>^Id^Attack</id>
@@ -309,6 +429,7 @@
       <field id="LaunchSiteOps_Ops">
         <value>SOpAttachWeaponRight</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^AttackImpact</id>
@@ -316,6 +437,7 @@
       <field id="Model">
         <value>Assets\Effects\Protoss\Supplicant_COOP_Missile_Impact\Supplicant_COOP_Missile_Impact.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^LMWeapon</id>
@@ -323,25 +445,14 @@
       <field id="Model">
         <value>Assets\Effects\Protoss\Supplicant_COOP_Missile\Supplicant_COOP_Missile.m3</value>
       </field>
-    </entry>
-    <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
-      <parentid>Portrait</parentid>
-      <field id="Name">
-        <value>^Name^头像</value>
-      </field>
-      <field id="Image">
-        <value>Assets\Textures\supplicantportrait_static.dds</value>
-      </field>
-      <field id="Model">
-        <value>Assets\Portraits\Protoss\Supplicant_Portrait\Supplicant_Portrait.m3</value>
-      </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^LM</id>
       <field id="ImpactEffect">
         <value>^Id^Damage</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Effect" type="CEffectDamage">
       <id>^Id^Damage</id>
@@ -355,14 +466,17 @@
       <field id="Death">
         <value>Blast</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
       <id>^Id^LMWeapon</id>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CMoverMissile" catalog="Mover">
       <parentid>MissileDefault</parentid>
       <id>^Id^LMWeapon</id>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <id>^Id^AttackMissile</id>
@@ -370,22 +484,7 @@
       <token id="unitName">
         <value>^Id^LMWeapon</value>
       </token>
-    </entry>
-    <category>合作任务/阿拉纳克</category>
-    <name>死徒</name>
-    <objecttypes create="Unit" />
-    <entry type="CModel" catalog="Model">
-      <parentid>UnitDeath</parentid>
-      <field id="Occlusion">
-        <value>Show</value>
-      </field>
-      <field id="LowQualityModel">
-        <value>ProtossSpiritDeathLow</value>
-      </field>
-      <id>^Id^_Death</id>
-      <field id="Model">
-        <value>Assets\Units\Protoss\Supplicant_Death\Supplicant_Death.m3</value>
-      </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CSound" catalog="Sound">
       <parentid>Combat</parentid>
@@ -422,6 +521,7 @@
       </field>
       <id>Supplicant_DeathFX</id>
       <allowmodify />
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CSound" catalog="Sound">
       <parentid>Combat</parentid>
@@ -477,6 +577,7 @@
       </field>
       <id>Supplicant_AttackImpact</id>
       <allowmodify />
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CSound" catalog="Sound">
       <parentid>Combat</parentid>
@@ -540,6 +641,7 @@
       </field>
       <id>Supplicant_AttackLaunch</id>
       <allowmodify />
+      <condition id="CreateWeapon" />
     </entry>
   </wizard>
 </wizardfile>

@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="HHWraith">
+    <name>阿斯忒瑞亚怨灵战机</name>
+    <category>合作任务/霍纳与汉</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -163,6 +178,7 @@
       <field id="MinimapRadius">
         <value>0.625</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -286,6 +302,7 @@
         <value>AnimBracketStop Cover</value>
         <index>69</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -341,8 +358,8 @@
         <value>2</value>
         <index>2;Weapon</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <category>合作任务/霍纳与汉</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^Death</id>
@@ -358,6 +375,7 @@
       <field id="Model">
         <value>Assets\Units\Terran\WraithDeath\WraithDeath.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^</id>
@@ -382,6 +400,7 @@
       <field id="AllowedMovement">
         <value>Slowing</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury10AB</id>
@@ -394,6 +413,7 @@
       <field id="Behavior">
         <value>^Id^Fury10</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury1AB</id>
@@ -406,6 +426,7 @@
       <field id="Behavior">
         <value>^Id^Fury1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury1RB</id>
@@ -418,6 +439,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury2AB</id>
@@ -430,6 +452,7 @@
       <field id="Behavior">
         <value>^Id^Fury2</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury2RB</id>
@@ -442,6 +465,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury3AB</id>
@@ -454,6 +478,7 @@
       <field id="Behavior">
         <value>^Id^Fury3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury3RB</id>
@@ -466,6 +491,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury4AB</id>
@@ -478,6 +504,7 @@
       <field id="Behavior">
         <value>^Id^Fury4</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury4RB</id>
@@ -490,6 +517,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury5AB</id>
@@ -502,6 +530,7 @@
       <field id="Behavior">
         <value>^Id^Fury5</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury5RB</id>
@@ -514,6 +543,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury6AB</id>
@@ -526,6 +556,7 @@
       <field id="Behavior">
         <value>^Id^Fury6</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury6RB</id>
@@ -538,6 +569,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury7AB</id>
@@ -550,6 +582,7 @@
       <field id="Behavior">
         <value>^Id^Fury7</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury7RB</id>
@@ -562,6 +595,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury8AB</id>
@@ -574,6 +608,7 @@
       <field id="Behavior">
         <value>^Id^Fury8</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury8RB</id>
@@ -586,6 +621,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectApplyBehavior" catalog="Effect">
       <id>^Id^Fury9AB</id>
@@ -598,6 +634,7 @@
       <field id="Behavior">
         <value>^Id^Fury9</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectRemoveBehavior" catalog="Effect">
       <id>^Id^Fury9RB</id>
@@ -610,6 +647,7 @@
       <field id="WhichUnit_Value">
         <value>Caster</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSwitch" catalog="Effect">
       <id>^Id^FurySwitch</id>
@@ -702,6 +740,7 @@
       <field id="ValidatorArray">
         <value>Have^Id^Fury</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch0</id>
@@ -712,6 +751,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch1</id>
@@ -726,6 +766,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch10</id>
@@ -736,6 +777,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch2</id>
@@ -750,6 +792,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch3</id>
@@ -764,6 +807,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch4</id>
@@ -778,6 +822,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch5</id>
@@ -792,6 +837,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch6</id>
@@ -806,6 +852,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch7</id>
@@ -820,6 +867,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch8</id>
@@ -834,6 +882,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^FurySwitch9</id>
@@ -848,6 +897,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^LaunchMissile</id>
@@ -860,6 +910,7 @@
       <field id="AmmoUnit">
         <value>^Id^Weapon</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectSet" catalog="Effect">
       <id>^Id^LaunchMissileSet</id>
@@ -874,6 +925,7 @@
         <value>^Id^LaunchMissile</value>
         <index>1</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP</parentid>
@@ -890,6 +942,7 @@
       <field id="Amount">
         <value>16</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury10</id>
@@ -906,6 +959,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>2</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury1</id>
@@ -922,6 +976,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury2</id>
@@ -938,6 +993,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.2</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury3</id>
@@ -954,6 +1010,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury4</id>
@@ -970,6 +1027,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.4</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury5</id>
@@ -986,6 +1044,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.5</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury6</id>
@@ -1002,6 +1061,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.6</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury7</id>
@@ -1018,6 +1078,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.7</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury8</id>
@@ -1034,6 +1095,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.8</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CBehaviorBuff" catalog="Behavior">
       <id>^Id^Fury9</id>
@@ -1050,6 +1112,7 @@
       <field id="Modification_AttackSpeedMultiplier">
         <value>1.9</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -1069,6 +1132,7 @@
       <field id="ImpactMap_Sound">
         <value>Wraith_GroundAttackImpact</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <parentid>GenericAttackMissile</parentid>
@@ -1076,6 +1140,7 @@
       <token id="unitName">
         <value>^Id^Weapon</value>
       </token>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CMoverMissile" catalog="Mover">
       <parentid>MissileDefault</parentid>
@@ -1104,6 +1169,7 @@
       <field id="MotionPhases_YawPitchRoll">
         <value>719.2968</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -1114,6 +1180,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -1124,6 +1191,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -1134,6 +1202,7 @@
       <field id="EditorCategories">
         <value>Race:Terran</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
@@ -1144,6 +1213,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:FactionMarauder</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury1</id>
@@ -1156,6 +1226,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury10</id>
@@ -1168,6 +1239,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury2</id>
@@ -1180,6 +1252,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury3</id>
@@ -1192,6 +1265,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury4</id>
@@ -1204,6 +1278,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury5</id>
@@ -1216,6 +1291,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury6</id>
@@ -1228,6 +1304,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury7</id>
@@ -1240,6 +1317,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury8</id>
@@ -1252,6 +1330,7 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
       <id>Have^Id^Fury9</id>
@@ -1264,9 +1343,8 @@
       <field id="Value">
         <value>1</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <name>阿斯忒瑞亚怨灵战机</name>
-    <objecttypes create="Unit" />
     <entry type="CAttachMethodPattern" catalog="AttachMethod">
       <id>AMPattern^Id^</id>
       <field id="Keyword">
@@ -1278,6 +1356,7 @@
       <field id="Base">
         <value>::RollingIndex</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
   </wizard>
 </wizardfile>

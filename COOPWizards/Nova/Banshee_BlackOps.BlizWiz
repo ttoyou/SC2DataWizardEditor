@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Banshee_BlackOps">
+    <name>隐秘女妖</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -157,6 +172,7 @@
         <value>1</value>
         <index>Air</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -269,6 +285,7 @@
         <value>_UnitLarge</value>
         <index>2</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -323,6 +340,7 @@
       <field id="ShadowRadius">
         <value>0.937500</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
@@ -356,6 +374,7 @@
       <field id="AllowedMovement">
         <value>Slowing</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Actor" type="CActorAction">
       <id>^Id^Attack</id>
@@ -377,6 +396,7 @@
       <field id="LaunchAttachQuery_Methods">
         <value>AMPattern^Id^</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^AttackImpact</id>
@@ -384,6 +404,7 @@
       <field id="Model">
         <value>Assets\Effects\Terran\BansheeMissileImpact\BansheeMissileImpact.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <field id="Visibility">
@@ -393,6 +414,7 @@
         <value>18</value>
       </field>
       <id>^Id^Damage</id>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectCreatePersistent" catalog="Effect">
       <field id="WhichLocation_Value">
@@ -415,6 +437,7 @@
       <field id="PeriodicPeriodArray">
         <value>0.15</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Effect" type="CEffectLaunchMissile">
       <id>^Id^LaunchMissile</id>
@@ -424,6 +447,7 @@
       <field id="AmmoUnit">
         <value>^Id^Weapon</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Unit" type="CUnit">
       <id>^Id^Weapon</id>
@@ -431,6 +455,7 @@
       <field id="Mover">
         <value>BacklashRocketsLMWeapon</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <id>^Id^AttackMissile</id>
@@ -438,6 +463,7 @@
       <token id="unitName">
         <value>^Id^Weapon</value>
       </token>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <id>^Id^Weapon</id>
@@ -445,10 +471,8 @@
       <field id="Model">
         <value>Assets\Effects\Terran\BansheeMissile\BansheeMissile.m3</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <objecttypes create="Unit" />
-    <name>隐秘女妖</name>
-    <category>合作任务/诺娃</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <field id="LowQualityModel">
@@ -461,6 +485,7 @@
       <field id="Model">
         <value>Assets\Units\Terran\Banshee_BlackOps_Death\Banshee_BlackOps_Death.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CAttachMethodPattern" catalog="AttachMethod">
       <id>AMPattern^Id^</id>
@@ -470,6 +495,7 @@
       <field id="Driver">
         <value>^Id^LaunchMissile</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
   </wizard>
 </wizardfile>

@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="GhostFemale_BlackOps">
+    <name>特战幽灵(Female)</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -82,61 +85,47 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--修改-->
       <field id="LifeStart">
         <value>250</value>
       </field>
-      <!--修改-->
       <field id="LifeMax">
         <value>250</value>
       </field>
-      <!--修改-->
       <field id="Speed">
         <value>2.25</value>
       </field>
-      <!--修改-->
       <field id="Acceleration">
         <value>1000</value>
       </field>
-      <!--修改-->
       <field id="LateralAcceleration">
         <value>46.0625</value>
       </field>
-      <!--修改-->
       <field id="StationaryTurningRate">
         <value>999.8437</value>
       </field>
-      <!--修改-->
       <field id="TurningRate">
         <value>999.8437</value>
       </field>
-      <!--重要-->
       <field id="FlagArray">
         <index>PreventDestroy</index>
         <value>1</value>
       </field>
-      <!--重要-->
       <field id="Radius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="SeparationRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="InnerRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="MinimapRadius">
         <value>0.375</value>
       </field>
-      <!--重要-->
       <field id="PlaneArray">
         <index>Ground</index>
         <value>1</value>
       </field>
-      <!--重要-->
       <field id="Collide">
         <index>1</index>
         <value>1</value>
@@ -196,34 +185,25 @@
       <token id="unitName">
         <value>^Id^</value>
       </token>
-      <!--重要-->
       <field id="GroupIcon_Image">
         <value>Assets\Textures\wireframe-ghostfemale.dds</value>
       </field>
-      <!--重要-->
       <field id="LifeArmorIcon">
         <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
       </field>
-      <!--重要-->
       <field id="UnitIcon">
         <value>Assets\Textures\btn-unit-terran-blackops-femaleghost.dds</value>
       </field>
-      <!--重要-->
       <field id="Wireframe_Image">
         <value>Assets\Textures\wireframe-ghostfemale.dds</value>
       </field>
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--重要-->
       <field id="WalkAnimMoveSpeed">
         <value>2.25</value>
       </field>
-      <!--修改-->
-      <!--修改-->
-      <!--修改-->
       <parentid>GenericUnitBase</parentid>
-      <!---->
       <field id="SoundArray">
         <index>Ready</index>
         <value>GhostAlternate_Ready</value>
@@ -329,7 +309,6 @@
       <field id="Name">
         <value>^Name^</value>
       </field>
-      <!--修改-->
       <field id="Model">
         <value>Assets\Units\Terran\GhostFemale_BlackOps\GhostFemale_BlackOps.m3</value>
       </field>
@@ -348,27 +327,21 @@
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
-      <!--修改-->
       <field id="Icon">
         <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
       </field>
-      <!--修改-->
       <field id="DisplayEffect">
         <value>^Id^Damage</value>
       </field>
-      <!--修改-->
       <field id="TargetFilters">
         <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
       </field>
-      <!--修改-->
       <field id="Period">
         <value>1.5</value>
       </field>
-      <!--修改-->
       <field id="DamagePoint">
         <value>0.083</value>
       </field>
-      <!--修改-->
       <field id="Effect">
         <value>^Id^Damage</value>
       </field>
@@ -385,11 +358,9 @@
       <token id="effectAttack">
         <value>^Id^Damage</value>
       </token>
-      <!--修改-->
       <field id="LaunchAssets_Sound">
         <value>Ghost_AttackLaunch</value>
       </field>
-      <!--修改-->
       <field id="ImpactMap_Sound">
         <index>0</index>
         <value>Ghost_AttackImpact</value>
@@ -408,9 +379,6 @@
         <value>5.000000</value>
       </field>
     </entry>
-    <objecttypes create="Unit" />
-    <category>合作任务/诺娃</category>
-    <name>特战幽灵(Female)</name>
     <entry type="CEffectDamage" catalog="Effect">
       <id>^Id^Damage</id>
       <parentid>DU_WEAP</parentid>

@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <wizard id="ZerglingStetmann">
+    <name>机械跳虫</name>
+    <category>合作任务/斯台特曼</category>
+    <objecttypes create="Unit" />
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>35</value>
+      </field>
+      <field id="LifeMax">
+        <value>35</value>
+      </field>
+      <field id="Speed">
+        <value>2.9531</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>8</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>108</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>33</value>
+      </field>
+      <field id="EnergyStart">
+        <value>50</value>
+      </field>
+      <field id="EnergyMax">
+        <value>50</value>
+      </field>
+      <field id="RepairTime">
+        <value>24</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>Burrow^Id^Down</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^BurrowDown</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>Burrow^Id^Down,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>4</value>
+        <index>5</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Zergling_Mecha_Portrait</value>
+      </field>
+      <field id="WalkAnimMoveSpeed">
+        <value>3.1328</value>
+      </field>
+      <field id="BarOffset">
+        <value>30</value>
+      </field>
+      <field id="BarWidth">
+        <value>36</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Zergling.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-zergling-mecha.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechagroundplating-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Zergling_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Zergling_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Zergling_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Zergling_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Zergling_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Zergling_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Zergling_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Zergling_Movement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>Zergling_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>Zergling_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>Zergling_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>Zergling_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>Zergling_Highlight</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-zergling-mecha.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Zergling.dds</value>
+      </field>
+      <parentid>GenericBurrowerStandard</parentid>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Cancel; MorphFrom ^Id^; MorphTo ^Id^Burrowed</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Burrow</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom ^Id^Burrowed</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Burrow</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom ^Id^Burrowed</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Burrow</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk; AnimPlaying Birth</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth.^Id^</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>TerrainSquibActivateGroup RippleStandard</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom ^Id^Burrowed</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>TerrainSquibActivateGroup RippleStandard</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^Burrowed; MorphFrom ^Id^</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>TerrainSquibDeactivate</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Zergling_Land</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom HybridZerglingEgg</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>79</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom HybridZerglingEgg</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>Create EggsplosionPurpleGeneric0</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^; MorphFrom HybridZerglingEgg</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart BSD Birth,01 Stand Death</value>
+        <index>81</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>ZergBurrowStandardAnimMacro</value>
+        <index>1</index>
+      </field>
+      <field id="Macros">
+        <value>ZergSmallBurrowEffects</value>
+        <index>2</index>
+      </field>
+      <field id="MovementHerdNode">
+        <value>HerdNode_ZergSmall</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Zergling_Mecha</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Melee</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechameleeattacks-level0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^ClawsDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>0.1</value>
+      </field>
+      <field id="Period">
+        <value>0.696</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^ClawsDamage</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^ClawsDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Amount">
+        <value>5</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^AttackStart</id>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^.AttackStart</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Zergling_AttackLaunch</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectAttack">
+        <value>^Id^ClawsDamage</value>
+      </token>
+      <field id="ImpactAttachQuery_Methods">
+        <value>AMFilterTargetVolumes</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>Zergling_AttackImpact</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Header</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Burrowed</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Cloaked</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Buried</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>0</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>35</value>
+      </field>
+      <field id="LifeMax">
+        <value>35</value>
+      </field>
+      <field id="EnergyStart">
+        <value>50</value>
+      </field>
+      <field id="EnergyMax">
+        <value>50</value>
+      </field>
+      <field id="Mover">
+        <value>Burrowed</value>
+      </field>
+      <field id="Sight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>108</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="RepairTime">
+        <value>24</value>
+      </field>
+      <field id="AbilArray_Link">
+        <value>Burrow^Id^Up</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^BurrowUp</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>Burrow^Id^Up,Execute</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>4</value>
+        <index>5</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Zergling_Mecha_Death</parentid>
+      <id>^Id^Death</id>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>Burrow^Id^Down</id>
+      <field id="AbilSetId">
+        <value>BrwD</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>BurrowDown</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>1</index>
+        <value>Cancel</value>
+      </field>
+      <field id="ActorKey">
+        <value>BurrowDown</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Interruptible</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>IgnorePlacement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressMovement</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^Burrowed</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.3703</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.333</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>0.5556</value>
+        <index>0;2;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1</value>
+        <index>0;5;0</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CAbilMorph" catalog="Abil">
+      <id>Burrow^Id^Up</id>
+      <field id="AbilSetId">
+        <value>BrwU</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:MorphsandBurrows</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <index>0</index>
+        <value>BurrowUp</value>
+      </field>
+      <field id="CmdButtonArray_Flags">
+        <value>1</value>
+        <index>0;ToSelection</index>
+      </field>
+      <field id="ActorKey">
+        <value>BurrowUp</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCast</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>IgnoreFacing</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressMovement</index>
+      </field>
+      <field id="InfoArray_Unit">
+        <value>^Id^</value>
+      </field>
+      <field id="InfoArray_RandomDelayMax">
+        <value>0.5</value>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1.0625</value>
+        <index>0;0;0</index>
+      </field>
+      <field id="InfoArray_SectionArray_DurationArray">
+        <value>1</value>
+        <index>0;1;1</index>
+      </field>
+      <field id="AutoCastFilters">
+        <value>Ground,Visible;Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden</value>
+      </field>
+      <field id="AutoCastValidatorArray">
+        <value>TargetNotChangeling</value>
+      </field>
+      <field id="AutoCastRange">
+        <value>2</value>
+      </field>
+      <field id="AutoCastCountMin">
+        <value>1</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^BurrowDown</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-zerg-burrow-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-zerg-burrow-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^BurrowUp</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-zerg-upburrow-color.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-zerg-upburrow-color.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+  </wizard>
+</wizardfile>

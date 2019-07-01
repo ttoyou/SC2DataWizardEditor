@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="ZealotShakuras">
+    <name>百夫长</name>
+    <category>合作任务/沃拉尊</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -190,6 +205,7 @@
       <field id="SubgroupPriority">
         <value>105</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -273,6 +289,32 @@
       <field id="DeathArray_SoundLink">
         <value>Zealot_DeathFX</value>
       </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Zealot_Land</value>
+        <index>69</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
+      </field>
+      <field id="PlacementSound">
+        <value>Protoss_BuildingPlacementSmall</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -316,8 +358,69 @@
       <field id="TextureDeclares_Adaptions_Slot">
         <value>main</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
-    <category>合作任务/沃拉尊</category>
+    <entry type="CModel" catalog="Model">
+      <parentid>Placement</parentid>
+      <id>^Id^Placement</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Zealot_Shakuras_Placement\Zealot_Shakuras_Placement.m3</value>
+      </field>
+      <field id="Radius">
+        <value>-1.000000</value>
+      </field>
+      <field id="Lighting">
+        <value>Zealot</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.416500</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.416500</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Zealot_Nerazim_WarpIn\Zealot_Nerazim_WarpIn.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossUnitBirth</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.555400</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.555400</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^Death</id>
@@ -339,6 +442,7 @@
       <field id="ShadowRadius">
         <value>0.555400</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CActorSound" catalog="Actor">
       <parentid>SoundOneShot</parentid>
@@ -354,6 +458,7 @@
       <field id="Sound">
         <value>ZealotNerazim_Death</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CWeaponLegacy" catalog="Weapon">
       <id>^Id^</id>
@@ -395,6 +500,7 @@
       <field id="Effect">
         <value>^Id^PsiBladesBurst</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectCreatePersistent" catalog="Effect">
       <id>^Id^PsiBladesBurst</id>
@@ -425,6 +531,7 @@
         <value>0.28</value>
         <index>1</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP</parentid>
@@ -441,6 +548,7 @@
       <field id="ValidatorArray">
         <value>NotHidden</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -460,8 +568,7 @@
       <field id="ShieldFlashType">
         <value>Header</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <name>百夫长</name>
-    <objecttypes create="Unit" />
   </wizard>
 </wizardfile>

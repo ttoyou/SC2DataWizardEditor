@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Dragoon">
+    <name>龙骑士</name>
+    <category>合作任务/阿塔尼斯</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -190,6 +205,7 @@
       <field id="WeaponArray_Turret">
         <value>Dragoon</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -378,6 +394,7 @@
         <value>Create Dragoon_Land</value>
         <index>73</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -415,6 +432,7 @@
       <token id="Race">
         <value>Protoss</value>
       </token>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
@@ -439,8 +457,8 @@
       <field id="Effect">
         <value>^Id^LM</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <category>合作任务/阿塔尼斯</category>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^Death</id>
@@ -450,6 +468,7 @@
       <field id="Model">
         <value>Assets\Units\Protoss\Dragoon_Void_Death\Dragoon_Void_Death.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>Placement</parentid>
@@ -460,6 +479,7 @@
       <field id="Model">
         <value>Assets\Units\Protoss\Dragoon_Placement\Dragoon_Placement.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>OneShotSpellFX</parentid>
@@ -482,6 +502,7 @@
       <field id="ShadowRadius">
         <value>0.555400</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CEffectLaunchMissile" catalog="Effect">
       <id>^Id^LM</id>
@@ -494,6 +515,7 @@
       <field id="AmmoUnit">
         <value>^Id^Weapon</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <parentid>DU_WEAP</parentid>
@@ -511,6 +533,7 @@
       <field id="Amount">
         <value>15</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorAction" catalog="Actor">
       <parentid>GenericAttack</parentid>
@@ -534,6 +557,7 @@
       <field id="ImpactSiteOps_Ops">
         <value>SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CActorMissile" catalog="Actor">
       <parentid>GenericAttackMissile</parentid>
@@ -549,6 +573,7 @@
         <value>AnimSetTimeScaleAbsolute Lifetime 1.000000</value>
         <index>4</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CUnit" catalog="Unit">
       <parentid>MISSILE</parentid>
@@ -559,6 +584,7 @@
       <field id="EditorCategories">
         <value>ObjectType:Projectile,ObjectFamily:Melee</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CMoverMissile" catalog="Mover">
       <id>^Id^Weapon</id>
@@ -613,6 +639,7 @@
         <value>MAX</value>
         <index>1</index>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>ImpactFX</parentid>
@@ -623,6 +650,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MissileFX</parentid>
@@ -633,8 +661,7 @@
       <field id="EditorCategories">
         <value>Race:Protoss</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
-    <objecttypes create="Unit" />
-    <name>龙骑士</name>
   </wizard>
 </wizardfile>

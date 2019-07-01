@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Liberator_BlackOps">
+    <name>掠袭解放者</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -2373,9 +2376,6 @@
         <value>0.400000,0.100000</value>
       </field>
     </entry>
-    <name>掠袭解放者</name>
-    <category>合作任务/诺娃</category>
-    <objecttypes create="Unit" />
     <entry type="CActorRange" catalog="Actor">
       <id>^Id^AGSearchRange</id>
       <field id="Host_Subject">

@@ -1,0 +1,1044 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="DehakaGlevig">
+    <category>合作任务/德哈卡</category>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>PZrg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AISplash</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unstoppable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>4</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>User1</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>MapBoss</index>
+      </field>
+      <field id="LifeStart">
+        <value>1500</value>
+      </field>
+      <field id="LifeMax">
+        <value>1500</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>0.2734</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>119.8828</value>
+      </field>
+      <field id="TurningRate">
+        <value>119.8828</value>
+      </field>
+      <field id="Sight">
+        <value>14</value>
+      </field>
+      <field id="Height">
+        <value>0.02</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.5</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.5</value>
+      </field>
+      <field id="InnerRadius">
+        <value>1.5</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>0</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>196</value>
+      </field>
+      <condition id="CreateUnit" />
+      <field id="PlacementFootprint">
+        <value>Footprint3x3CreepNormal</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Glevig_Primal_Collection_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="BarOffset">
+        <value>225</value>
+      </field>
+      <field id="BarWidth">
+        <value>155</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Dehaka-Glevig-Primal.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-zerg-glevig.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-dehaka-groundcarapace-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Glevig_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Glevig_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Glevig_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Glevig_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Glevig_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Construction</index>
+        <value>Zerg_BuildingMorphWhat</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-zerg-glevig.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Dehaka-Glevig-Primal.dds</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitHuge</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Spell Attack,01</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBirth</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Unburrow DontResetOnUnhide 0.000000 -1.000000 -1.000000 AsAutomatic 0.125000</value>
+        <index>65</index>
+      </field>
+      <condition id="CreateUnit" />
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Base</value>
+        <index>66</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,00</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Stand_Breathing</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.018000</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Stand_Breathing</value>
+        <index>0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Stand,00</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Stand_Breathing</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Time">
+        <value>3.183000</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Stand_Breathing</value>
+        <index>1</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,Start,00</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Inhale_Vx_SpellStart</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Inhale_Vx_SpellStart</value>
+        <index>2</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,Start,00</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Spell_Attack</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.578000</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Spell_Attack</value>
+        <index>3</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,End,00</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Spell_End</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.006000</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Spell_End</value>
+        <index>4</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Spell,End,00</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Fire_Spell_EndFlare</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.052000</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Fire_Spell_EndFlare</value>
+        <index>5</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Name">
+        <value>Yagdra_Vox_Burrow</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.778000</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_Vox_Burrow</value>
+        <index>6</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Burrow</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.014000</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Burrow</value>
+        <index>7</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Name">
+        <value>Brutalisk_UnBurrow</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.904000</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Brutalisk_UnBurrow</value>
+        <index>8</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Name">
+        <value>Dehaka_Glevig_DeathBurrow</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.904000</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Dehaka_Glevig_DeathBurrow</value>
+        <index>9</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Unburrow,00</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Name">
+        <value>DehakaGlevigBase_UnBurrow_AS</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Type">
+        <value>Actor</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.010000</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Payload">
+        <value>DehakaGlevigBase_UnBurrow_AS</value>
+        <index>10</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Unburrow,00</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Name">
+        <value>Yagdra_Vox_Burrow</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.422000</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_Vox_Burrow</value>
+        <index>11</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,Cover</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Name">
+        <value>AttackCover</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.340000</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_Swipe</value>
+        <index>12</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Cover,Attack,00</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Name">
+        <value>Glevig_Attack</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.279000</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Attack</value>
+        <index>13</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Cover,Attack,00</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Name">
+        <value>Yagdra_Swipe</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.354000</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_Swipe</value>
+        <index>14</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,01</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Name">
+        <value>AttackInhale</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Glevig_Inhale_Vx_SpellStart</value>
+        <index>15</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Attack,01</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Name">
+        <value>Yagdra_Attack</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Time">
+        <value>0.530000</value>
+        <index>16</index>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_Attack</value>
+        <index>16</index>
+      </field>
+      <field id="PlanetPanelCamera">
+        <value>Star2CameraLow15</value>
+      </field>
+      <field id="Radius">
+        <value>1.500000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.960000,0.960000,0.960000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.960000,0.960000,0.960000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,1.300000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>2.000000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>2.000000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Flesh</value>
+      </field>
+      <field id="TechPurchaseCamera">
+        <value>Star2CameraLow15</value>
+      </field>
+      <field id="UnitGlossaryCamera">
+        <value>Star2CameraLow15</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Glevig_Coop\Glevig_Coop.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-zerg-yagdra-aoe.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>12</value>
+      </field>
+      <field id="Period">
+        <value>2</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0.5</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LaunchMissile</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="AreaArray_Radius">
+        <index>0</index>
+        <value>1</value>
+      </field>
+      <field id="AreaArray_Fraction">
+        <index>0</index>
+        <value>1</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <field id="Amount">
+        <value>100</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="SearchFilters">
+        <value>-;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LaunchMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Campaign</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectImpact">
+        <value>^Id^Damage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LaunchMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeapon01</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Yagdra_Attack</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpForwardLaunchGuide SOp2DRotation</value>
+      </field>
+      <field id="ImpactSiteOps_HoldPosition">
+        <value>1</value>
+      </field>
+      <field id="ImpactAttachQuery_Methods">
+        <value>Origin</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>Yagdra_Fireball_Impact</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <index>11</index>
+        <value>None</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Full</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <parentid>MissileDefault</parentid>
+      <id>^Id^Weapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_ClearanceAcceleration">
+        <value>75</value>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-1</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>719.2968</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <name>格里维格</name>
+    <objecttypes create="Unit" />
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\YagdraFireBallMissileImpact\YagdraFireBallMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\YagdraFireBallMissile\YagdraFireBallMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death</value>
+      </field>
+      <field id="Events_Name">
+        <value>Death</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Yagdra_FireBallImpact</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^Base</id>
+      <field id="Aliases">
+        <value>_Snapshot</value>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CastShadows</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CloakEffect</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>CreepEngulfment</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Decal</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>ModelMaterials</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Opacity</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TeamColor</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TimeScale</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>TintColor</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Inherits">
+        <value>1</value>
+        <index>WarpGroup</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart BSD Unburrow Stand Burrow</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Burrowing</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>RefClear ::Host</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.Burrowing</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.DeathDisintegration</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.DeathDisintegration</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimSetDuration BSD 7.000000</value>
+        <index>5</index>
+      </field>
+      <field id="HostForProps_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="Model">
+        <value>^Id^Base</value>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomatedGlobalLoopsIgnoreOrphan</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>AutomateGlobalLoops</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>UseSyncSeed</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachHarnessStationary</value>
+      </field>
+      <field id="HostSiteOps_HoldPosition">
+        <value>1</value>
+      </field>
+      <field id="HostSiteOps_HoldRotation">
+        <value>1</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>RacePersistentSpellFX</parentid>
+      <id>^Id^Base</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>Dakrun_Base_SinkHole</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>1.700000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Dakrun_Base_SinkHole</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Burrow,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>Primal_Murvar_Base_Sinkhole</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>0.040000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Primal_Murvar_Base_Sinkhole</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\Primal_Glevig_Base_Coop\Primal_Glevig_Base_Coop.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+  </wizard>
+</wizardfile>

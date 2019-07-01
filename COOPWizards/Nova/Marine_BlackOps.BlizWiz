@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="Marine_BlackOps">
+    <name>精英陆战队员</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -9,6 +12,18 @@
       <name>名称</name>
       <tooltip>单位名称</tooltip>
     </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
     <!--标准单位创建-->
     <entry catalog="Unit" type="CUnit">
       <id>^Id^</id>
@@ -162,6 +177,7 @@
       <field id="MinimapRadius">
         <value>0.375</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Actor" type="CActorUnit">
       <id>^Id^</id>
@@ -305,6 +321,7 @@
         <value>_UnitSmall</value>
         <index>2</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>
@@ -414,14 +431,13 @@
         <value>0</value>
         <index>0;SetC</index>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry catalog="Weapon" type="CWeaponLegacy">
       <id>^Id^</id>
-      <!--修改-->
       <field id="DisplayEffect">
         <value>^Id^Damage</value>
       </field>
-      <!--修改-->
       <field id="Effect">
         <value>^Id^Damage</value>
       </field>
@@ -440,6 +456,7 @@
       <field id="Backswing">
         <value>0.75</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Actor" type="CActorAction">
       <id>^Id^Attack</id>
@@ -465,6 +482,7 @@
       <field id="ImpactMap_Sound">
         <value>Marine_AttackImpact</value>
       </field>
+      <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^_Portrait</id>
@@ -481,6 +499,7 @@
       <field id="Model">
         <value>Assets\Portraits\Terran\BlackOps_Marine_Portrait\BlackOps_Marine_Portrait.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
     <entry type="CEffectDamage" catalog="Effect">
       <field id="Kind">
@@ -509,16 +528,15 @@
         <index>OffsetByUnitRadius</index>
       </field>
       <id>^Id^Damage</id>
+      <condition id="CreateWeapon" />
     </entry>
-    <name>精英陆战队员</name>
-    <category>合作任务/诺娃</category>
-    <objecttypes create="Unit" />
     <entry type="CModel" catalog="Model">
       <parentid>MarineDeathBase</parentid>
       <id>^Id^_Death</id>
       <field id="Model">
         <value>Assets\Units\Terran\Marine_BlackOps_Death\Marine_BlackOps_Death.m3</value>
       </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

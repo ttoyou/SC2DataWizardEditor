@@ -2,6 +2,9 @@
 <wizardfile>
   <!--合作单位向导-->
   <wizard id="Marauder_BlackOps">
+    <name>劫掠者突击手</name>
+    <category>合作任务/诺娃</category>
+    <objecttypes create="Unit" />
     <input id="Id" type="CString">
       <name>Id</name>
     </input>
@@ -446,9 +449,6 @@
       </field>
       <id>^Id^LMWeapon</id>
     </entry>
-    <category>合作任务/诺娃</category>
-    <name>劫掠者突击手</name>
-    <objecttypes create="Unit" />
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
       <id>^Id^_Death</id>

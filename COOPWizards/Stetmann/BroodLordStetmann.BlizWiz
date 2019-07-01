@@ -1,0 +1,3213 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="BroodLordStetmann">
+    <category>合作任务/斯台特曼</category>
+    <objecttypes create="Unit" />
+    <name>机械巢式战列空母</name>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIThreatGround</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="LifeStart">
+        <value>550</value>
+      </field>
+      <field id="LifeMax">
+        <value>550</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="EnergyStart">
+        <value>400</value>
+      </field>
+      <field id="EnergyMax">
+        <value>400</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>1.879</value>
+      </field>
+      <field id="Acceleration">
+        <value>1.0625</value>
+      </field>
+      <field id="Sight">
+        <value>12</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>116</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1</value>
+      </field>
+      <field id="RepairTime">
+        <value>90</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Broodlings</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^Hangar,Ammo1</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+        <index>5</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Broodlings</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^BroodlingEscortArmAugment,Execute</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>0</value>
+        <index>6</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^Bombers</value>
+        <index>7</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>7</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^BomberMagazine,Ammo1</value>
+        <index>7</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>7</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>1</value>
+        <index>7</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>^Id^YamatoCannon</value>
+        <index>8</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <value>AbilCmd</value>
+        <index>8</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <value>^Id^YamatoGun,Execute</value>
+        <index>8</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <value>2</value>
+        <index>8</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <value>2</value>
+        <index>8</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^Hangar</value>
+        <index>3</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^HangarQueue5</value>
+        <index>4</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^BomberMagazine</value>
+        <index>5</index>
+      </field>
+      <field id="AbilArray_Link">
+        <value>^Id^YamatoGun</value>
+        <index>6</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <parentid>GenericUnitBase</parentid>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>BroodLord_Mecha_Portrait</value>
+      </field>
+      <field id="WalkAnimMoveSpeed">
+        <value>3.75</value>
+      </field>
+      <field id="BarOffset">
+        <value>60</value>
+      </field>
+      <field id="BarWidth">
+        <value>100</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Zerg-BroodLord.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-broodlord-mecha.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerplating-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>BroodLord_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>BroodLord_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>BroodLord_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>BroodLord_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>BroodLord_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>BroodLord_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>BroodLord_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>BroodLord_Movement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>BroodLord_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>BroodLord_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>BroodLord_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>BroodLord_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>BroodLord_Highlight</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-broodlord-mecha.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Zerg-BroodLord.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitBrith.^Id^</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create SoundEmitter BroodLord_Ambience</value>
+        <index>0</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitHuge</value>
+        <index>2</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>BroodLord_Explode</value>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <value>BroodLordDeathVoice</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; AnimPlaying Birth</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Finish; MorphTo ^Id^</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>AbilMorph.*.Start; MorphFrom ^Id^</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth 0 0.000000 -1.000000 0.000000</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^Hangar.Launch</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay SWE Stand,Work,End</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Broodlord_Land</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.InfestedVentSpawnBroodLordCreateBroodLord.Create</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^YamatoGun.SourcePrepStart</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart SpellChannel Spell,Channel,Start Spell,Channel Spell,Channel,End FullMatch</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^YamatoGun.SourceCastStart</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop SpellChannel</value>
+        <index>76</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\COOP\Stetmann\Units\BroodLord_Stetmann_COOP\BroodLord_Stetmann_COOP.m3</value>
+      </field>
+      <field id="RequiredAnims">
+        <value>Assets\Units\Zerg\BroodLord_SwarmAnims\BroodLord_SwarmAnims.m3a</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>0.850000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.700000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.250000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.250000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Tipability">
+        <value>0.750000</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerattacks-level0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^EscortDamage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>9.5</value>
+      </field>
+      <field id="Period">
+        <value>2.5</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^BomberLaunchCP</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Slowing</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX_COOP</parentid>
+      <id>^Id^AttackImpact</id>
+      <token id="COOP">
+        <value>Stetmann</value>
+      </token>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\SymbioteImpact\SymbioteImpact.m3</value>
+      </field>
+    </entry>
+    <entry type="CEffectUseMagazine" catalog="Effect">
+      <id>^Id^BomberLaunch</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="MagazineAbil">
+        <value>^Id^BomberMagazine</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^LaunchBomber</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^BomberLaunchCP</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="PeriodCount">
+        <value>4</value>
+      </field>
+      <field id="PeriodicValidator">
+        <value>CasterNotDead</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^BomberLaunch</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^BroodlingEscortDamage</id>
+      <field id="ValidatorArray">
+        <value>^Id^BroodlingEscortFilters</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ImpactLocation_Effect">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>30</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^AttackImpactAction</id>
+      <token id="effectAttack">
+        <value>^Id^BroodlingEscortDamage</value>
+      </token>
+      <field id="ImpactMap_Model">
+        <value>^Id^BroodLordAttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>BroodLord_AttackImpact</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BroodlingEscortDamageUnit.Start; At Caster</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>7</index>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Bombers</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-collection-creeperhostspawnflyer-mecha.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-collection-creeperhostspawnflyer-mecha.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^YamatoCannon</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-ability-stetmann-battlecarrierlordmechayamatocannon.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-ability-stetmann-battlecarrierlordmechayamatocannon.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Universal">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CButton" catalog="Button">
+      <id>^Id^Broodlings</id>
+      <field id="Icon">
+        <value>Assets\Textures\btn-unit-collection-symbiote-mecha.dds</value>
+      </field>
+      <field id="AlertIcon">
+        <value>Assets\Textures\btn-unit-collection-symbiote-mecha.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+    </entry>
+    <entry type="CAbilArmMagazine" catalog="Abil">
+      <id>^Id^Hangar</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>AutoCastOffOwnerLeave</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Retarget</index>
+      </field>
+      <field id="Leash">
+        <value>12</value>
+      </field>
+      <field id="Alert" />
+      <field id="EffectArray">
+        <value>BroodLordSymbioteLaunchSet</value>
+        <index>Create</index>
+      </field>
+      <field id="EffectArray">
+        <value>InterceptorFate</value>
+        <index>Death</index>
+      </field>
+      <field id="EffectArray">
+        <value>KillsToCaster</value>
+        <index>Release</index>
+      </field>
+      <field id="ExternalAngle">
+        <value>-149.9853</value>
+      </field>
+      <field id="ExternalAngle">
+        <value>149.9853</value>
+      </field>
+      <field id="InfoArray_CountStart">
+        <index>0</index>
+        <value>2</value>
+      </field>
+      <field id="InfoArray_Manage">
+        <index>0</index>
+        <value>Recall</value>
+      </field>
+      <field id="InfoArray_Unit">
+        <index>0</index>
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="InfoArray_Charge_Link">
+        <index>0;0;0</index>
+        <value>Abil/^Id^Hangar</value>
+      </field>
+      <field id="InfoArray_Cooldown_Link">
+        <index>0;0;0</index>
+        <value>Abil/^Id^Hangar</value>
+      </field>
+      <field id="InfoArray_Button_DefaultButtonFace">
+        <index>0;0;0</index>
+        <value>^Id^Broodlings</value>
+      </field>
+      <field id="InfoArray_Button_Requirements">
+        <index>0;0;0</index>
+        <value>^Id^ArmBroodlingEscort</value>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;External</index>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;AutoBuild</index>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;AutoBuildOn</index>
+      </field>
+      <field id="InfoArray_Cooldown_TimeUse">
+        <index>0;0;0</index>
+        <value>2.5</value>
+      </field>
+      <field id="InfoArray_Vital">
+        <value>15</value>
+        <index>0;Energy</index>
+      </field>
+    </entry>
+    <entry type="CAbilArmMagazine" catalog="Abil">
+      <id>^Id^BomberMagazine</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Retarget</index>
+      </field>
+      <field id="Leash">
+        <value>12</value>
+      </field>
+      <field id="InfoArray_Time">
+        <index>0</index>
+        <value>10</value>
+      </field>
+      <field id="InfoArray_CountStart">
+        <index>0</index>
+        <value>4</value>
+      </field>
+      <field id="InfoArray_Manage">
+        <index>0</index>
+        <value>Recall</value>
+      </field>
+      <field id="InfoArray_Unit">
+        <index>0</index>
+        <value>^Id^Interceptor</value>
+      </field>
+      <field id="InfoArray_Vital">
+        <value>75</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="InfoArray_Charge_Link">
+        <index>0;0;0</index>
+        <value>^Id^Interceptor</value>
+      </field>
+      <field id="InfoArray_Charge_Location">
+        <index>0;0;0</index>
+        <value>Unit</value>
+      </field>
+      <field id="InfoArray_Cooldown_Link">
+        <index>0;0;0</index>
+        <value>^Id^TrainInterceptor</value>
+      </field>
+      <field id="InfoArray_Cooldown_TimeUse">
+        <index>0;0;0</index>
+        <value>0.01</value>
+      </field>
+      <field id="InfoArray_Button_DefaultButtonFace">
+        <index>0;0;0</index>
+        <value>^Id^Bombers</value>
+      </field>
+      <field id="InfoArray_Button_Requirements">
+        <index>0;0;0</index>
+        <value>^Id^BuildBomber</value>
+      </field>
+      <field id="InfoArray_Button_Flags">
+        <value>1</value>
+        <index>0;0;ToSelection</index>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;AutoBuild</index>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;AutoBuildOn</index>
+      </field>
+      <field id="InfoArray_Flags">
+        <value>1</value>
+        <index>0;LeashRetarget</index>
+      </field>
+      <field id="Alert">
+        <value>TrainComplete</value>
+      </field>
+      <field id="EffectArray">
+        <value>InterceptorCreateAB</value>
+        <index>Create</index>
+      </field>
+      <field id="EffectArray">
+        <value>InterceptorFate</value>
+        <index>Death</index>
+      </field>
+      <field id="MaxCount">
+        <value>4</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectInstant" catalog="Abil">
+      <id>^Id^BroodlingEscortArm</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AllowMovement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCast</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCastOn</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Transient</index>
+      </field>
+      <field id="Cost_Vital">
+        <value>15</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Charge_TimeUse">
+        <value>2.5</value>
+      </field>
+      <field id="Cost_Cooldown_Location">
+        <value>Unit</value>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <value>2.5</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^Broodlings</value>
+      </field>
+      <field id="CmdButtonArray_Requirements">
+        <value>^Id^ArmBroodlingEscort</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^BroodlingEscortArmDelay</value>
+        <index>0</index>
+      </field>
+      <field id="AutoCastFilters">
+        <value>Self;-</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="AutoCastRange">
+        <value>1</value>
+      </field>
+      <field id="Cost_Vital">
+        <value>15</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Charge_Link">
+        <value>Abil/^Id^BroodlingEscortArm</value>
+      </field>
+      <field id="Cost_Cooldown_Link">
+        <value>Abil/^Id^BroodlingEscortArm</value>
+      </field>
+    </entry>
+    <entry type="CAbilAugment" catalog="Abil">
+      <id>^Id^BroodlingEscortArmAugment</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:Units</value>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^Broodlings</value>
+      </field>
+      <field id="CmdButtonArray_Requirements">
+        <value>^Id^ArmBroodlingEscort</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCast</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AutoCastOn</index>
+      </field>
+      <field id="AbilCmd">
+        <value>attack,Execute</value>
+      </field>
+      <field id="Cost_Vital">
+        <value>15</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Cooldown_Link">
+        <value>Abil/^Id^BroodlingEscortArm</value>
+      </field>
+      <field id="Cost_Cooldown_Location">
+        <value>Unit</value>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <value>2.5</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^BroodlingEscortArmDelay</value>
+      </field>
+      <field id="AutoCastFilters">
+        <value>Visible;-</value>
+      </field>
+      <field id="AutoCastValidatorArray">
+        <value>^Id^BroodlingArmAutoCastOn</value>
+      </field>
+    </entry>
+    <entry type="CAbilEffectTarget" catalog="Abil">
+      <id>^Id^YamatoGun</id>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^YamatoMissile</value>
+        <index>0</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>AllowMovement</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>NoDeceleration</index>
+      </field>
+      <field id="Cost_Vital">
+        <value>100</value>
+        <index>0;Energy</index>
+      </field>
+      <field id="Cost_Cooldown_TimeUse">
+        <value>30</value>
+      </field>
+      <field id="TargetFilters">
+        <value>-;Player,Ally</value>
+      </field>
+      <field id="Range">
+        <value>10</value>
+      </field>
+      <field id="RangeSlop">
+        <value>10</value>
+      </field>
+      <field id="PrepTime">
+        <value>3</value>
+      </field>
+      <field id="Marker_Link">
+        <value>Abil/Yamato</value>
+      </field>
+      <field id="ShowProgressArray">
+        <value>1</value>
+        <index>Prep</index>
+      </field>
+      <field id="UninterruptibleArray">
+        <value>1</value>
+        <index>Prep</index>
+      </field>
+      <field id="UninterruptibleArray">
+        <value>1</value>
+        <index>Cast</index>
+      </field>
+      <field id="UninterruptibleArray">
+        <value>1</value>
+        <index>Channel</index>
+      </field>
+      <field id="UninterruptibleArray">
+        <value>1</value>
+        <index>Finish</index>
+      </field>
+      <field id="AINotifyEffect">
+        <value>Yamato</value>
+      </field>
+      <field id="ProgressButtonArray">
+        <value>^Id^YamatoCannon</value>
+        <index>Prep</index>
+      </field>
+      <field id="CmdButtonArray_DefaultButtonFace">
+        <value>^Id^YamatoCannon</value>
+      </field>
+      <field id="CmdButtonArray_Requirements">
+        <value>^Id^Yamato</value>
+      </field>
+    </entry>
+    <entry type="CRequirement" catalog="Requirement">
+      <id>^Id^ArmBroodlingEscort</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,TechType:Unit</value>
+      </field>
+      <field id="CanBeSuppressed">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="NodeArray_Link">
+        <index>0</index>
+        <value>LTCountUnit^Id^BroodlingEscortQueuedOrBetterAtUnit2</value>
+      </field>
+    </entry>
+    <entry type="CRequirementLT" catalog="RequirementNode">
+      <id>LTCountUnit^Id^BroodlingEscortQueuedOrBetterAtUnit2</id>
+      <field id="OperandArray">
+        <value>CountUnit^Id^BroodlingEscortQueuedOrBetterAtUnit</value>
+        <index>0</index>
+      </field>
+      <field id="OperandArray">
+        <value>2</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CRequirementCountUnit" catalog="RequirementNode">
+      <id>CountUnit^Id^BroodlingEscortQueuedOrBetterAtUnit</id>
+      <field id="Count_Link">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="Count_State">
+        <value>QueuedOrBetterAtUnit</value>
+      </field>
+    </entry>
+    <entry type="CRequirement" catalog="Requirement">
+      <id>^Id^BuildBomber</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss,TechType:Unit</value>
+      </field>
+      <field id="NodeArray_Link">
+        <index>0</index>
+        <value>AndCountUpgrade^Id^BombersCompleteOnlyLTCountUnitInterceptorQueuedOrBetterAtUnit4</value>
+      </field>
+      <!--如果你创造了一个升级，就删掉这个-->
+      <field id="NodeArray_Link">
+        <value>LTCountUnit^Id^InterceptorQueuedOrBetterAtUnit4</value>
+      </field>
+    </entry>
+    <entry type="CRequirementAnd" catalog="RequirementNode">
+      <id>AndCountUpgrade^Id^BombersCompleteOnlyLTCountUnitInterceptorQueuedOrBetterAtUnit4</id>
+      <field id="OperandArray">
+        <value>CountUpgrade^Id^BombersCompleteOnly</value>
+      </field>
+      <field id="OperandArray">
+        <value>LTCountUnit^Id^InterceptorQueuedOrBetterAtUnit4</value>
+      </field>
+    </entry>
+    <entry type="CRequirementLT" catalog="RequirementNode">
+      <id>LTCountUnit^Id^InterceptorQueuedOrBetterAtUnit4</id>
+      <field id="OperandArray">
+        <value>^Id^CountUnitInterceptorQueuedOrBetterAtUnit</value>
+        <index>0</index>
+      </field>
+      <field id="OperandArray">
+        <value>4</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CRequirementCountUnit" catalog="RequirementNode">
+      <id>CountUnit^Id^InterceptorQueuedOrBetterAtUnit</id>
+      <field id="Count_Link">
+        <value>^Id^Interceptor</value>
+      </field>
+      <field id="Count_State">
+        <value>QueuedOrBetterAtUnit</value>
+      </field>
+    </entry>
+    <entry type="CRequirementCountUpgrade" catalog="RequirementNode">
+      <id>CountUpgrade^Id^BombersCompleteOnly</id>
+      <field id="Count_Link">
+        <value>^Id^Bombers</value>
+      </field>
+      <field id="Count_State">
+        <value>CompleteOnly</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitOrder" catalog="Validator">
+      <id>^Id^BroodlingArmAutoCastOff</id>
+      <field id="AbilLink">
+        <value>^Id^BroodlingEscortArm</value>
+      </field>
+      <field id="CmdFlags">
+        <value>1</value>
+        <index>SetAutoCast</index>
+      </field>
+      <field id="CmdFlags">
+        <value>1</value>
+        <index>SetAutoCastOn</index>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^BroodlingArmAutoCastOn</id>
+      <field id="CombineArray">
+        <value>^Id^BroodlingArmAutoCastOff</value>
+      </field>
+      <field id="Negate">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^InterceptorLaunch</id>
+      <field id="On_Terms">
+        <value>Abil.^Id^BomberMagazine.Launch</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>SwarmHost_Flying_Locust_Spawn</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^BroodlingEscortArmDelay</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^BroodlingEscortArm</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>2.5</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortArm</id>
+      <field id="ValidatorArray">
+        <value>CasterNotDead</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE_INVULNERABLE</parentid>
+      <id>^Id^YamatoWeapon</id>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:FactionMecha</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX_COOP</parentid>
+      <id>^Id^YamatoAttackImpact</id>
+      <token id="COOP">
+        <value>Stetmann</value>
+      </token>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Terran\YamatoMissileImpact\YamatoMissileImpact.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.750000,0.750000,0.750000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX_COOP</parentid>
+      <id>^Id^YamatoWeapon</id>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Terran\YamatoMissile\YamatoMissile.m3</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^YamatoAttack</id>
+      <token id="effectImpact">
+        <value>^Id^YamatoDamage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^YamatoMissile</value>
+      </token>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA2</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>BroodLord_StetmannYamatoAttack_Launch</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpForwardLaunchGuide SOp2DRotation</value>
+      </field>
+      <field id="ImpactAttachQuery_Methods">
+        <value>Origin</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>BroodLord_StetmannYamatoAttack_Impact</value>
+      </field>
+      <field id="ImpactModel">
+        <value>^Id^YamatoAttackImpactModel</value>
+      </field>
+      <field id="ImpactPhysics_Name">
+        <value>YamatoImpact</value>
+        <index>0</index>
+      </field>
+      <field id="ImpactPhysics_MatchKeys">
+        <value>Basic</value>
+        <index>0</index>
+      </field>
+      <field id="ImpactPhysics_Physics">
+        <value>BattlecruiserYamatoAttackForce</value>
+        <index>0</index>
+      </field>
+      <field id="ImpactPhysics_Name">
+        <value>YamatoImpactAir</value>
+        <index>1</index>
+      </field>
+      <field id="ImpactPhysics_MatchKeys">
+        <value>BasicAir</value>
+        <index>1</index>
+      </field>
+      <field id="ImpactPhysics_Physics">
+        <value>BattlecruiserYamatoAttackForce</value>
+        <index>1</index>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Full</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^YamatoAttackChargeSound</id>
+      <field id="On_Terms">
+        <value>Abil.^Id^YamatoGun.SourcePrepStart</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.^Id^YamatoGun.SourcePrepStop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Host_Subject">
+        <value>BattlecruiserYamatoAttackChargeModel</value>
+      </field>
+      <field id="Sound">
+        <value>BroodLord_StetmannYamatoAttackChargeUp</value>
+      </field>
+      <field id="Layers_Sound">
+        <value>BroodLord_Mecha_YamatoCharge_Start</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <parentid>GenericAttackImpactModel</parentid>
+      <id>^Id^YamatoAttackImpactModel</id>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachOrigin SOpForwardLaunchGuide SOp2DRotation</value>
+      </field>
+      <field id="HostSiteOps_HoldPosition">
+        <value>1</value>
+      </field>
+      <field id="HostSiteOps_HoldRotation">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^YamatoAttackMissile</id>
+      <token id="unitName">
+        <value>^Id^YamatoWeapon</value>
+      </token>
+      <field id="TerrainSquibs_MovementDistance">
+        <value>0.500000</value>
+      </field>
+      <field id="TerrainSquibs_RangeDown">
+        <value>5.000000</value>
+      </field>
+      <field id="TerrainSquibs_RangeDownFade">
+        <value>1.000000</value>
+      </field>
+      <field id="TerrainSquibs_Visuals_TerrainPhysicsMaterial">
+        <value>Water</value>
+      </field>
+      <field id="TerrainSquibs_Visuals_ActorModel">
+        <value>YamatoTerrainSquibHarnessOneShot</value>
+      </field>
+      <field id="TerrainSquibs_Visuals_ModelLink">
+        <value>WaterSplashMassive</value>
+      </field>
+      <field id="TerrainSquibs_Visuals_Flags">
+        <value>1</value>
+        <index>0;0;OneShot</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>SetTintColor 242,254,29 0.000000 OneShot MechaYamatoTint</value>
+        <index>4</index>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <parentid>MissileDefault</parentid>
+      <id>^Id^YamatoWeapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_ClearanceAcceleration">
+        <value>75</value>
+      </field>
+      <field id="MotionPhases_Outro">
+        <value>-1</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>719.2968</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^YamatoDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Acquire</index>
+      </field>
+      <field id="ResponseFlags">
+        <value>1</value>
+        <index>Flee</index>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Notification</index>
+      </field>
+      <field id="Amount">
+        <value>300</value>
+      </field>
+      <field id="Death">
+        <value>Blast</value>
+      </field>
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>CallForHelp</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^YamatoMissile</id>
+      <field id="ValidatorArray">
+        <value>YamatoTargetFilters</value>
+        <index>0</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>IsNotWarpBubble</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^YamatoDamage</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^YamatoWeapon</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>BroodLord_Mecha_Death</parentid>
+      <id>^Id^Death</id>
+      <field id="Model">
+        <value>Assets\Units\Zerg\BroodLord_Mecha_Death\BroodLord_Mecha_Death.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^BroodlingEscort</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Uncommandable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unselectable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Untargetable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Invulnerable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoScore</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoDeathEvent</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AILifetime</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>18</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>30</value>
+      </field>
+      <field id="LifeMax">
+        <value>30</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>6</value>
+      </field>
+      <field id="Acceleration">
+        <value>4</value>
+      </field>
+      <field id="Sight">
+        <value>7</value>
+      </field>
+      <field id="Height">
+        <value>4.25</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>14</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="RepairTime">
+        <value>50</value>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>StandardMissile</value>
+        <index>0</index>
+      </field>
+      <field id="BehaviorArray_Link">
+        <value>BroodlingAttackDelay</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorMissile">
+      <id>^Id^BroodlingEscort</id>
+      <token id="unitName">
+        <value>^Id^BroodlingEscort</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Broodling_Mecha_Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="AnimBlendTime">
+        <value>0.300000</value>
+      </field>
+      <field id="WalkAnimMoveSpeed">
+        <value>1.5</value>
+      </field>
+      <field id="BarOffset">
+        <value>25</value>
+      </field>
+      <field id="BarWidth">
+        <value>40</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Broodling.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerplating-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>BroodlingBirth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Broodling_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>BroodlingHelp</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Broodling_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Broodling_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Broodling_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Broodling_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>BroodlingMovement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>BroodlingTurning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>BroodlingBoard</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>BroodlingClick</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>BroodlingClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>BroodlingHighlight</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-zerg-symbiote.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Broodling.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="Aliases">
+        <value>_MissileHybrids</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>BroodlingAnimSlateCleaner</value>
+        <index>1</index>
+      </field>
+      <field id="Model">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>^Id^BroodlordZ</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="UnitFlags">
+        <value>0</value>
+        <index>ShowBlobShadow</index>
+      </field>
+      <field id="PreHost">
+        <value>_ActorAction</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth 0 0.000000</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BroodlingEscort.Start; At Caster</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.375000 AnimTransition</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName AnimTransition</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName AnimTransition</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Spell Spell PlayForever</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^SymbioteLaunchSet.Start; At Target</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSetFromRequest ::scope.Broodlord ::Main Caster</value>
+        <index>68</index>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponLegacy">
+      <id>^Id^BroodlingEscort</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerattacks-level0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>9</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="Period">
+        <value>10</value>
+      </field>
+    </entry>
+    <entry type="CEffectTransferBehavior" catalog="Effect">
+      <id>^Id^BroodlingEscortImpactTransfer</id>
+      <field id="LaunchUnit_Effect">
+        <value>^Id^BroodlingEscortMissile</value>
+      </field>
+      <field id="LaunchUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="ImpactUnit_Value">
+        <value>Target</value>
+      </field>
+      <field id="Behavior">
+        <value>KillsToCaster</value>
+      </field>
+    </entry>
+    <entry type="CEffectTransferBehavior" catalog="Effect">
+      <id>^Id^BroodlingEscortLaunchBTransfer</id>
+      <field id="LaunchUnit_Effect">
+        <value>^Id^BroodlingEscortLaunchA</value>
+      </field>
+      <field id="LaunchUnit_Value">
+        <value>Source</value>
+      </field>
+      <field id="ImpactUnit_Value">
+        <value>Target</value>
+      </field>
+      <field id="Behavior">
+        <value>KillsToCaster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^BroodlingTimedLife</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Behavior">
+        <value>BroodlingFate</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^BroodlingEscortCU</id>
+      <field id="ValidatorArray">
+        <value>NotHallucination</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>Birth</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>SetFacing</index>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^BroodlingEscortLaunch</value>
+      </field>
+      <field id="SpawnUnit">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="SpawnRange">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^BroodlingEscortDamageUnit</id>
+      <field id="ValidatorArray">
+        <value>^Id^BroodlingEscortFilters</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>30</value>
+      </field>
+    </entry>
+    <entry type="CEffectReleaseMagazine" catalog="Effect">
+      <id>^Id^BroodlingEscortRelease</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortImpact</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>RemovePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortImpactTransfer</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingAttack</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>SuicideRemove</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortLaunchB</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortMissileB</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>MakePrecursor</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingTimedLife</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortLaunchBTransfer</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortLaunch</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortRelease</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortMissile</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>MakePrecursor</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingTimedLife</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^BroodlingEscortLaunchA</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^BroodlingEscortDamageUnit</value>
+      </field>
+      <field id="FinishEffect">
+        <value>^Id^BroodlingEscortImpactA</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>ValidateWeapon</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponRight</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponLeft</value>
+        <index>1</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>1</index>
+      </field>
+      <field id="MoverRollingJump">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^BroodlingEscort</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>IsStructure</value>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^BroodlingEscortStructure</value>
+      </field>
+      <field id="CaseDefault">
+        <value>^Id^BroodlingEscortUnitSet</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreateUnit" catalog="Effect">
+      <id>^Id^BroodlingEscortImpactA</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="CreateFlags">
+        <value>0</value>
+        <index>Birth</index>
+      </field>
+      <field id="CreateFlags">
+        <value>1</value>
+        <index>SetFacing</index>
+      </field>
+      <field id="SpawnEffect">
+        <value>^Id^BroodlingEscortLaunchB</value>
+      </field>
+      <field id="SpawnUnit">
+        <value>^Id^Broodling</value>
+      </field>
+      <field id="SpawnRange">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortUnitSet</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortRelease</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingEscortLaunchA</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^BroodlingEscortMissileB</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="LaunchLocation_Value">
+        <value>CasterUnit</value>
+      </field>
+      <field id="FinishEffect">
+        <value>^Id^BroodlingEscortImpactB</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^BWeapon</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BroodlingEscortImpactB</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="EffectArray">
+        <value>RemovePrecursor</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BroodlingAttack</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>SuicideRemove</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^BroodlingEscortDamage</id>
+      <field id="ValidatorArray">
+        <value>^Id^BroodlingEscortFilters</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="ImpactLocation_Effect">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>30</value>
+      </field>
+    </entry>
+    <entry type="CEffectIssueOrder" catalog="Effect">
+      <id>^Id^BroodlingAttack</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Abil">
+        <value>attack</value>
+      </field>
+      <field id="Target_Effect">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="Target_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^BroodlingEscortMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="LaunchLocation_Value">
+        <value>CasterUnit</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^BroodlingEscortDamage</value>
+      </field>
+      <field id="FinishEffect">
+        <value>^Id^BroodlingEscortImpact</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>ValidateWeapon</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponRight</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>1</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponLeft</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>1</index>
+      </field>
+      <field id="MoverRollingJump">
+        <value>1</value>
+      </field>
+      <field id="DeathType">
+        <value>Unknown</value>
+      </field>
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^BroodlingEscortFallbackMissile</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="LaunchLocation_Value">
+        <value>CasterUnit</value>
+      </field>
+      <field id="ImpactLocation_Value">
+        <value>TargetUnitOrPoint</value>
+      </field>
+      <field id="FinishEffect">
+        <value>^Id^BroodlingEscortDamage</value>
+      </field>
+      <field id="Flags">
+        <value>0</value>
+        <index>ValidateWeapon</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponRight</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>1</index>
+      </field>
+      <field id="Movers_Link">
+        <value>BroodLordWeaponLeft</value>
+        <index>0</index>
+      </field>
+      <field id="Movers_IfRangeLTE">
+        <value>500</value>
+        <index>1</index>
+      </field>
+      <field id="MoverRollingJump">
+        <value>1</value>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^BroodlingEscortStructure</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^BroodlingEscortCU</value>
+      </field>
+      <field id="CaseArray_FallThrough">
+        <value>1</value>
+      </field>
+      <field id="CaseDefault">
+        <value>^Id^BroodlingEscortFallbackMissile</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX_COOP</parentid>
+      <id>^Id^AttackImpact</id>
+      <token id="COOP">
+        <value>Stetmann</value>
+      </token>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Zerg\SymbioteImpact\SymbioteImpact.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Broodling_Mecha</parentid>
+      <id>^Id^BWeapon</id>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^BroodlingEscortRelease.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>BroodLord_AttackLaunch</value>
+      </field>
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^BWeapon</id>
+      <token id="unitName">
+        <value>^Id^BWeapon</value>
+      </token>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Broodling</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^BroodlingNeedleClaws</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoScore</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AILifetime</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>30</value>
+      </field>
+      <field id="LifeMax">
+        <value>30</value>
+      </field>
+      <field id="Speed">
+        <value>3.836</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>46.0625</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>7</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.375</value>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>114</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.375</value>
+      </field>
+      <field id="RepairTime">
+        <value>24</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Broodling</id>
+      <parentid>GenericUnitBase</parentid>
+      <token id="unitName">
+        <value>^Id^Broodling</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>Broodling_Mecha_Portrait</value>
+      </field>
+      <field id="WalkAnimMoveSpeed">
+        <value>1.5</value>
+      </field>
+      <field id="BarOffset">
+        <value>25</value>
+      </field>
+      <field id="BarWidth">
+        <value>40</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Broodling.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-missing-kaeo.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechagroundplating-level0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>Broodling_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Broodling_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Broodling_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Broodling_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Broodling_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Broodling_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Broodling_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>Broodling_Movement</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>Broodling_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>Broodling_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>Broodling_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>Broodling_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>Broodling_Highlight</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-zerg-symbiote.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Zerg-Broodling.dds</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+      <field id="Macros">
+        <value>BroodlingAnimSlateCleaner</value>
+        <index>1</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^BroodlingDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Broodling_Explode</value>
+      </field>
+      <field id="DeathArray_VoiceLink">
+        <value>BroodlingDeathVoice</value>
+      </field>
+      <field id="On_Send">
+        <index>0</index>
+        <value>Create SoundEmitter Broodling_Ambience</value>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Attack Attack</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; AnimPlaying Birth</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Birth</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Attack</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Birth Birth 0 0.000000</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Broodling_Land</value>
+        <index>70</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Broodling</id>
+      <parentid>Broodling_Mecha</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Broodling_Mecha\Broodling_Mecha.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Broodling_Mecha_Death</parentid>
+      <id>^Id^BroodlingDeath</id>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^BroodlingNeedleClaws</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Options">
+        <value>1</value>
+        <index>Melee</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechameleeattacks-level0.dds</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MinScanRange">
+        <value>15</value>
+      </field>
+      <field id="Range">
+        <value>0.1</value>
+      </field>
+      <field id="Period">
+        <value>0.6455</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^BroodlingNeedleClaws</id>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <field id="Amount">
+        <value>4</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^BroodlingAttack</id>
+      <token id="effectAttack">
+        <value>^Id^BroodlingNeedleClaws</value>
+      </token>
+      <field id="ImpactMap_Sound">
+        <value>Stukov_Broodling_AttackImpact</value>
+      </field>
+      <field id="ShieldFlashType">
+        <value>Header</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundOneShot</parentid>
+      <id>^Id^BroodlingAttackLaunch</id>
+      <field id="On_Terms">
+        <value>WeaponStart.^Id^BroodlingNeedleClaws.AttackStart</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>Stukov_Broodling_AttackLaunch</value>
+      </field>
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^BWeapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>40</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>40</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+      </field>
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE_INVULNERABLE</parentid>
+      <id>^Id^BWeapon</id>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="Mover">
+        <value>^Id^BWeapon</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Melee</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitFilters" catalog="Validator">
+      <id>^Id^BroodlingEscortFilters</id>
+      <field id="WhichUnit_Effect">
+        <value>^Id^BroodlingEscort</value>
+      </field>
+      <field id="Filters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+    </entry>
+    <entry type="CValidatorPlayerRequirement" catalog="Validator">
+      <id>^Id^LaunchBomber</id>
+      <field id="Find">
+        <value>1</value>
+      </field>
+      <field id="Value">
+        <value>^Id^LaunchBomber</value>
+      </field>
+    </entry>
+    <entry type="CAbilQueue" catalog="Abil">
+      <id>^Id^HangarQueue5</id>
+      <field id="EditorCategories">
+        <value>Race:Neutral,AbilityorEffectType:Structures</value>
+      </field>
+      <field id="QueueSize">
+        <value>5</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Passive</index>
+      </field>
+    </entry>
+    <entry type="CActorSiteOpZ" catalog="Actor">
+      <id>^Id^BroodlordZ</id>
+      <field id="HostZ_Subject">
+        <value>::scope.Broodlord</value>
+      </field>
+    </entry>
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^Interceptor</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^Interceptor</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Zerg</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>Unselectable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>NoScore</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AILifetime</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>18</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Light</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>80</value>
+      </field>
+      <field id="LifeMax">
+        <value>80</value>
+      </field>
+      <field id="LifeRegenRate">
+        <value>1</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>7.5</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>7</value>
+      </field>
+      <field id="Height">
+        <value>3.25</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>0.25</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.25</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>19</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>0.25</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^Interceptor</id>
+      <token id="unitName">
+        <value>^Id^Interceptor</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^_Portrait</value>
+      </field>
+      <parentid>GenericUnitStandard</parentid>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerplating-level0.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-collection-creeperhostspawnflyer-mecha.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-collection-creeperhostspawnflyer-mecha.dds</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <value>^Id^InterceptorDeath</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Interceptor_Explode</value>
+      </field>
+      <field id="UnitFlags">
+        <value>0</value>
+        <index>ShowBlobShadow</index>
+      </field>
+      <field id="BarWidth">
+        <value>36</value>
+      </field>
+      <field id="BarOffset">
+        <value>25</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+      </field>
+      <field id="SoundArray">
+        <value>InterceptorWeaponBirth</value>
+        <index>Movement</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitSmall</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^Interceptor</id>
+      <parentid>Locust_Mecha_Flyer</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.500000,0.500000,0.500000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.500000,0.500000,0.500000</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Zerg\Locust_Mecha_Flyer\Locust_Mecha_Flyer.m3</value>
+      </field>
+    </entry>
+    <entry catalog="Weapon" type="CWeaponStrafe">
+      <id>^Id^Interceptor</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-stetmann-mechaflyerattacks-level0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^InterceptorBeamDamage</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>2</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>2</value>
+      </field>
+      <field id="TeleportResetRange">
+        <value>0</value>
+      </field>
+      <field id="Arc">
+        <value>19.6875</value>
+      </field>
+      <field id="Period">
+        <value>3</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^InterceptorBeamCP</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^InterceptorBeamCP</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Marker_Link">
+        <value>Effect/^Id^InterceptorBeamPersistent</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^InterceptorBeamDamage</value>
+      </field>
+      <field id="PeriodCount">
+        <value>1</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^InterceptorBeamDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>0</index>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^InterceptorBeamDamage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>8</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^InterceptorAttack</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^InterceptorBeamCP.Start; At Caster</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^InterceptorBeamDamage.Start; At Caster; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^InterceptorBeamCP.Stop; At Caster; FromEffectTreeDescendant</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamagePhysics</value>
+        <index>2</index>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeapon</value>
+      </field>
+      <field id="LaunchAssets_Model">
+        <value>InterceptorAttackLaunch</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>Interceptor_AttackLaunch</value>
+      </field>
+      <field id="BeamScope">
+        <value>Caster</value>
+      </field>
+      <field id="Missile">
+        <value>InterceptorAttackMissile</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>Interceptor_AttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <index>0</index>
+        <value>InterceptorAttackImpactReaction</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>10</index>
+        <value>InterceptorAttackImpactShield</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <index>10</index>
+        <value>InterceptorAttackImpactReactionShield</value>
+      </field>
+      <field id="DamageMap_Model">
+        <index>0</index>
+        <value>InterceptorAttackDamage</value>
+      </field>
+      <field id="DamageMap_Sound">
+        <index>0</index>
+        <value>InterceptorAttackDamage</value>
+      </field>
+      <field id="DamageMap_ModelReaction">
+        <index>0</index>
+        <value>InterceptorAttackDamageReaction</value>
+      </field>
+      <field id="DamageMap_Sound">
+        <index>10</index>
+        <value>InterceptorAttackDamageShield</value>
+      </field>
+      <field id="DamageMap_ModelReaction">
+        <index>10</index>
+        <value>InterceptorAttackDamageReactionShield</value>
+      </field>
+      <field id="DamagePhysics_Name">
+        <value>InterceptorBeamImpact</value>
+        <index>0</index>
+      </field>
+      <field id="DamagePhysics_MatchKeys">
+        <value>Basic</value>
+        <index>0</index>
+      </field>
+      <field id="DamagePhysics_Physics">
+        <value>InterceptorAttackDeathForce</value>
+        <index>0</index>
+      </field>
+      <field id="DamagePhysics_Name">
+        <value>InterceptorBeamImpact</value>
+        <index>1</index>
+      </field>
+      <field id="DamagePhysics_MatchKeys">
+        <value>BasicAir</value>
+        <index>1</index>
+      </field>
+      <field id="DamagePhysics_Physics">
+        <value>InterceptorAttackAirDeathForce</value>
+        <index>1</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>ImpactMonitorsTeleports</index>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^Id^InterceptorAttackBeam</id>
+      <field id="Macros">
+        <value>ActionTargetTeleportDestroy</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>SuppressSaveLoad</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart BSD Birth Stand Death ContentPlayOnce</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimBracketState.*.AfterClosing; AnimName BSD</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX_COOP</parentid>
+      <id>^Id^InterceptorAttackBeam</id>
+      <token id="COOP">
+        <value>Stetmann</value>
+      </token>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\InterceptorMissile\InterceptorMissile.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX_COOP</parentid>
+      <id>^Id^InterceptorAttackImpact</id>
+      <token id="COOP">
+        <value>Stetmann</value>
+      </token>
+      <token id="Race">
+        <value>Zerg</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\InterceptorMissileImpact\InterceptorMissileImpact.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Locust_Mecha_Flyer_Death</parentid>
+      <id>^Id^InterceptorDeath</id>
+    </entry>
+  </wizard>
+</wizardfile>

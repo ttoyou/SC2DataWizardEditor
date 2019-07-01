@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="PhoenixAiur">
@@ -282,6 +282,36 @@
       </field>
       <field id="DeathArray_SoundLink">
         <value>Phoenix_Explode</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Phoenix_Land</value>
+        <index>64</index>
+      </field>
+      <field id="Baselines_BlendIn">
+        <index>1</index>
+        <value>1.500000</value>
+      </field>
+      <field id="Baselines_BlendOut">
+        <index>1</index>
+        <value>2.000000</value>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpBankerPhoenix</value>
+      </field>
+      <field id="NameOffset">
+        <value>50</value>
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
