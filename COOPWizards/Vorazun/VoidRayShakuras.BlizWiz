@@ -383,7 +383,7 @@
         <index>73</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On; IsStatus WeaponAnim 0</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On; IsStatus WeaponAnim 0</value>
         <index>74</index>
       </field>
       <field id="On_Send">
@@ -391,7 +391,7 @@
         <index>74</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On; IsStatus WeaponAnim 0</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On; IsStatus WeaponAnim 0</value>
         <index>75</index>
       </field>
       <field id="On_Send">
@@ -399,7 +399,7 @@
         <index>75</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On</value>
         <index>76</index>
       </field>
       <field id="On_Send">
@@ -407,7 +407,7 @@
         <index>76</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off</value>
         <index>77</index>
       </field>
       <field id="On_Send">
@@ -415,7 +415,7 @@
         <index>77</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 0</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 0</value>
         <index>78</index>
       </field>
       <field id="On_Send">
@@ -423,7 +423,7 @@
         <index>78</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 0</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 0</value>
         <index>79</index>
       </field>
       <field id="On_Send">
@@ -435,23 +435,23 @@
         <index>80</index>
       </field>
       <field id="On_Send">
-        <value>Create VoidRayVoidCenterBeam</value>
+        <value>Create ^Id^CenterBeam</value>
         <index>80</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
         <index>81</index>
       </field>
       <field id="On_Send">
-        <value>Create VoidRayVoidCenterBeam</value>
+        <value>Create ^Id^VoidCenterBeam</value>
         <index>81</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On</value>
         <index>82</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayVoidCenterBeam</value>
+        <value>^Id^VoidCenterBeam</value>
         <index>82</index>
       </field>
       <field id="On_Send">
@@ -463,7 +463,7 @@
         <index>83</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayVoidCenterBeam</value>
+        <value>^Id^VoidCenterBeam</value>
         <index>83</index>
       </field>
       <field id="On_Send">
@@ -487,7 +487,7 @@
         <index>85</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On; IsStatus WeaponAttacking 1</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On; IsStatus WeaponAttacking 1</value>
         <index>86</index>
       </field>
       <field id="On_Target">
@@ -499,7 +499,7 @@
         <index>86</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On; IsStatus WeaponAttacking 1</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On; IsStatus WeaponAttacking 1</value>
         <index>87</index>
       </field>
       <field id="On_Send">
@@ -507,7 +507,7 @@
         <index>87</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
         <index>88</index>
       </field>
       <field id="On_Target">
@@ -519,7 +519,7 @@
         <index>88</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off; IsStatus WeaponAttacking 1</value>
         <index>89</index>
       </field>
       <field id="On_Send">
@@ -559,7 +559,7 @@
         <index>92</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.On</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.On</value>
         <index>93</index>
       </field>
       <field id="On_Target">
@@ -571,7 +571,7 @@
         <index>93</index>
       </field>
       <field id="On_Terms">
-        <value>Behavior.VoidRayChargeBeamRangeCounter.Off</value>
+        <value>Behavior.^Id^ChargeBeamRangeCounter.Off</value>
         <index>94</index>
       </field>
       <field id="On_Target">
@@ -627,7 +627,7 @@
         <index>100</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayVoidCenterBeam</value>
+        <value>^Id^VoidCenterBeam</value>
         <index>100</index>
       </field>
       <field id="On_Send">
@@ -1743,6 +1743,38 @@
       </field>
       <field id="Behavior">
         <value>^Id^ChargeBeamRangeCounter</value>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>ModelAnimationStyleContinuous</parentid>
+      <id>^Id^VoidCenterBeam</id>
+      <field id="Model">
+        <value>^Id^CenterBeam</value>
+      </field>
+      <field id="HostLaunchSiteOps_Ops">
+        <value>SOpAttachCenter</value>
+      </field>
+      <field id="HostImpactSiteOps_Ops">
+        <value>SOpAttachWeapon</value>
+      </field>
+      <field id="HostLaunch_Subject">
+        <value>_Selectable</value>
+      </field>
+      <field id="HostImpact_Subject">
+        <value>_Selectable</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^CenterBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\VoidRayCenterBeam\VoidRayCenterBeam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
       </field>
     </entry>
   </wizard>
