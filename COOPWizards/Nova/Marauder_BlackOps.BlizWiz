@@ -169,7 +169,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitBase</parentid>
       <field id="WalkAnimMoveSpeed">
@@ -313,7 +313,7 @@
         <index>2</index>
       </field>
       <field id="DeathArray_ModelLink">
-        <value>^Id^_Death</value>
+        <value>^Id^Death</value>
       </field>
       <field id="DeathArray_SoundLink">
         <value>Marauder_Explode</value>
@@ -393,7 +393,7 @@
       </token>
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>FXAPortrait</parentid>
       <field id="Name">
         <value>^Name^头像</value>
@@ -451,7 +451,7 @@
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>UnitDeath</parentid>
-      <id>^Id^_Death</id>
+      <id>^Id^Death</id>
       <token id="Race">
         <value>Terran</value>
       </token>
@@ -561,6 +561,9 @@
       </field>
       <field id="Occlusion">
         <value>Show</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Marauder_BlackOps_Death\Marauder_BlackOps_Death.m3</value>
       </field>
     </entry>
   </wizard>

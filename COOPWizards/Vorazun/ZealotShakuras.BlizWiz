@@ -521,7 +521,7 @@
         <index>Channeled</index>
       </field>
       <field id="PeriodicEffectArray">
-        <value>PsiBlades</value>
+        <value>^Id^PsiBlades</value>
       </field>
       <field id="PeriodicPeriodArray">
         <value>0</value>

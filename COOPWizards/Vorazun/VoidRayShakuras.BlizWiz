@@ -639,7 +639,7 @@
         <index>101</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayEnhancementAddition01</value>
+        <value>^Id^EnhancementAddition01</value>
         <index>101</index>
       </field>
       <field id="On_Send">
@@ -651,7 +651,7 @@
         <index>102</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayEnhancementAddition02</value>
+        <value>^Id^EnhancementAddition02</value>
         <index>102</index>
       </field>
       <field id="On_Send">
@@ -663,7 +663,7 @@
         <index>103</index>
       </field>
       <field id="On_Target">
-        <value>VoidRayEnhancementAddition03</value>
+        <value>^Id^EnhancementAddition03</value>
         <index>103</index>
       </field>
       <field id="On_Send">
@@ -729,15 +729,6 @@
       </field>
       <field id="Radius">
         <value>0.750000</value>
-      </field>
-      <field id="TechPurchaseCamera">
-        <value>Star2CameraLow08</value>
-      </field>
-      <field id="UnitGlossaryCamera">
-        <value>Star2CameraLow08</value>
-      </field>
-      <field id="PlanetPanelCamera">
-        <value>Star2CameraLow08</value>
       </field>
       <field id="ShadowRadius">
         <value>0.882000</value>

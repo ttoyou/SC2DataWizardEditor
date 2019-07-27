@@ -1,0 +1,688 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="Marauder">
+    <category>合作任务/雷诺</category>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="LifeStart">
+        <value>125</value>
+      </field>
+      <field id="LifeMax">
+        <value>125</value>
+      </field>
+      <field id="LifeArmor">
+        <value>1</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>1000</value>
+      </field>
+      <field id="LateralAcceleration">
+        <value>69.125</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="RepairTime">
+        <value>25</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>114</value>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Ground</index>
+      </field>
+      <field id="Collide">
+        <index>1</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>8</index>
+        <value>1</value>
+      </field>
+      <field id="Collide">
+        <index>10</index>
+        <value>1</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Biological</index>
+      </field>
+      <field id="InnerRadius">
+        <value>0.375</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Anim</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Idle</index>
+        <value>33</value>
+      </field>
+      <field id="Fidget_ChanceArray">
+        <index>0;Turn</index>
+        <value>33</value>
+      </field>
+      <field id="Radius">
+        <value>0.5625</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="WalkAnimMoveSpeed">
+        <value>2.25</value>
+      </field>
+      <field id="BarWidth">
+        <value>50</value>
+      </field>
+      <field id="BarOffset">
+        <value>60</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-terran-marauder.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-terran-marauder.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Terran-Marauder.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\Wireframe-Terran-Marauder.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Birth</value>
+        <index>Birth</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Ready</value>
+        <index>Ready</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Help</value>
+        <index>Help</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_What</value>
+        <index>What</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Yes</value>
+        <index>Yes</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Attack</value>
+        <index>Attack</index>
+      </field>
+      <field id="SoundArray">
+        <value>Marauder_Pissed</value>
+        <index>Pissed</index>
+      </field>
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <index>0</index>
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <index>0</index>
+        <value>Marauder_Explode</value>
+      </field>
+      <field id="Macros">
+        <value>UnloadDropAnim</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStart</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupApply Ready</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponNext 0</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusIncrement WeaponNext</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 2</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponNext 0</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 0</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 0</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackLeft Attack,Left</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 1</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^LM.Start; At Caster; IsStatus WeaponNext 1</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay AttackRight Attack,Right</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitMovementUpdate.*.Walk</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>ModelEvent; ModelEventName AnimClear</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackLeft</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>ModelEvent; ModelEventName AnimClear</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear AttackRight</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>Abil.attack.ReadyStop</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimGroupRemove Ready</value>
+        <index>76</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>MarauderBase</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Terran\Marauder\Marauder.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MarauderDeathBase</parentid>
+      <id>^Id^Death</id>
+      <field id="Model">
+        <value>Assets\Units\Terran\MarauderDeathEx1\MarauderDeathEx1.m3</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MarauderPortraitBase</parentid>
+      <id>^Id^Portrait</id>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\MarauderPortrait\MarauderPortrait.m3</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\MarauderPortrait_Static.dds</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^Damage</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="Period">
+        <value>1.5</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0</value>
+      </field>
+      <field id="Backswing">
+        <value>0</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^LM</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^Slow</id>
+      <field id="ValidatorArray">
+        <value>^Id^SlowTargetFilters</value>
+        <index>0</index>
+      </field>
+      <field id="ValidatorArray">
+        <value>NotFrenzied</value>
+        <index>1</index>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^Slow</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>10</value>
+      </field>
+      <field id="Death">
+        <value>Blast</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>10</value>
+        <index>Armored</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectLaunchMissile" catalog="Effect">
+      <id>^Id^LM</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="ImpactEffect">
+        <value>^Id^Set</value>
+      </field>
+      <field id="Movers_Link">
+        <value>^Id^Weapon</value>
+      </field>
+      <field id="AmmoUnit">
+        <value>^Id^Weapon</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^Set</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Slow</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Damage</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^SlowAOE</value>
+        <index>2</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^SlowAOE</id>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <field id="SearchFilters">
+        <value>Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>0</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^Slow</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^Slow</id>
+      <field id="Alignment">
+        <value>Negative</value>
+      </field>
+      <field id="InfoIcon">
+        <value>Assets\Textures\btn-ability-terran-slow.dds</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran,AbilityorEffectType:Units</value>
+      </field>
+      <field id="Duration">
+        <value>0.0625</value>
+      </field>
+      <field id="Modification_MoveSpeedMultiplier">
+        <value>1</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttack</parentid>
+      <id>^Id^Attack</id>
+      <token id="effectImpact">
+        <value>^Id^Damage</value>
+      </token>
+      <token id="effectLaunch">
+        <value>^Id^LM</value>
+      </token>
+      <field id="LaunchAssets_Sound">
+        <value>Marauder_AttackLaunch</value>
+      </field>
+      <field id="ImpactAttachQuery_Methods">
+        <value>AMFilterTarget AMProximityAll</value>
+      </field>
+      <field id="ImpactMap_Model">
+        <index>0</index>
+        <value>^Id^AttackImpact</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <index>0</index>
+        <value>Marauder_AttackImpact</value>
+      </field>
+      <field id="ImpactMap_ModelReaction">
+        <index>6</index>
+        <value>BloodTargetImpact</value>
+      </field>
+      <field id="ContainerAssets_Sound">
+        <value>Marauder_AttackLaunch</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMPattern^Id^</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorMissile" catalog="Actor">
+      <parentid>GenericAttackMissile</parentid>
+      <id>^Id^AttackMissile</id>
+      <token id="unitName">
+        <value>^Id^Weapon</value>
+      </token>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CAttachMethodPattern" catalog="AttachMethod">
+      <id>AMPattern^Id^</id>
+      <field id="Keyword">
+        <value>Weapon</value>
+      </field>
+      <field id="Driver">
+        <value>^Id^LM</value>
+      </field>
+      <field id="Base">
+        <value>::RollingIndex</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>LaunchFX</parentid>
+      <id>^Id^AttackLaunch</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MarauderMissileLaunch\MarauderMissileLaunch.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MarauderBaseMissileImpact\MarauderBaseMissileImpact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Model">
+        <value>Assets\Effects\Terran\MarauderMissile\MarauderMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Terran</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CUnit" catalog="Unit">
+      <parentid>MISSILE</parentid>
+      <id>^Id^Weapon</id>
+      <field id="Race">
+        <value>Terr</value>
+      </field>
+      <field id="EditorCategories">
+        <value>ObjectType:Projectile,ObjectFamily:Melee</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CMoverMissile" catalog="Mover">
+      <id>^Id^Weapon</id>
+      <field id="MotionPhases_Driver">
+        <value>Guidance</value>
+      </field>
+      <field id="MotionPhases_Acceleration">
+        <value>3200</value>
+      </field>
+      <field id="MotionPhases_MaxSpeed">
+        <value>20</value>
+      </field>
+      <field id="MotionPhases_YawPitchRoll">
+        <value>MAX</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <name>劫掠者</name>
+    <objecttypes create="Unit" />
+    <entry type="CValidatorUnitFilters" catalog="Validator">
+      <id>^Id^SlowTargetFilters</id>
+      <field id="Filters">
+        <value>-;Player,Ally,Neutral,Enemy</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+  </wizard>
+</wizardfile>

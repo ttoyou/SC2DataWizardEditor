@@ -177,7 +177,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitStandard</parentid>
       <field id="WalkAnimMoveSpeed">
@@ -292,7 +292,7 @@
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>FXAPortrait</parentid>
       <field id="Name">
         <value>^Name^头像</value>

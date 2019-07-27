@@ -232,7 +232,7 @@
         <value>Assets\Textures\btn-unit-terran-blackops-femaleghost.dds</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <field id="BarOffset">
         <value>50</value>
@@ -289,7 +289,7 @@
         <index>69</index>
       </field>
       <field id="DeathArray_ModelLink">
-        <value>^Id^_Death</value>
+        <value>^Id^Death</value>
       </field>
       <field id="DeathArray_SoundLink">
         <value>Ghost_Explode</value>
@@ -408,7 +408,7 @@
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>Portrait</parentid>
       <field id="Image">
         <value>Assets\Textures\blackopsghostfemale_portrait_static.dds</value>
@@ -425,7 +425,7 @@
       <field id="Occlusion">
         <value>Show</value>
       </field>
-      <id>^Id^_Death</id>
+      <id>^Id^Death</id>
       <token id="Race">
         <value>Terran</value>
       </token>

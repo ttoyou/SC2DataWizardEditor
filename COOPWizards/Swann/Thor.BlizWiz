@@ -207,7 +207,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>ThorPortrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <field id="WalkAnimMoveSpeed">
         <value>1.8671</value>
@@ -778,6 +778,16 @@
       </field>
       <field id="EditorCategories">
         <value>Race:Terran</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ThorPortraitBase</parentid>
+      <id>^Id^Portrait</id>
+      <field id="Model">
+        <value>Assets\Portraits\Terran\ThorPortrait\ThorPortrait.m3</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\ThorPortrait_Static.dds</value>
       </field>
     </entry>
   </wizard>

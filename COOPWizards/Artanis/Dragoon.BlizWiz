@@ -216,7 +216,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>DragoonPortrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitBase</parentid>
       <field id="WalkAnimMoveSpeed">
@@ -662,6 +662,23 @@
         <value>Race:Protoss</value>
       </field>
       <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Portrait</parentid>
+      <id>^Id^Portrait</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Portraits\Protoss\Aiur_DragoonEx2_Portrait\Aiur_DragoonEx2_Portrait.m3</value>
+      </field>
+      <field id="Lighting">
+        <value>PortraitAiurDragoon</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\aiurdragoonportrait_static.dds</value>
+      </field>
+      <condition id="CreateUnit" />
     </entry>
   </wizard>
 </wizardfile>

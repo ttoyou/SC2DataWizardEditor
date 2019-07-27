@@ -192,7 +192,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <field id="WalkAnimMoveSpeed">
         <value>3</value>
@@ -253,7 +253,7 @@
       </field>
       <parentid>GenericUnitStandard</parentid>
       <field id="DeathArray_ModelLink">
-        <value>^Id^_Death</value>
+        <value>^Id^Death</value>
       </field>
       <field id="DeathArray_SoundLink">
         <value>Supplicant_DeathFX</value>
@@ -315,7 +315,7 @@
       <condition id="CreateUnit" />
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>Portrait</parentid>
       <field id="Name">
         <value>^Name^头像</value>
@@ -329,7 +329,7 @@
       <condition id="CreateUnit" />
     </entry>
     <entry type="CModel" catalog="Model">
-      <id>^Id^_Death</id>
+      <id>^Id^Death</id>
       <parentid>UnitDeath</parentid>
       <field id="Occlusion">
         <value>Show</value>
@@ -344,7 +344,7 @@
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>OneShotSpellFX</parentid>
-      <id>^Id^Supplicant_WarpIn</id>
+      <id>^Id^WarpIn</id>
       <field id="Model">
         <value>Assets\Units\Protoss\Supplicant_WarpIn\Supplicant_WarpIn.m3</value>
       </field>

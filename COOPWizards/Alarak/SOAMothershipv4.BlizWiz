@@ -1,0 +1,993 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="SOAMothershipv4">
+    <category>合作任务/阿拉纳克</category>
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <input id="CreateUnitCheck" type="WizardCheckbox">
+      <name>创建单位</name>
+      <tooltip>创建单位</tooltip>
+      <default value="1" />
+    </input>
+    <input id="CreateWeaponCheck" type="WizardCheckbox">
+      <name>创建武器</name>
+      <tooltip>创建武器</tooltip>
+      <default value="1" />
+    </input>
+    <condition id="CreateUnit" input="CreateUnitCheck" value="1" operator="equal" />
+    <condition id="CreateWeapon" input="CreateWeaponCheck" value="1" operator="equal" />
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>0</value>
+        <index>Turnable</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Psionic</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Massive</index>
+      </field>
+      <field id="LifeStart">
+        <value>1000</value>
+      </field>
+      <field id="LifeMax">
+        <value>1000</value>
+      </field>
+      <field id="LifeArmor">
+        <value>2</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>1000</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>1000</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Acceleration">
+        <value>1.375</value>
+      </field>
+      <field id="Sight">
+        <value>14</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1.375</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>1.375</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1.375</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Heroic</index>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="RepairTime">
+        <value>60</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>150</value>
+      </field>
+      <field id="WeaponArray_Turret">
+        <index>0</index>
+        <value>FreeRotate</value>
+      </field>
+      <field id="WeaponArray_Turret">
+        <value>MothershipRotate</value>
+        <index>1</index>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>^Id^Portrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="BarOffset">
+        <value>180</value>
+      </field>
+      <field id="BarWidth">
+        <value>216</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\Wireframe-Protoss-Mothership.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>MothershipVoid_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>MothershipVoid_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>MothershipVoid_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>MothershipVoid_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>MothershipVoid_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>MothershipVoid_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>MothershipVoid_MoveStart</value>
+      </field>
+      <field id="SoundArray">
+        <index>Turning</index>
+        <value>Mothership_Turning</value>
+      </field>
+      <field id="SoundArray">
+        <index>Board</index>
+        <value>Mothership_Board</value>
+      </field>
+      <field id="SoundArray">
+        <index>Click</index>
+        <value>Mothership_Click</value>
+      </field>
+      <field id="SoundArray">
+        <index>ClickError</index>
+        <value>Mothership_ClickError</value>
+      </field>
+      <field id="SoundArray">
+        <index>Highlight</index>
+        <value>Mothership_Highlight</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-mothership-taldarim.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\Wireframe-Protoss-Mothership-taldarim-Shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\Wireframe-Protoss-Mothership-taldarim-Shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\Wireframe-Protoss-Mothership-taldarim-Shield03.dds</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak-taldarim-mothership.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak-taldarim-mothership.dds</value>
+      </field>
+      <field id="MinimapUseSelfColor">
+        <value>0</value>
+      </field>
+      <field id="MinimapUseSelectionColor">
+        <value>0</value>
+      </field>
+      <field id="MinimapIcon">
+        <value>Assets\Textures\btn-ac-protoss-taldarimmothershipmapicon.dds</value>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>Create Mothership_Land</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.WarpInEffect.On</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap ^Id^WarpInStargateBig</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.WarpInEffect.On</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Spell Spell</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Spell</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap ^Id^</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Spell</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart GL_BSD GLbirth GLstand GLdeath</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Spell</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Spell</value>
+        <index>69</index>
+      </field>
+      <condition id="CreateUnit" />
+      <field id="DeathArray_ModelLink">
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <value>Mothership_Explode</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitHuge</value>
+        <index>2</index>
+      </field>
+      <field id="NameOffset">
+        <value>130</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds</value>
+      </field>
+      <field id="Baselines_AnimProps">
+        <index>1</index>
+        <value>Walk,01</value>
+      </field>
+      <field id="GlossaryAnim">
+        <value>GLstand</value>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\MotherShip_Taldarim\MotherShip_Taldarim.m3</value>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 01</value>
+        <index>0</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>0;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 02</value>
+        <index>1</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>1;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 03</value>
+        <index>2</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>2;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 04</value>
+        <index>3</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>3;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 05</value>
+        <index>4</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>4;SetA</index>
+      </field>
+      <field id="AttachProps_Id">
+        <value>Ref_Weapon 06</value>
+        <index>5</index>
+      </field>
+      <field id="AttachProps_Keys">
+        <value>0</value>
+        <index>5;SetA</index>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="Radius">
+        <value>2.000000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>3.333000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>3.333000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Portrait</parentid>
+      <id>^Id^Portrait</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Portraits\Protoss\MothershipTalDarimEx2Portrait\MothershipTalDarimEx2Portrait.m3</value>
+      </field>
+      <field id="Image">
+        <value>Assets\Textures\mothershiptaldarimportrait_static.dds</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Placement</parentid>
+      <id>^Id^Placement</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\MotherShip_Taldarim_Placement\MotherShip_Taldarim_Placement.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\MotherShip_Taldarim_WarpIn\MotherShip_Taldarim_WarpIn.m3</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.600000,0.600000,0.600000</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^Death</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\MotherShip_Taldarim_Death\MotherShip_Taldarim_Death.m3</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+      </field>
+      <field id="Events_Name">
+        <value>Uni_DeathFXincidentallFire</value>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+      </field>
+      <field id="Events_Time">
+        <value>2.200000</value>
+      </field>
+      <field id="Events_Payload">
+        <value>Uni_DeathFXincidentallFire</value>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>1;0</index>
+      </field>
+      <field id="Events_Name">
+        <value>MothershipVoid_PreDeathExplosion</value>
+        <index>1;0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>1;0</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.400000</value>
+        <index>1;0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>MothershipVoid_PreDeathExplosion</value>
+        <index>1;0</index>
+      </field>
+      <field id="Events_Anim">
+        <value>Death,00</value>
+        <index>2;0</index>
+      </field>
+      <field id="Events_Name">
+        <value>MothershipVoid_DeathExplosion</value>
+        <index>2;0</index>
+      </field>
+      <field id="Events_Type">
+        <value>Sound</value>
+        <index>2;0</index>
+      </field>
+      <field id="Events_Time">
+        <value>1.800000</value>
+        <index>2;0</index>
+      </field>
+      <field id="Events_Payload">
+        <value>MothershipVoid_DeathExplosion</value>
+        <index>2;0</index>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossLargeTaldarimUnitDeathLow</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^WarpInStargateBig</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Mothership_Taldarim_WarpIn_StarGate\Mothership_Taldarim_WarpIn_StarGate.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>3.333000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>2.000000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>3.333000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <condition id="CreateUnit" />
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireWhileInAttackOrder</index>
+      </field>
+      <field id="Options">
+        <value>0</value>
+        <index>OnlyFireAtAttackOrderTarget</index>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^BeamDamage</value>
+      </field>
+      <field id="DisplayAttackCount">
+        <value>6</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>7</value>
+      </field>
+      <field id="Arc">
+        <value>360</value>
+      </field>
+      <field id="Period">
+        <value>2.21</value>
+      </field>
+      <field id="DamagePoint">
+        <value>0</value>
+      </field>
+      <field id="Effect">
+        <value>^Id^BeamSet</value>
+      </field>
+      <field id="AllowedMovement">
+        <value>Moving</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP_MISSILE</parentid>
+      <id>^Id^BeamDamage</id>
+      <field id="ValidatorArray">
+        <value>^Id^AttackRangeCheck</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>NotHidden</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Amount">
+        <value>38</value>
+      </field>
+      <field id="Death">
+        <value>Fire</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectModifyUnit" catalog="Effect">
+      <id>^Id^BeamDummy</id>
+      <field id="ValidatorArray">
+        <value>^Id^AttackRangeCheck</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^BeamPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^BeamDummy</value>
+      </field>
+      <field id="PeriodCount">
+        <value>3</value>
+      </field>
+      <field id="PeriodicValidator">
+        <value>CasterNotDead</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^BeamDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.375</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^BeamSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^BeamPersistent</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^SecondaryBeamPersistent</value>
+        <index>1</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^SecondaryBeamPersistent</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="InitialDelay">
+        <value>0.25</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^BeamDummy</value>
+      </field>
+      <field id="PeriodCount">
+        <value>3</value>
+      </field>
+      <field id="PeriodicValidator">
+        <value>^Id^AttackRangeCheckCombine</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^BeamDamage</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.375</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CValidatorLocationCompareRange" catalog="Validator">
+      <id>^Id^AttackRangeCheck</id>
+      <field id="Range">
+        <value>10</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^AttackRangeCheckCombine</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>CasterNotDead</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>^Id^AttackRangeCheck</value>
+        <index>1</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^Attack</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamPersistent.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamDamage.Start; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamPersistent.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy WhenReady</value>
+        <index>2</index>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0 AMClosest2ToTarget AMPattern^Id^Beam</value>
+      </field>
+      <field id="LaunchAssets_Sound">
+        <value>MothershipVoid_AttackLaunch</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>ImpactMonitorsTeleports</index>
+      </field>
+      <field id="Lifetime">
+        <value>-1.000000</value>
+      </field>
+      <field id="ImpactMap_Sound">
+        <value>MothershipVoid_AttackImpact</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Macros">
+        <value>ActionTargetTeleportDestroy</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamPersistent.Stop</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamDamage.Start; EffectExecuteIndex 1</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamPersistent.Stop</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>4</index>
+      </field>
+      <field id="Sound">
+        <value>MothershipVoid_AttackImpactLoop</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^SecondaryAttack</id>
+      <field id="LaunchAttachQuery_Methods">
+        <value>AMFilterWeaponSetA0 AMClosest2ToTarget AMPattern^Id^Beam</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>ImpactMonitorsTeleports</index>
+      </field>
+      <field id="Lifetime">
+        <value>-1.000000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^SecondaryBeamPersistent.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamDamage.Start; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^BeamPersistent.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy WhenReady</value>
+        <index>2</index>
+      </field>
+      <field id="ImpactMap_Model">
+        <value>^Id^AttackImpact</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^SecondaryAttackBeam</id>
+      <field id="Model">
+        <value>^Id^AttackBeam</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^SecondaryBeamPersistent.Stop</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>3</index>
+      </field>
+      <field id="Macros">
+        <value>ActionTargetTeleportDestroy</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\Mothership_Taldarim_Terminator_Beam\Mothership_Taldarim_Terminator_Beam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.700000,0.700000,0.700000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.700000,0.700000,0.700000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.714000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.714000</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>ImpactFX</parentid>
+      <id>^Id^AttackImpact</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\Mothership_Taldarim_Terminator_Beam_Impact\Mothership_Taldarim_Terminator_Beam_Impact.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Zerg</value>
+      </field>
+      <condition id="CreateWeapon" />
+    </entry>
+    <name>母舰</name>
+    <objecttypes create="Unit" />
+  </wizard>
+</wizardfile>

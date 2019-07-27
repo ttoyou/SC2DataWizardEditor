@@ -2,9 +2,9 @@
 <wizardfile>
   <!--合作任务单位向导-->
   <wizard id="BroodLordStetmann">
+    <name>机械巢式战列空母</name>
     <category>合作任务/斯台特曼</category>
     <objecttypes create="Unit" />
-    <name>机械巢式战列空母</name>
     <input id="Id" type="CString">
       <name>Id</name>
     </input>

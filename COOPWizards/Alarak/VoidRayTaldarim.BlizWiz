@@ -1,0 +1,2160 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<wizardfile>
+  <!--合作任务单位向导-->
+  <wizard id="VoidRayTaldarim">
+    <name>毁灭者</name>
+    <category>合作任务/阿拉纳克</category>
+    <objecttypes create="Unit" />
+    <input id="Id" type="CString">
+      <name>Id</name>
+    </input>
+    <input id="Name" type="CStringLink">
+      <name>名称</name>
+      <tooltip>单位名称</tooltip>
+    </input>
+    <!--标准单位创建-->
+    <entry catalog="Unit" type="CUnit">
+      <id>^Id^</id>
+      <field id="AbilArray_Link">
+        <index>0</index>
+        <value>stop</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>1</index>
+        <value>attack</value>
+      </field>
+      <field id="AbilArray_Link">
+        <index>2</index>
+        <value>move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Move</value>
+        <index>0</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Type">
+        <index>^VALUEINDEX^</index>
+        <value>AbilCmd</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>0</index>
+        <value>move,Move</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Row">
+        <index>^VALUEINDEX^</index>
+        <value>0</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Column">
+        <index>^VALUEINDEX^</index>
+        <value>^VALUEINDEX^</value>
+        <count>5</count>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Stop</value>
+        <index>1</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>1</index>
+        <value>stop,Stop</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MoveHoldPosition</value>
+        <index>2</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>2</index>
+        <value>move,HoldPos</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>MovePatrol</value>
+        <index>3</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>3</index>
+        <value>move,Patrol</value>
+      </field>
+      <field id="CardLayouts_LayoutButtons_Face">
+        <value>Attack</value>
+        <index>4</index>
+      </field>
+      <field id="CardLayouts_LayoutButtons_AbilCmd">
+        <index>4</index>
+        <value>attack,Execute</value>
+      </field>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="WeaponArray_Link">
+        <value>^Id^</value>
+      </field>
+      <field id="DeathRevealRadius">
+        <value>3</value>
+      </field>
+      <field id="Race">
+        <value>Prot</value>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>PreventDestroy</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>UseLineOfSight</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>AIFleeDamageDisabled</index>
+      </field>
+      <field id="FlagArray">
+        <value>1</value>
+        <index>ArmySelect</index>
+      </field>
+      <field id="PlaneArray">
+        <value>1</value>
+        <index>Air</index>
+      </field>
+      <field id="Collide">
+        <index>16</index>
+        <value>1</value>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="Attributes">
+        <value>1</value>
+        <index>Mechanical</index>
+      </field>
+      <field id="LifeStart">
+        <value>150</value>
+      </field>
+      <field id="LifeMax">
+        <value>150</value>
+      </field>
+      <field id="ShieldsStart">
+        <value>100</value>
+      </field>
+      <field id="ShieldsMax">
+        <value>100</value>
+      </field>
+      <field id="ShieldRegenDelay">
+        <value>10</value>
+      </field>
+      <field id="ShieldRegenRate">
+        <value>2</value>
+      </field>
+      <field id="Mover">
+        <value>Fly</value>
+      </field>
+      <field id="Speed">
+        <value>2.25</value>
+      </field>
+      <field id="Acceleration">
+        <value>2</value>
+      </field>
+      <field id="StationaryTurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="TurningRate">
+        <value>999.8437</value>
+      </field>
+      <field id="Sight">
+        <value>10</value>
+      </field>
+      <field id="Height">
+        <value>3.75</value>
+      </field>
+      <field id="VisionHeight">
+        <value>4</value>
+      </field>
+      <field id="AttackTargetPriority">
+        <value>20</value>
+      </field>
+      <field id="Radius">
+        <value>1</value>
+      </field>
+      <field id="SeparationRadius">
+        <value>0.75</value>
+      </field>
+      <field id="MinimapRadius">
+        <value>1</value>
+      </field>
+      <field id="RepairTime">
+        <value>36</value>
+      </field>
+      <field id="SubgroupPriority">
+        <value>110</value>
+      </field>
+    </entry>
+    <entry catalog="Actor" type="CActorUnit">
+      <id>^Id^</id>
+      <token id="unitName">
+        <value>^Id^</value>
+      </token>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="PortraitModel">
+        <value>VoidRayTaldarimPortrait</value>
+      </field>
+      <parentid>GenericUnitBase</parentid>
+      <field id="AnimBlendTime">
+        <value>0.500000</value>
+      </field>
+      <field id="BarWidth">
+        <value>100</value>
+      </field>
+      <field id="BarOffset">
+        <value>65</value>
+      </field>
+      <field id="HeroIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak-taldarim-voidray.dds</value>
+      </field>
+      <field id="UnitIcon">
+        <value>Assets\Textures\btn-unit-protoss-alarak-taldarim-voidray.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;0</index>
+        <value>Assets\Textures\wireframe-protoss-voidray-taldarim-shield01.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;1</index>
+        <value>Assets\Textures\wireframe-protoss-voidray-taldarim-shield02.dds</value>
+      </field>
+      <field id="WireframeShield_Image">
+        <index>0;2</index>
+        <value>Assets\Textures\wireframe-protoss-voidray-taldarim-shield03.dds</value>
+      </field>
+      <field id="GroupIcon_Image">
+        <value>Assets\Textures\wireframe-protoss-voidray-taldarim.dds</value>
+      </field>
+      <field id="Wireframe_Image">
+        <value>Assets\Textures\wireframe-protoss-voidray-taldarim.dds</value>
+      </field>
+      <field id="LifeArmorIcon">
+        <value>Assets\Textures\btn-upgrade-protoss-airarmorlevel0.dds</value>
+      </field>
+      <field id="SoundArray">
+        <index>Birth</index>
+        <value>VoidRay_Birth</value>
+      </field>
+      <field id="SoundArray">
+        <index>Ready</index>
+        <value>Destroyer_Ready</value>
+      </field>
+      <field id="SoundArray">
+        <index>Help</index>
+        <value>Destroyer_Help</value>
+      </field>
+      <field id="SoundArray">
+        <index>What</index>
+        <value>Destroyer_What</value>
+      </field>
+      <field id="SoundArray">
+        <index>Yes</index>
+        <value>Destroyer_Yes</value>
+      </field>
+      <field id="SoundArray">
+        <index>Attack</index>
+        <value>Destroyer_Attack</value>
+      </field>
+      <field id="SoundArray">
+        <index>Pissed</index>
+        <value>Destroyer_Pissed</value>
+      </field>
+      <field id="SoundArray">
+        <index>Movement</index>
+        <value>VoidRay_Movement</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
+      <field id="Baselines_BlendIn">
+        <index>1;0</index>
+        <value>1.500000</value>
+      </field>
+      <field id="Baselines_BlendOut">
+        <index>1;0</index>
+        <value>2.000000</value>
+      </field>
+      <field id="DeathArray_ModelLink">
+        <index>0</index>
+        <value>^Id^Death</value>
+      </field>
+      <field id="DeathArray_SoundLink">
+        <index>0</index>
+        <value>VoidRay_Explode</value>
+      </field>
+      <field id="NameOffset">
+        <value>60</value>
+      </field>
+      <field id="Aliases">
+        <value>_UnitLarge</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>64</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAttacking 0</value>
+        <index>64</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>65</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAnim 0</value>
+        <index>65</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart</value>
+        <index>66</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAttacking 1</value>
+        <index>66</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>67</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAttacking 0</value>
+        <index>67</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.On; IsStatus WeaponAnim 0</value>
+        <index>68</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStart Powered Attack Stand,Channel Attack,End</value>
+        <index>68</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.On; IsStatus WeaponAnim 0</value>
+        <index>69</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAnim 1</value>
+        <index>69</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.On</value>
+        <index>70</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponEnhanced 1</value>
+        <index>70</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.Off</value>
+        <index>71</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponEnhanced 0</value>
+        <index>71</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.Off; IsStatus WeaponAttacking 0</value>
+        <index>72</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop Powered</value>
+        <index>72</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.Off; IsStatus WeaponAttacking 0</value>
+        <index>73</index>
+      </field>
+      <field id="On_Send">
+        <value>StatusSet WeaponAnim 0</value>
+        <index>73</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.WarpInEffect.On</value>
+        <index>84</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap ^Id^WarpInStargate</value>
+        <index>84</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.WarpInEffect.On</value>
+        <index>85</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Spell Spell</value>
+        <index>85</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Spell</value>
+        <index>86</index>
+      </field>
+      <field id="On_Send">
+        <value>ModelSwap ^Id^</value>
+        <index>86</index>
+      </field>
+      <field id="On_Terms">
+        <value>AnimDone; AnimName Spell</value>
+        <index>87</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimClear Spell</value>
+        <index>87</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.UnitRemoved</value>
+        <index>88</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^1AttackBeam</value>
+        <index>88</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy Immediate</value>
+        <index>88</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.CampaignBeamCreated</value>
+        <index>89</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSetFromMsg ::actor.MyAttackBeam ::Sender</value>
+        <index>89</index>
+      </field>
+      <field id="On_Terms">
+        <value>Signal.*.UnitRemoved</value>
+        <index>90</index>
+      </field>
+      <field id="On_Target">
+        <value>::actor.MyAttackBeam</value>
+        <index>90</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy Immediate</value>
+        <index>90</index>
+      </field>
+      <field id="On_Terms">
+        <value>UnitHeightUpdate.*.Land</value>
+        <index>91</index>
+      </field>
+      <field id="On_Send">
+        <value>Create VoidRay_Land</value>
+        <index>91</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; ValidateUnit ^Id^ChargeBeamPhase1</value>
+        <index>74</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Sound1</value>
+        <index>74</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; ValidateUnit ^Id^ChargeBeamPhase2</value>
+        <index>75</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Sound2</value>
+        <index>75</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStart.*.AttackStart; ValidateUnit ^Id^ChargeBeamPhase3</value>
+        <index>76</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Sound3</value>
+        <index>76</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>77</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^Sound1</value>
+        <index>77</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>77</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>78</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^Sound2</value>
+        <index>78</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>78</index>
+      </field>
+      <field id="On_Terms">
+        <value>WeaponStop.*.AttackStop</value>
+        <index>79</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^Sound3</value>
+        <index>79</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>79</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase2.On</value>
+        <index>80</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^Sound1</value>
+        <index>80</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>80</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase2.On; IsStatus WeaponAttacking 1</value>
+        <index>81</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Sound2</value>
+        <index>81</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.On</value>
+        <index>82</index>
+      </field>
+      <field id="On_Target">
+        <value>^Id^Sound2</value>
+        <index>82</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>82</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.On; IsStatus WeaponAttacking 1</value>
+        <index>83</index>
+      </field>
+      <field id="On_Send">
+        <value>Create ^Id^Sound3</value>
+        <index>83</index>
+      </field>
+    </entry>
+    <entry catalog="Model" type="CModel">
+      <id>^Id^</id>
+      <parentid>Unit</parentid>
+      <field id="Name">
+        <value>^Name^</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\VoidRay_TalDarim\VoidRay_TalDarim.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.882000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>0.750000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.882000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>UnitDeath</parentid>
+      <id>^Id^Death</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\VoidRay_TalDarim_Death\VoidRay_TalDarim_Death.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossLargeTaldarimUnitDeathLow</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.555400</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.555400</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <id>^Id^Placement</id>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="Model">
+        <value>Assets\Units\Protoss\VoidRay_TalDarim_Placement\VoidRay_TalDarim_Placement.m3</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\VoidRay_TalDarim_WarpIn\VoidRay_TalDarim_WarpIn.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.850000,0.850000,0.850000</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="LowQualityModel">
+        <value>ProtossUnitBirth</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>0.882000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>0.882000</value>
+      </field>
+    </entry>
+    <entry type="CWeaponLegacy" catalog="Weapon">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Icon">
+        <value>Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds</value>
+      </field>
+      <field id="DisplayEffect">
+        <value>^Id^DamageCharge1</value>
+      </field>
+      <field id="TargetFilters">
+        <value>Visible;Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="Range">
+        <value>6</value>
+      </field>
+      <field id="RangeSlop">
+        <value>2</value>
+      </field>
+      <field id="ArcSlop">
+        <value>39.9902</value>
+      </field>
+      <field id="Period">
+        <value>0.5</value>
+      </field>
+      <field id="Backswing">
+        <value>0.75</value>
+      </field>
+      <field id="LegacyOptions">
+        <value>1</value>
+        <index>CanRetargetWhileChanneling</index>
+      </field>
+      <field id="AllowedMovement">
+        <value>Moving</value>
+      </field>
+    </entry>
+    <entry type="CEffectCreatePersistent" catalog="Effect">
+      <id>^Id^</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^InitialImpactSet</value>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>Channeled</index>
+      </field>
+      <field id="Flags">
+        <value>1</value>
+        <index>PersistUntilDestroyed</index>
+      </field>
+      <field id="WhichLocation_Value">
+        <value>TargetUnit</value>
+      </field>
+      <field id="TimeScaleSource_Value">
+        <value>Caster</value>
+      </field>
+      <field id="PeriodicEffectArray">
+        <value>^Id^ImpactSet</value>
+      </field>
+      <field id="PeriodicPeriodArray">
+        <value>0.5</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^CasterAB</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamCounter</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <id>^Id^Damage</id>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^DamageCharge1</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>6</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>4</value>
+        <index>Armored</index>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^DamageCharge2</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>6</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>4</value>
+        <index>Armored</index>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^DamageCharge3</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>6</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>4</value>
+        <index>Armored</index>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^DamageSwitch</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>^Id^ChargeBeamCounterCheckPhase2Ready</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^DamageCharge2</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>^Id^ChargeBeamCounterCheckPhase3Ready</value>
+        <index>1</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^DamageCharge3</value>
+        <index>1</index>
+      </field>
+      <field id="CaseDefault">
+        <value>^Id^DamageCharge1</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^ImpactSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Damage</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^DamageSwitch</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^CasterAB</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^1Search</value>
+        <index>3</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^2Search</value>
+        <index>4</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^3Search</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^InitialImpactSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^Damage</value>
+        <index>0</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^DamageSwitch</value>
+        <index>1</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^CasterAB</value>
+        <index>2</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^1Search</value>
+        <index>3</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^2Search</value>
+        <index>4</index>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^3Search</value>
+        <index>5</index>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^1Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>1</value>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^1DamageSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^1Damage</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^1Search</id>
+      <field id="EditorCategories" />
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>SameCliff</index>
+      </field>
+      <field id="SearchFilters">
+        <value>Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MaxCount">
+        <value>1</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Outer</value>
+        <index>0;0</index>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+        <index>1;0</index>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^1DamageSet</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^ChargeBeamCounterPhase1</value>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSFarthestDistance</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^2Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>1</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>1</value>
+        <index>Armored</index>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^2DamageSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^2Damage</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^2Search</id>
+      <field id="EditorCategories" />
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>SameCliff</index>
+      </field>
+      <field id="SearchFilters">
+        <value>Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MaxCount">
+        <value>2</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Outer</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^2DamageSet</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^ChargeBeamCounterCheckPhase2Ready</value>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSFarthestDistance</value>
+      </field>
+    </entry>
+    <entry type="CEffectDamage" catalog="Effect">
+      <parentid>DU_WEAP</parentid>
+      <id>^Id^3Damage</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="Visibility">
+        <value>Visible</value>
+      </field>
+      <field id="Kind">
+        <value>Ranged</value>
+      </field>
+      <field id="Amount">
+        <value>1</value>
+      </field>
+      <field id="AttributeBonus">
+        <value>2</value>
+        <index>Armored</index>
+      </field>
+      <field id="DamageModifierSource_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^3DamageSet</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^3Damage</value>
+      </field>
+    </entry>
+    <entry type="CEffectEnumArea" catalog="Effect">
+      <id>^Id^3Search</id>
+      <field id="EditorCategories" />
+      <field id="SearchFlags">
+        <value>1</value>
+        <index>SameCliff</index>
+      </field>
+      <field id="SearchFilters">
+        <value>Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable</value>
+      </field>
+      <field id="MaxCount">
+        <value>3</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Outer</value>
+      </field>
+      <field id="ExcludeArray_Value">
+        <value>Target</value>
+      </field>
+      <field id="AreaArray_Radius">
+        <value>5</value>
+      </field>
+      <field id="AreaArray_Effect">
+        <value>^Id^3DamageSet</value>
+      </field>
+      <field id="ValidatorArray">
+        <value>^Id^ChargeBeamCounterCheckPhase3Ready</value>
+      </field>
+      <field id="TargetSorts_SortArray">
+        <value>TSFarthestDistance</value>
+      </field>
+    </entry>
+    <entry type="CEffectSwitch" catalog="Effect">
+      <id>^Id^ChargeBeamCounterCheck</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>^Id^ChargeBeamCounterCheckPhase2Ready</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^ChargeBeamCounterCheckPhase2</value>
+        <index>0</index>
+      </field>
+      <field id="CaseArray_Validator">
+        <value>^Id^ChargeBeamCounterCheckPhase3Ready</value>
+        <index>1</index>
+      </field>
+      <field id="CaseArray_Effect">
+        <value>^Id^ChargeBeamCounterCheckPhase3</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^ChargeBeamCounterCheckPhase2</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^ChargeBeamPhase2AB</value>
+      </field>
+    </entry>
+    <entry type="CEffectSet" catalog="Effect">
+      <id>^Id^ChargeBeamCounterCheckPhase3</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^ChargeBeamPhase2RB</value>
+      </field>
+      <field id="EffectArray">
+        <value>^Id^ChargeBeamPhase3AB</value>
+      </field>
+    </entry>
+    <entry type="CEffectRemoveBehavior" catalog="Effect">
+      <id>^Id^ChargeBeamPhase2RB</id>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="BehaviorLink">
+        <value>^Id^ChargeBeamPhase2</value>
+      </field>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^ChargeBeamPhase2AB</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase2</value>
+      </field>
+    </entry>
+    <entry type="CEffectApplyBehavior" catalog="Effect">
+      <id>^Id^ChargeBeamPhase3AB</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase3</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^ChargeBeamCounter</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+      <field id="BuffFlags">
+        <value>1</value>
+        <index>RefreshStack</index>
+      </field>
+      <field id="MaxStackCount">
+        <value>30</value>
+      </field>
+      <field id="InitialEffect">
+        <value>^Id^ChargeBeamCounterCheck</value>
+      </field>
+      <field id="RefreshEffect">
+        <value>^Id^ChargeBeamCounterCheck</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^ChargeBeamPhase2</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CBehaviorBuff" catalog="Behavior">
+      <id>^Id^ChargeBeamPhase3</id>
+      <field id="InfoFlags">
+        <value>1</value>
+        <index>Hidden</index>
+      </field>
+      <field id="Duration">
+        <value>5</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^Attack</id>
+      <field id="ImpactSite">
+        <value>^Id^AttackBeam1ImpactSite</value>
+      </field>
+      <field id="LaunchAttachQuery_Methods">
+        <value>Weapon 1</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>-1.000000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^.Start; At Caster</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^Damage.Start; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^.Stop</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>2</index>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <parentid>BeamSimpleAnimationStyleContinuous</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Supporter_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="Supporter_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="Supporter_Actor">
+        <value>Find</value>
+      </field>
+      <field id="Host_Subject">
+        <value>_Unit</value>
+      </field>
+      <field id="Host_Scope">
+        <value>Caster</value>
+      </field>
+      <field id="Host_Actor">
+        <value>Find</value>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Target">
+        <value>::Host</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Signal VoidRayChargeAttackBeamModel</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; ValidateEffect ^Id^ChargeBeamCounterPhase1</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,02 PlayForever</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; ValidateEffect ^Id^ChargeBeamCounterCheckPhase2Ready</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,04 PlayForever</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation; ValidateEffect ^Id^ChargeBeamCounterCheckPhase3Ready</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,06 PlayForever</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^ChargeBeamPhase2AB.Start</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,04 PlayForever</value>
+        <index>7</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^ChargeBeamPhase3AB.Start</value>
+        <index>8</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,06 PlayForever</value>
+        <index>8</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>9</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>9</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^.Stop; At Effect</value>
+        <index>10</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.125000 DelayDestroy</value>
+        <index>10</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDestroy</value>
+        <index>11</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>11</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>12</index>
+      </field>
+      <field id="On_Send">
+        <value>RefSetFromRequest ::actor.CasterUnit _Unit Caster Find</value>
+        <index>12</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>13</index>
+      </field>
+      <field id="On_Target">
+        <value>::actor.CasterUnit</value>
+        <index>13</index>
+      </field>
+      <field id="On_Send">
+        <value>Signal CampaignBeamCreated</value>
+        <index>13</index>
+      </field>
+      <field id="Aliases">
+        <value>_VoidRayChargeAttackBeam</value>
+      </field>
+      <field id="Model">
+        <value>^Id^AttackBeam</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^1Attack</id>
+      <field id="AcquisitionYawHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AcquisitionPitchHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AccuracyHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="BeamScope">
+        <value>Caster</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance</value>
+      </field>
+      <field id="LaunchRequest_Subject">
+        <value>^Id^AttackBeam1ImpactSite</value>
+      </field>
+      <field id="LaunchRequest_Actor">
+        <value>Find</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>0.750000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^1Damage.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^1Damage.Start; At Effect; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^Id^1AttackBeam</id>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,02 PlayForever</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 1.000000 0.300000</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.600000 OpacTimer</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName OpacTimer</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 0.000000 0.300000</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>7</index>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+      <field id="Model">
+        <value>^Id^AttackBounceBeam</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^2Attack</id>
+      <field id="AcquisitionYawHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AcquisitionPitchHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AccuracyHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="BeamScope">
+        <value>Caster</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance</value>
+      </field>
+      <field id="LaunchRequest_Subject">
+        <value>^Id^AttackBeam1ImpactSite</value>
+      </field>
+      <field id="LaunchRequest_Actor">
+        <value>Find</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>0.750000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^2Damage.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^2Damage.Start; At Effect; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^Id^2AttackBeam</id>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,04 PlayForever</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 1.000000 0.300000</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.600000 OpacTimer</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName OpacTimer</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 0.000000 0.300000</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>7</index>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+      <field id="Model">
+        <value>^Id^AttackBounceBeam</value>
+      </field>
+    </entry>
+    <entry type="CActorAction" catalog="Actor">
+      <parentid>GenericAttackBase</parentid>
+      <id>^Id^3Attack</id>
+      <field id="AcquisitionYawHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AcquisitionPitchHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="AccuracyHalfArc">
+        <value>0.100000</value>
+      </field>
+      <field id="BeamScope">
+        <value>Caster</value>
+      </field>
+      <field id="ImpactSiteOps_Ops">
+        <value>SOpAttachHarness SOpAttachVolumeNoVizEnhance</value>
+      </field>
+      <field id="LaunchRequest_Subject">
+        <value>^Id^AttackBeam1ImpactSite</value>
+      </field>
+      <field id="LaunchRequest_Actor">
+        <value>Find</value>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>AlignedImpactsAndDamages</index>
+      </field>
+      <field id="ActionFlags">
+        <value>1</value>
+        <index>LaunchForceSite</index>
+      </field>
+      <field id="Lifetime">
+        <value>0.750000</value>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^3Damage.Start</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>Effect.^Id^3Damage.Start; At Effect; FromEffectTreeDescendant</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>ActionDamage</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>3</index>
+      </field>
+    </entry>
+    <entry type="CActorBeamSimple" catalog="Actor">
+      <id>^Id^3AttackBeam</id>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>0</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimPlay Attack Attack,06 PlayForever</value>
+        <index>0</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorOrphan</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>1</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>2</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity</value>
+        <index>2</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 1.000000 0.300000</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.600000 OpacTimer</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName OpacTimer</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>SetOpacity 0.000000 0.300000</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>ActorCreation</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>TimerSet 0.900000 DelayDeath</value>
+        <index>6</index>
+      </field>
+      <field id="On_Terms">
+        <value>TimerExpired; TimerName DelayDeath</value>
+        <index>7</index>
+      </field>
+      <field id="On_Send">
+        <value>Destroy</value>
+        <index>7</index>
+      </field>
+      <field id="ModelFlags">
+        <value>0</value>
+        <index>AllowHitTest</index>
+      </field>
+      <field id="Model">
+        <value>^Id^AttackBounceBeam</value>
+      </field>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^EnhancementAddition01</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamCounter.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachWeapon03</value>
+      </field>
+      <field id="Model">
+        <value>^Id^ChargeBeam</value>
+      </field>
+      <parentid>ModelAddition</parentid>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^EnhancementAddition02</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase2.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase2.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.On</value>
+        <index>5</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>5</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.Off</value>
+        <index>6</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>6</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachWeapon05</value>
+      </field>
+      <field id="Model">
+        <value>^Id^ChargeBeam</value>
+      </field>
+      <parentid>ModelAddition</parentid>
+    </entry>
+    <entry type="CActorModel" catalog="Actor">
+      <id>^Id^EnhancementAddition03</id>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.On</value>
+        <index>3</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>3</index>
+      </field>
+      <field id="On_Terms">
+        <value>Behavior.^Id^ChargeBeamPhase3.Off</value>
+        <index>4</index>
+      </field>
+      <field id="On_Send">
+        <value>AnimBracketStop BSD</value>
+        <index>4</index>
+      </field>
+      <field id="HostSiteOps_Ops">
+        <value>SOpAttachWeapon07</value>
+      </field>
+      <field id="Model">
+        <value>^Id^ChargeBeam</value>
+      </field>
+      <parentid>ModelAddition</parentid>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <id>^Id^SoundEnd</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^.Stop</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>VoidRay_WeaponEnd</value>
+      </field>
+      <parentid>SoundOneShot</parentid>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <id>^Id^SoundStart</id>
+      <field id="On_Terms">
+        <value>Effect.^Id^.Start</value>
+        <index>1</index>
+      </field>
+      <field id="On_Send">
+        <value>Create</value>
+        <index>1</index>
+      </field>
+      <field id="Sound">
+        <value>VoidRay_WeaponStart</value>
+      </field>
+      <parentid>SoundOneShot</parentid>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\VoidRayBeamBounceMissile\VoidRayBeamBounceMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBounceBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\BeamBounceMissile\BeamBounceMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^ChargeBeamCounterCheckPhase2Ready</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>^Id^ChargeBeamCounterPhase2CountHigh</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>^Id^ChargeBeamCounterPhase2CountLow</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^ChargeBeamCounterCheckPhase3Ready</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>^Id^ChargeBeamCounterPhase3CountLow</value>
+        <index>0</index>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamCounterPhase2CountHigh</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Compare">
+        <value>LT</value>
+      </field>
+      <field id="Value">
+        <value>12</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamCounter</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamCounterPhase2CountLow</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Compare">
+        <value>GE</value>
+      </field>
+      <field id="Value">
+        <value>6</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamCounter</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamCounterPhase3CountLow</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Compare">
+        <value>GE</value>
+      </field>
+      <field id="Value">
+        <value>12</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamCounter</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamCounterPhase1</id>
+      <field id="WhichUnit_Value">
+        <value>Caster</value>
+      </field>
+      <field id="Compare">
+        <value>LT</value>
+      </field>
+      <field id="Value">
+        <value>6</value>
+      </field>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamCounter</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>PersistentSpellFX</parentid>
+      <id>^Id^ChargeBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\VoidRayBeamBounceBeam\VoidRayBeamBounceBeam.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\VoidRayBeamBounceMissile\VoidRayBeamBounceMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>MissileFX</parentid>
+      <id>^Id^AttackBounceBeam</id>
+      <field id="Model">
+        <value>Assets\Effects\Protoss\BeamBounceMissile\BeamBounceMissile.m3</value>
+      </field>
+      <field id="EditorCategories">
+        <value>Race:Protoss</value>
+      </field>
+      <field id="RadiusLoose">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CValidatorCombine" catalog="Validator">
+      <id>^Id^ChargeBeamPhase1</id>
+      <field id="Type">
+        <value>And</value>
+      </field>
+      <field id="CombineArray">
+        <value>No^Id^ChargeBeamPhase2</value>
+        <index>0</index>
+      </field>
+      <field id="CombineArray">
+        <value>No^Id^ChargeBeamPhase3</value>
+        <index>1</index>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamPhase3</id>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase3</value>
+      </field>
+      <field id="Compare">
+        <value>NE</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>^Id^ChargeBeamPhase2</id>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase2</value>
+      </field>
+      <field id="Compare">
+        <value>NE</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>No^Id^ChargeBeamPhase3</id>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase3</value>
+      </field>
+      <field id="Compare">
+        <value>LE</value>
+      </field>
+    </entry>
+    <entry type="CValidatorUnitCompareBehaviorCount" catalog="Validator">
+      <id>No^Id^ChargeBeamPhase2</id>
+      <field id="Behavior">
+        <value>^Id^ChargeBeamPhase2</value>
+      </field>
+      <field id="Compare">
+        <value>LE</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound2</id>
+      <field id="Inherits">
+        <value>0</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Sound">
+        <value>VoidRay_WeaponLoop2</value>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound1</id>
+      <field id="Inherits">
+        <value>0</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Sound">
+        <value>VoidRay_WeaponLoop1</value>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+    </entry>
+    <entry type="CActorSound" catalog="Actor">
+      <parentid>SoundContinuous</parentid>
+      <id>^Id^Sound3</id>
+      <field id="Inherits">
+        <value>0</value>
+        <index>Visibility</index>
+      </field>
+      <field id="Sound">
+        <value>VoidRay_WeaponLoop3</value>
+      </field>
+      <field id="Host_Subject">
+        <value>_Selectable</value>
+      </field>
+    </entry>
+    <entry type="CActorSite" catalog="Actor">
+      <parentid>GenericAttackImpactSite</parentid>
+      <id>^Id^AttackBeam1ImpactSite</id>
+    </entry>
+  </wizard>
+</wizardfile>

@@ -191,7 +191,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitBase</parentid>
       <field id="WalkAnimMoveSpeed">
@@ -252,7 +252,7 @@
         <value>Stalker_Pissed</value>
       </field>
       <field id="DeathArray_ModelLink">
-        <value>^Id^_Death</value>
+        <value>^Id^Death</value>
       </field>
       <field id="On_Terms">
         <value>WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000</value>
@@ -381,7 +381,7 @@
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>Portrait</parentid>
       <field id="Name">
         <value>^Name^头像</value>
@@ -452,7 +452,7 @@
     <objecttypes create="Unit" />
     <entry type="CModel" catalog="Model">
       <parentid>StalkerDeathBase</parentid>
-      <id>^Id^_Death</id>
+      <id>^Id^Death</id>
       <field id="Model">
         <value>Assets\COOP\Zeratul\Units\Stalker_Zeratul_COOP_Death\Stalker_Zeratul_COOP_Death.m3</value>
       </field>

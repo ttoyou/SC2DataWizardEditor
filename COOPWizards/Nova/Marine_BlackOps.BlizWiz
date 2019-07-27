@@ -188,7 +188,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>^Id^_Portrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitBase</parentid>
       <field id="WalkAnimMoveSpeed">
@@ -312,7 +312,7 @@
         <index>68</index>
       </field>
       <field id="DeathArray_ModelLink">
-        <value>^Id^_Death</value>
+        <value>^Id^Death</value>
       </field>
       <field id="DeathArray_SoundLink">
         <value>Marine_DeathFXBloodSpray</value>
@@ -485,7 +485,7 @@
       <condition id="CreateWeapon" />
     </entry>
     <entry catalog="Model" type="CModel">
-      <id>^Id^_Portrait</id>
+      <id>^Id^Portrait</id>
       <parentid>Portrait</parentid>
       <field id="Name">
         <value>^Name^头像</value>
@@ -532,7 +532,7 @@
     </entry>
     <entry type="CModel" catalog="Model">
       <parentid>MarineDeathBase</parentid>
-      <id>^Id^_Death</id>
+      <id>^Id^Death</id>
       <field id="Model">
         <value>Assets\Units\Terran\Marine_BlackOps_Death\Marine_BlackOps_Death.m3</value>
       </field>

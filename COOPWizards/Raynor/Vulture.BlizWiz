@@ -250,6 +250,14 @@
         <index>Movement</index>
       </field>
       <condition id="CreateUnit" />
+      <field id="Aliases">
+        <value>_UnitMedium</value>
+        <index>2</index>
+      </field>
+      <field id="ModelFlags">
+        <value>1</value>
+        <index>OutlineEmitter</index>
+      </field>
     </entry>
     <entry catalog="Model" type="CModel">
       <id>^Id^</id>

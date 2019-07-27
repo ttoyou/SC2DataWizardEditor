@@ -203,7 +203,7 @@
         <value>^Name^</value>
       </field>
       <field id="PortraitModel">
-        <value>TempestPortrait</value>
+        <value>^Id^Portrait</value>
       </field>
       <parentid>GenericUnitStandard</parentid>
       <field id="AnimBlendTime">
@@ -320,6 +320,12 @@
       <field id="On_Send">
         <value>Create Tempest_DisruptionBlastRangedVO</value>
         <index>73</index>
+      </field>
+      <field id="BuildModel">
+        <value>^Id^WarpIn</value>
+      </field>
+      <field id="PlacementModel">
+        <value>^Id^Placement</value>
       </field>
     </entry>
     <entry catalog="Model" type="CModel">
@@ -739,6 +745,72 @@
       </field>
       <field id="EditorCategories">
         <value>ObjectFamily:Melee,ObjectType:Projectile</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>OneShotSpellFX</parentid>
+      <id>^Id^WarpIn</id>
+      <field id="Model">
+        <value>Assets\Units\Protoss\TempestEx1WarpIn\TempestEx1WarpIn.m3</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.000000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>1.000000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.000000</value>
+      </field>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>TempestPortraitBase</parentid>
+      <id>^Id^Portrait</id>
+    </entry>
+    <entry type="CModel" catalog="Model">
+      <parentid>Placement</parentid>
+      <id>^Id^Placement</id>
+      <token id="Race">
+        <value>Protoss</value>
+      </token>
+      <field id="Model">
+        <value>Assets\Units\Protoss\Tempest_Ex2_Placement\Tempest_Ex2_Placement.m3</value>
+      </field>
+      <field id="Lighting">
+        <value>Tempest</value>
+      </field>
+      <field id="ScaleMax">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="ScaleMin">
+        <value>0.900000,0.900000,0.900000</value>
+      </field>
+      <field id="Occlusion">
+        <value>Show</value>
+      </field>
+      <field id="SelectionOffset">
+        <value>0.000000,0.000000,-0.750000</value>
+      </field>
+      <field id="SelectionRadius">
+        <value>1.000000</value>
+      </field>
+      <field id="SquibTypeDefault">
+        <value>Metal</value>
+      </field>
+      <field id="Radius">
+        <value>1.000000</value>
+      </field>
+      <field id="ShadowRadius">
+        <value>1.000000</value>
       </field>
     </entry>
   </wizard>
